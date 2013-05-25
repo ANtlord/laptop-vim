@@ -1,0 +1,1011 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALAPI	/usr/include/AL/al.h	40;"	d
+ALAPIENTRY	/usr/include/AL/al.h	41;"	d
+ALCAPI	/usr/include/AL/alc.h	38;"	d
+ALCAPIENTRY	/usr/include/AL/alc.h	39;"	d
+ALC_ALL_ATTRIBUTES	/usr/include/AL/alc.h	168;"	d
+ALC_ALL_DEVICES_SPECIFIER	/usr/include/AL/alext.h	74;"	d
+ALC_API	/usr/include/AL/alc.h	12;"	d
+ALC_API	/usr/include/AL/alc.h	14;"	d
+ALC_API	/usr/include/AL/alc.h	18;"	d
+ALC_API	/usr/include/AL/alc.h	20;"	d
+ALC_API	/usr/include/AL/alc.h	9;"	d
+ALC_APIENTRY	/usr/include/AL/alc.h	25;"	d
+ALC_APIENTRY	/usr/include/AL/alc.h	27;"	d
+ALC_ATTRIBUTES_SIZE	/usr/include/AL/alc.h	167;"	d
+ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER	/usr/include/AL/alc.h	175;"	d
+ALC_CAPTURE_DEVICE_SPECIFIER	/usr/include/AL/alc.h	174;"	d
+ALC_CAPTURE_SAMPLES	/usr/include/AL/alc.h	176;"	d
+ALC_CHAN_CD_LOKI	/usr/include/AL/alext.h	68;"	d
+ALC_CHAN_MAIN_LOKI	/usr/include/AL/alext.h	66;"	d
+ALC_CHAN_PCM_LOKI	/usr/include/AL/alext.h	67;"	d
+ALC_CONNECTED	/usr/include/AL/alext.h	128;"	d
+ALC_DEFAULT_ALL_DEVICES_SPECIFIER	/usr/include/AL/alext.h	73;"	d
+ALC_DEFAULT_DEVICE_SPECIFIER	/usr/include/AL/alc.h	160;"	d
+ALC_DEVICE_SPECIFIER	/usr/include/AL/alc.h	161;"	d
+ALC_EFX_MAJOR_VERSION	/usr/include/AL/efx.h	11;"	d
+ALC_EFX_MINOR_VERSION	/usr/include/AL/efx.h	12;"	d
+ALC_ENUMERATE_ALL_EXT	/usr/include/AL/alext.h	72;"	d
+ALC_EXTENSIONS	/usr/include/AL/alc.h	162;"	d
+ALC_EXT_EFX	/usr/include/AL/alext.h	122;"	d
+ALC_EXT_EFX_NAME	/usr/include/AL/efx.h	9;"	d
+ALC_EXT_disconnect	/usr/include/AL/alext.h	127;"	d
+ALC_EXT_thread_local_context	/usr/include/AL/alext.h	132;"	d
+ALC_FALSE	/usr/include/AL/alc.h	92;"	d
+ALC_FREQUENCY	/usr/include/AL/alc.h	100;"	d
+ALC_INVALID	/usr/include/AL/alc.h	40;"	d
+ALC_INVALID_CONTEXT	/usr/include/AL/alc.h	139;"	d
+ALC_INVALID_DEVICE	/usr/include/AL/alc.h	134;"	d
+ALC_INVALID_ENUM	/usr/include/AL/alc.h	144;"	d
+ALC_INVALID_VALUE	/usr/include/AL/alc.h	149;"	d
+ALC_LOKI_audio_channel	/usr/include/AL/alext.h	65;"	d
+ALC_MAJOR_VERSION	/usr/include/AL/alc.h	164;"	d
+ALC_MAX_AUXILIARY_SENDS	/usr/include/AL/efx.h	13;"	d
+ALC_MINOR_VERSION	/usr/include/AL/alc.h	165;"	d
+ALC_MONO_SOURCES	/usr/include/AL/alc.h	115;"	d
+ALC_NO_ERROR	/usr/include/AL/alc.h	129;"	d
+ALC_OUT_OF_MEMORY	/usr/include/AL/alc.h	154;"	d
+ALC_REFRESH	/usr/include/AL/alc.h	105;"	d
+ALC_STEREO_SOURCES	/usr/include/AL/alc.h	120;"	d
+ALC_SYNC	/usr/include/AL/alc.h	110;"	d
+ALC_TRUE	/usr/include/AL/alc.h	95;"	d
+ALC_VERSION_0_1	/usr/include/AL/alc.h	43;"	d
+ALCboolean	/usr/include/AL/alc.h	/^typedef char ALCboolean;$/;"	t
+ALCbyte	/usr/include/AL/alc.h	/^typedef signed char ALCbyte;$/;"	t
+ALCchar	/usr/include/AL/alc.h	/^typedef char ALCchar;$/;"	t
+ALCcontext	/usr/include/AL/alc.h	/^typedef struct ALCcontext_struct ALCcontext;$/;"	t	typeref:struct:ALCcontext_struct
+ALCdevice	/usr/include/AL/alc.h	/^typedef struct ALCdevice_struct ALCdevice;$/;"	t	typeref:struct:ALCdevice_struct
+ALCdouble	/usr/include/AL/alc.h	/^typedef double ALCdouble;$/;"	t
+ALCenum	/usr/include/AL/alc.h	/^typedef int ALCenum;$/;"	t
+ALCfloat	/usr/include/AL/alc.h	/^typedef float ALCfloat;$/;"	t
+ALCint	/usr/include/AL/alc.h	/^typedef int ALCint;$/;"	t
+ALCshort	/usr/include/AL/alc.h	/^typedef short ALCshort;$/;"	t
+ALCsizei	/usr/include/AL/alc.h	/^typedef int ALCsizei;$/;"	t
+ALCubyte	/usr/include/AL/alc.h	/^typedef unsigned char ALCubyte;$/;"	t
+ALCuint	/usr/include/AL/alc.h	/^typedef unsigned int ALCuint;$/;"	t
+ALCushort	/usr/include/AL/alc.h	/^typedef unsigned short ALCushort;$/;"	t
+ALCvoid	/usr/include/AL/alc.h	/^typedef void ALCvoid;$/;"	t
+ALUT_API	/usr/include/AL/alut.h	21;"	d
+ALUT_API	/usr/include/AL/alut.h	23;"	d
+ALUT_API	/usr/include/AL/alut.h	27;"	d
+ALUT_API	/usr/include/AL/alut.h	29;"	d
+ALUT_APIENTRY	/usr/include/AL/alut.h	34;"	d
+ALUT_APIENTRY	/usr/include/AL/alut.h	36;"	d
+ALUT_API_MAJOR_VERSION	/usr/include/AL/alut.h	52;"	d
+ALUT_API_MINOR_VERSION	/usr/include/AL/alut.h	53;"	d
+ALUT_ATTRIBUTE_DEPRECATED	/usr/include/AL/alut.h	45;"	d
+ALUT_ATTRIBUTE_DEPRECATED	/usr/include/AL/alut.h	47;"	d
+ALUT_ATTRIBUTE_DEPRECATED	/usr/include/AL/alut.h	49;"	d
+ALUT_ERROR_ALC_ERROR_ON_ENTRY	/usr/include/AL/alut.h	62;"	d
+ALUT_ERROR_AL_ERROR_ON_ENTRY	/usr/include/AL/alut.h	61;"	d
+ALUT_ERROR_BUFFER_DATA	/usr/include/AL/alut.h	69;"	d
+ALUT_ERROR_CLOSE_DEVICE	/usr/include/AL/alut.h	64;"	d
+ALUT_ERROR_CORRUPT_OR_TRUNCATED_DATA	/usr/include/AL/alut.h	73;"	d
+ALUT_ERROR_CREATE_CONTEXT	/usr/include/AL/alut.h	65;"	d
+ALUT_ERROR_DESTROY_CONTEXT	/usr/include/AL/alut.h	67;"	d
+ALUT_ERROR_GEN_BUFFERS	/usr/include/AL/alut.h	68;"	d
+ALUT_ERROR_INVALID_ENUM	/usr/include/AL/alut.h	57;"	d
+ALUT_ERROR_INVALID_OPERATION	/usr/include/AL/alut.h	59;"	d
+ALUT_ERROR_INVALID_VALUE	/usr/include/AL/alut.h	58;"	d
+ALUT_ERROR_IO_ERROR	/usr/include/AL/alut.h	70;"	d
+ALUT_ERROR_MAKE_CONTEXT_CURRENT	/usr/include/AL/alut.h	66;"	d
+ALUT_ERROR_NO_CURRENT_CONTEXT	/usr/include/AL/alut.h	60;"	d
+ALUT_ERROR_NO_ERROR	/usr/include/AL/alut.h	55;"	d
+ALUT_ERROR_OPEN_DEVICE	/usr/include/AL/alut.h	63;"	d
+ALUT_ERROR_OUT_OF_MEMORY	/usr/include/AL/alut.h	56;"	d
+ALUT_ERROR_UNSUPPORTED_FILE_SUBTYPE	/usr/include/AL/alut.h	72;"	d
+ALUT_ERROR_UNSUPPORTED_FILE_TYPE	/usr/include/AL/alut.h	71;"	d
+ALUT_LOADER_BUFFER	/usr/include/AL/alut.h	81;"	d
+ALUT_LOADER_MEMORY	/usr/include/AL/alut.h	82;"	d
+ALUT_WAVEFORM_IMPULSE	/usr/include/AL/alut.h	79;"	d
+ALUT_WAVEFORM_SAWTOOTH	/usr/include/AL/alut.h	77;"	d
+ALUT_WAVEFORM_SINE	/usr/include/AL/alut.h	75;"	d
+ALUT_WAVEFORM_SQUARE	/usr/include/AL/alut.h	76;"	d
+ALUT_WAVEFORM_WHITENOISE	/usr/include/AL/alut.h	78;"	d
+AL_AIR_ABSORPTION_FACTOR	/usr/include/AL/efx.h	22;"	d
+AL_ALC_H	/usr/include/AL/alc.h	2;"	d
+AL_ALEXT_H	/usr/include/AL/alext.h	22;"	d
+AL_ALUT_H	/usr/include/AL/alut.h	2;"	d
+AL_AL_H	/usr/include/AL/al.h	2;"	d
+AL_API	/usr/include/AL/al.h	12;"	d
+AL_API	/usr/include/AL/al.h	14;"	d
+AL_API	/usr/include/AL/al.h	18;"	d
+AL_API	/usr/include/AL/al.h	20;"	d
+AL_API	/usr/include/AL/al.h	9;"	d
+AL_APIENTRY	/usr/include/AL/al.h	25;"	d
+AL_APIENTRY	/usr/include/AL/al.h	27;"	d
+AL_AUTOWAH_ATTACK_TIME	/usr/include/AL/efx.h	125;"	d
+AL_AUTOWAH_DEFAULT_ATTACK_TIME	/usr/include/AL/efx.h	661;"	d
+AL_AUTOWAH_DEFAULT_PEAK_GAIN	/usr/include/AL/efx.h	673;"	d
+AL_AUTOWAH_DEFAULT_RELEASE_TIME	/usr/include/AL/efx.h	665;"	d
+AL_AUTOWAH_DEFAULT_RESONANCE	/usr/include/AL/efx.h	669;"	d
+AL_AUTOWAH_MAX_ATTACK_TIME	/usr/include/AL/efx.h	660;"	d
+AL_AUTOWAH_MAX_PEAK_GAIN	/usr/include/AL/efx.h	672;"	d
+AL_AUTOWAH_MAX_RELEASE_TIME	/usr/include/AL/efx.h	664;"	d
+AL_AUTOWAH_MAX_RESONANCE	/usr/include/AL/efx.h	668;"	d
+AL_AUTOWAH_MIN_ATTACK_TIME	/usr/include/AL/efx.h	659;"	d
+AL_AUTOWAH_MIN_PEAK_GAIN	/usr/include/AL/efx.h	671;"	d
+AL_AUTOWAH_MIN_RELEASE_TIME	/usr/include/AL/efx.h	663;"	d
+AL_AUTOWAH_MIN_RESONANCE	/usr/include/AL/efx.h	667;"	d
+AL_AUTOWAH_PEAK_GAIN	/usr/include/AL/efx.h	128;"	d
+AL_AUTOWAH_RELEASE_TIME	/usr/include/AL/efx.h	126;"	d
+AL_AUTOWAH_RESONANCE	/usr/include/AL/efx.h	127;"	d
+AL_AUXILIARY_SEND_FILTER	/usr/include/AL/efx.h	21;"	d
+AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	27;"	d
+AL_AUXILIARY_SEND_FILTER_GAIN_AUTO	/usr/include/AL/efx.h	26;"	d
+AL_BANDPASS_GAIN	/usr/include/AL/efx.h	186;"	d
+AL_BANDPASS_GAINHF	/usr/include/AL/efx.h	188;"	d
+AL_BANDPASS_GAINLF	/usr/include/AL/efx.h	187;"	d
+AL_BITS	/usr/include/AL/al.h	281;"	d
+AL_BUFFER	/usr/include/AL/al.h	158;"	d
+AL_BUFFERS_PROCESSED	/usr/include/AL/al.h	211;"	d
+AL_BUFFERS_QUEUED	/usr/include/AL/al.h	210;"	d
+AL_BYTE_OFFSET	/usr/include/AL/al.h	218;"	d
+AL_BYTE_RW_OFFSETS_SOFT	/usr/include/AL/alext.h	148;"	d
+AL_CHANNELS	/usr/include/AL/al.h	282;"	d
+AL_CHORUS_DEFAULT_DELAY	/usr/include/AL/efx.h	483;"	d
+AL_CHORUS_DEFAULT_DEPTH	/usr/include/AL/efx.h	475;"	d
+AL_CHORUS_DEFAULT_FEEDBACK	/usr/include/AL/efx.h	479;"	d
+AL_CHORUS_DEFAULT_PHASE	/usr/include/AL/efx.h	467;"	d
+AL_CHORUS_DEFAULT_RATE	/usr/include/AL/efx.h	471;"	d
+AL_CHORUS_DEFAULT_WAVEFORM	/usr/include/AL/efx.h	463;"	d
+AL_CHORUS_DELAY	/usr/include/AL/efx.h	78;"	d
+AL_CHORUS_DEPTH	/usr/include/AL/efx.h	76;"	d
+AL_CHORUS_FEEDBACK	/usr/include/AL/efx.h	77;"	d
+AL_CHORUS_MAX_DELAY	/usr/include/AL/efx.h	482;"	d
+AL_CHORUS_MAX_DEPTH	/usr/include/AL/efx.h	474;"	d
+AL_CHORUS_MAX_FEEDBACK	/usr/include/AL/efx.h	478;"	d
+AL_CHORUS_MAX_PHASE	/usr/include/AL/efx.h	466;"	d
+AL_CHORUS_MAX_RATE	/usr/include/AL/efx.h	470;"	d
+AL_CHORUS_MAX_WAVEFORM	/usr/include/AL/efx.h	462;"	d
+AL_CHORUS_MIN_DELAY	/usr/include/AL/efx.h	481;"	d
+AL_CHORUS_MIN_DEPTH	/usr/include/AL/efx.h	473;"	d
+AL_CHORUS_MIN_FEEDBACK	/usr/include/AL/efx.h	477;"	d
+AL_CHORUS_MIN_PHASE	/usr/include/AL/efx.h	465;"	d
+AL_CHORUS_MIN_RATE	/usr/include/AL/efx.h	469;"	d
+AL_CHORUS_MIN_WAVEFORM	/usr/include/AL/efx.h	461;"	d
+AL_CHORUS_PHASE	/usr/include/AL/efx.h	74;"	d
+AL_CHORUS_RATE	/usr/include/AL/efx.h	75;"	d
+AL_CHORUS_WAVEFORM	/usr/include/AL/efx.h	73;"	d
+AL_CHORUS_WAVEFORM_SINUSOID	/usr/include/AL/efx.h	458;"	d
+AL_CHORUS_WAVEFORM_TRIANGLE	/usr/include/AL/efx.h	459;"	d
+AL_COMPRESSOR_DEFAULT_ONOFF	/usr/include/AL/efx.h	678;"	d
+AL_COMPRESSOR_MAX_ONOFF	/usr/include/AL/efx.h	677;"	d
+AL_COMPRESSOR_MIN_ONOFF	/usr/include/AL/efx.h	676;"	d
+AL_COMPRESSOR_ONOFF	/usr/include/AL/efx.h	131;"	d
+AL_CONE_INNER_ANGLE	/usr/include/AL/al.h	111;"	d
+AL_CONE_OUTER_ANGLE	/usr/include/AL/al.h	118;"	d
+AL_CONE_OUTER_GAIN	/usr/include/AL/al.h	262;"	d
+AL_CONE_OUTER_GAINHF	/usr/include/AL/efx.h	24;"	d
+AL_DEFAULT_AIR_ABSORPTION_FACTOR	/usr/include/AL/efx.h	725;"	d
+AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	745;"	d
+AL_DEFAULT_AUXILIARY_SEND_FILTER_GAIN_AUTO	/usr/include/AL/efx.h	741;"	d
+AL_DEFAULT_CONE_OUTER_GAINHF	/usr/include/AL/efx.h	733;"	d
+AL_DEFAULT_DIRECT_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	737;"	d
+AL_DEFAULT_METERS_PER_UNIT	/usr/include/AL/efx.h	751;"	d
+AL_DEFAULT_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	729;"	d
+AL_DIRECTION	/usr/include/AL/al.h	140;"	d
+AL_DIRECT_FILTER	/usr/include/AL/efx.h	20;"	d
+AL_DIRECT_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	25;"	d
+AL_DISTANCE_MODEL	/usr/include/AL/al.h	355;"	d
+AL_DISTORTION_DEFAULT_EDGE	/usr/include/AL/efx.h	488;"	d
+AL_DISTORTION_DEFAULT_EQBANDWIDTH	/usr/include/AL/efx.h	504;"	d
+AL_DISTORTION_DEFAULT_EQCENTER	/usr/include/AL/efx.h	500;"	d
+AL_DISTORTION_DEFAULT_GAIN	/usr/include/AL/efx.h	492;"	d
+AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF	/usr/include/AL/efx.h	496;"	d
+AL_DISTORTION_EDGE	/usr/include/AL/efx.h	81;"	d
+AL_DISTORTION_EQBANDWIDTH	/usr/include/AL/efx.h	85;"	d
+AL_DISTORTION_EQCENTER	/usr/include/AL/efx.h	84;"	d
+AL_DISTORTION_GAIN	/usr/include/AL/efx.h	82;"	d
+AL_DISTORTION_LOWPASS_CUTOFF	/usr/include/AL/efx.h	83;"	d
+AL_DISTORTION_MAX_EDGE	/usr/include/AL/efx.h	487;"	d
+AL_DISTORTION_MAX_EQBANDWIDTH	/usr/include/AL/efx.h	503;"	d
+AL_DISTORTION_MAX_EQCENTER	/usr/include/AL/efx.h	499;"	d
+AL_DISTORTION_MAX_GAIN	/usr/include/AL/efx.h	491;"	d
+AL_DISTORTION_MAX_LOWPASS_CUTOFF	/usr/include/AL/efx.h	495;"	d
+AL_DISTORTION_MIN_EDGE	/usr/include/AL/efx.h	486;"	d
+AL_DISTORTION_MIN_EQBANDWIDTH	/usr/include/AL/efx.h	502;"	d
+AL_DISTORTION_MIN_EQCENTER	/usr/include/AL/efx.h	498;"	d
+AL_DISTORTION_MIN_GAIN	/usr/include/AL/efx.h	490;"	d
+AL_DISTORTION_MIN_LOWPASS_CUTOFF	/usr/include/AL/efx.h	494;"	d
+AL_DOPPLER_FACTOR	/usr/include/AL/al.h	336;"	d
+AL_DOPPLER_VELOCITY	/usr/include/AL/al.h	341;"	d
+AL_EAXREVERB_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	66;"	d
+AL_EAXREVERB_DECAY_HFLIMIT	/usr/include/AL/efx.h	70;"	d
+AL_EAXREVERB_DECAY_HFRATIO	/usr/include/AL/efx.h	54;"	d
+AL_EAXREVERB_DECAY_LFRATIO	/usr/include/AL/efx.h	55;"	d
+AL_EAXREVERB_DECAY_TIME	/usr/include/AL/efx.h	53;"	d
+AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	439;"	d
+AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT	/usr/include/AL/efx.h	455;"	d
+AL_EAXREVERB_DEFAULT_DECAY_HFRATIO	/usr/include/AL/efx.h	395;"	d
+AL_EAXREVERB_DEFAULT_DECAY_LFRATIO	/usr/include/AL/efx.h	399;"	d
+AL_EAXREVERB_DEFAULT_DECAY_TIME	/usr/include/AL/efx.h	391;"	d
+AL_EAXREVERB_DEFAULT_DENSITY	/usr/include/AL/efx.h	371;"	d
+AL_EAXREVERB_DEFAULT_DIFFUSION	/usr/include/AL/efx.h	375;"	d
+AL_EAXREVERB_DEFAULT_ECHO_DEPTH	/usr/include/AL/efx.h	427;"	d
+AL_EAXREVERB_DEFAULT_ECHO_TIME	/usr/include/AL/efx.h	423;"	d
+AL_EAXREVERB_DEFAULT_GAIN	/usr/include/AL/efx.h	379;"	d
+AL_EAXREVERB_DEFAULT_GAINHF	/usr/include/AL/efx.h	383;"	d
+AL_EAXREVERB_DEFAULT_GAINLF	/usr/include/AL/efx.h	387;"	d
+AL_EAXREVERB_DEFAULT_HFREFERENCE	/usr/include/AL/efx.h	443;"	d
+AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY	/usr/include/AL/efx.h	417;"	d
+AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN	/usr/include/AL/efx.h	413;"	d
+AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ	/usr/include/AL/efx.h	419;"	d
+AL_EAXREVERB_DEFAULT_LFREFERENCE	/usr/include/AL/efx.h	447;"	d
+AL_EAXREVERB_DEFAULT_MODULATION_DEPTH	/usr/include/AL/efx.h	435;"	d
+AL_EAXREVERB_DEFAULT_MODULATION_TIME	/usr/include/AL/efx.h	431;"	d
+AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY	/usr/include/AL/efx.h	407;"	d
+AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN	/usr/include/AL/efx.h	403;"	d
+AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ	/usr/include/AL/efx.h	409;"	d
+AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	451;"	d
+AL_EAXREVERB_DENSITY	/usr/include/AL/efx.h	48;"	d
+AL_EAXREVERB_DIFFUSION	/usr/include/AL/efx.h	49;"	d
+AL_EAXREVERB_ECHO_DEPTH	/usr/include/AL/efx.h	63;"	d
+AL_EAXREVERB_ECHO_TIME	/usr/include/AL/efx.h	62;"	d
+AL_EAXREVERB_GAIN	/usr/include/AL/efx.h	50;"	d
+AL_EAXREVERB_GAINHF	/usr/include/AL/efx.h	51;"	d
+AL_EAXREVERB_GAINLF	/usr/include/AL/efx.h	52;"	d
+AL_EAXREVERB_HFREFERENCE	/usr/include/AL/efx.h	67;"	d
+AL_EAXREVERB_LATE_REVERB_DELAY	/usr/include/AL/efx.h	60;"	d
+AL_EAXREVERB_LATE_REVERB_GAIN	/usr/include/AL/efx.h	59;"	d
+AL_EAXREVERB_LATE_REVERB_PAN	/usr/include/AL/efx.h	61;"	d
+AL_EAXREVERB_LFREFERENCE	/usr/include/AL/efx.h	68;"	d
+AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	438;"	d
+AL_EAXREVERB_MAX_DECAY_HFLIMIT	/usr/include/AL/efx.h	454;"	d
+AL_EAXREVERB_MAX_DECAY_HFRATIO	/usr/include/AL/efx.h	394;"	d
+AL_EAXREVERB_MAX_DECAY_LFRATIO	/usr/include/AL/efx.h	398;"	d
+AL_EAXREVERB_MAX_DECAY_TIME	/usr/include/AL/efx.h	390;"	d
+AL_EAXREVERB_MAX_DENSITY	/usr/include/AL/efx.h	370;"	d
+AL_EAXREVERB_MAX_DIFFUSION	/usr/include/AL/efx.h	374;"	d
+AL_EAXREVERB_MAX_ECHO_DEPTH	/usr/include/AL/efx.h	426;"	d
+AL_EAXREVERB_MAX_ECHO_TIME	/usr/include/AL/efx.h	422;"	d
+AL_EAXREVERB_MAX_GAIN	/usr/include/AL/efx.h	378;"	d
+AL_EAXREVERB_MAX_GAINHF	/usr/include/AL/efx.h	382;"	d
+AL_EAXREVERB_MAX_GAINLF	/usr/include/AL/efx.h	386;"	d
+AL_EAXREVERB_MAX_HFREFERENCE	/usr/include/AL/efx.h	442;"	d
+AL_EAXREVERB_MAX_LATE_REVERB_DELAY	/usr/include/AL/efx.h	416;"	d
+AL_EAXREVERB_MAX_LATE_REVERB_GAIN	/usr/include/AL/efx.h	412;"	d
+AL_EAXREVERB_MAX_LFREFERENCE	/usr/include/AL/efx.h	446;"	d
+AL_EAXREVERB_MAX_MODULATION_DEPTH	/usr/include/AL/efx.h	434;"	d
+AL_EAXREVERB_MAX_MODULATION_TIME	/usr/include/AL/efx.h	430;"	d
+AL_EAXREVERB_MAX_REFLECTIONS_DELAY	/usr/include/AL/efx.h	406;"	d
+AL_EAXREVERB_MAX_REFLECTIONS_GAIN	/usr/include/AL/efx.h	402;"	d
+AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	450;"	d
+AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	437;"	d
+AL_EAXREVERB_MIN_DECAY_HFLIMIT	/usr/include/AL/efx.h	453;"	d
+AL_EAXREVERB_MIN_DECAY_HFRATIO	/usr/include/AL/efx.h	393;"	d
+AL_EAXREVERB_MIN_DECAY_LFRATIO	/usr/include/AL/efx.h	397;"	d
+AL_EAXREVERB_MIN_DECAY_TIME	/usr/include/AL/efx.h	389;"	d
+AL_EAXREVERB_MIN_DENSITY	/usr/include/AL/efx.h	369;"	d
+AL_EAXREVERB_MIN_DIFFUSION	/usr/include/AL/efx.h	373;"	d
+AL_EAXREVERB_MIN_ECHO_DEPTH	/usr/include/AL/efx.h	425;"	d
+AL_EAXREVERB_MIN_ECHO_TIME	/usr/include/AL/efx.h	421;"	d
+AL_EAXREVERB_MIN_GAIN	/usr/include/AL/efx.h	377;"	d
+AL_EAXREVERB_MIN_GAINHF	/usr/include/AL/efx.h	381;"	d
+AL_EAXREVERB_MIN_GAINLF	/usr/include/AL/efx.h	385;"	d
+AL_EAXREVERB_MIN_HFREFERENCE	/usr/include/AL/efx.h	441;"	d
+AL_EAXREVERB_MIN_LATE_REVERB_DELAY	/usr/include/AL/efx.h	415;"	d
+AL_EAXREVERB_MIN_LATE_REVERB_GAIN	/usr/include/AL/efx.h	411;"	d
+AL_EAXREVERB_MIN_LFREFERENCE	/usr/include/AL/efx.h	445;"	d
+AL_EAXREVERB_MIN_MODULATION_DEPTH	/usr/include/AL/efx.h	433;"	d
+AL_EAXREVERB_MIN_MODULATION_TIME	/usr/include/AL/efx.h	429;"	d
+AL_EAXREVERB_MIN_REFLECTIONS_DELAY	/usr/include/AL/efx.h	405;"	d
+AL_EAXREVERB_MIN_REFLECTIONS_GAIN	/usr/include/AL/efx.h	401;"	d
+AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	449;"	d
+AL_EAXREVERB_MODULATION_DEPTH	/usr/include/AL/efx.h	65;"	d
+AL_EAXREVERB_MODULATION_TIME	/usr/include/AL/efx.h	64;"	d
+AL_EAXREVERB_REFLECTIONS_DELAY	/usr/include/AL/efx.h	57;"	d
+AL_EAXREVERB_REFLECTIONS_GAIN	/usr/include/AL/efx.h	56;"	d
+AL_EAXREVERB_REFLECTIONS_PAN	/usr/include/AL/efx.h	58;"	d
+AL_EAXREVERB_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	69;"	d
+AL_ECHO_DAMPING	/usr/include/AL/efx.h	90;"	d
+AL_ECHO_DEFAULT_DAMPING	/usr/include/AL/efx.h	517;"	d
+AL_ECHO_DEFAULT_DELAY	/usr/include/AL/efx.h	509;"	d
+AL_ECHO_DEFAULT_FEEDBACK	/usr/include/AL/efx.h	521;"	d
+AL_ECHO_DEFAULT_LRDELAY	/usr/include/AL/efx.h	513;"	d
+AL_ECHO_DEFAULT_SPREAD	/usr/include/AL/efx.h	525;"	d
+AL_ECHO_DELAY	/usr/include/AL/efx.h	88;"	d
+AL_ECHO_FEEDBACK	/usr/include/AL/efx.h	91;"	d
+AL_ECHO_LRDELAY	/usr/include/AL/efx.h	89;"	d
+AL_ECHO_MAX_DAMPING	/usr/include/AL/efx.h	516;"	d
+AL_ECHO_MAX_DELAY	/usr/include/AL/efx.h	508;"	d
+AL_ECHO_MAX_FEEDBACK	/usr/include/AL/efx.h	520;"	d
+AL_ECHO_MAX_LRDELAY	/usr/include/AL/efx.h	512;"	d
+AL_ECHO_MAX_SPREAD	/usr/include/AL/efx.h	524;"	d
+AL_ECHO_MIN_DAMPING	/usr/include/AL/efx.h	515;"	d
+AL_ECHO_MIN_DELAY	/usr/include/AL/efx.h	507;"	d
+AL_ECHO_MIN_FEEDBACK	/usr/include/AL/efx.h	519;"	d
+AL_ECHO_MIN_LRDELAY	/usr/include/AL/efx.h	511;"	d
+AL_ECHO_MIN_SPREAD	/usr/include/AL/efx.h	523;"	d
+AL_ECHO_SPREAD	/usr/include/AL/efx.h	92;"	d
+AL_EFFECTSLOT_AUXILIARY_SEND_AUTO	/usr/include/AL/efx.h	169;"	d
+AL_EFFECTSLOT_EFFECT	/usr/include/AL/efx.h	167;"	d
+AL_EFFECTSLOT_GAIN	/usr/include/AL/efx.h	168;"	d
+AL_EFFECTSLOT_NULL	/usr/include/AL/efx.h	172;"	d
+AL_EFFECT_AUTOWAH	/usr/include/AL/efx.h	161;"	d
+AL_EFFECT_CHORUS	/usr/include/AL/efx.h	153;"	d
+AL_EFFECT_COMPRESSOR	/usr/include/AL/efx.h	162;"	d
+AL_EFFECT_DISTORTION	/usr/include/AL/efx.h	154;"	d
+AL_EFFECT_EAXREVERB	/usr/include/AL/efx.h	164;"	d
+AL_EFFECT_ECHO	/usr/include/AL/efx.h	155;"	d
+AL_EFFECT_EQUALIZER	/usr/include/AL/efx.h	163;"	d
+AL_EFFECT_FIRST_PARAMETER	/usr/include/AL/efx.h	146;"	d
+AL_EFFECT_FLANGER	/usr/include/AL/efx.h	156;"	d
+AL_EFFECT_FREQUENCY_SHIFTER	/usr/include/AL/efx.h	157;"	d
+AL_EFFECT_LAST_PARAMETER	/usr/include/AL/efx.h	147;"	d
+AL_EFFECT_NULL	/usr/include/AL/efx.h	151;"	d
+AL_EFFECT_PITCH_SHIFTER	/usr/include/AL/efx.h	159;"	d
+AL_EFFECT_REVERB	/usr/include/AL/efx.h	152;"	d
+AL_EFFECT_RING_MODULATOR	/usr/include/AL/efx.h	160;"	d
+AL_EFFECT_TYPE	/usr/include/AL/efx.h	148;"	d
+AL_EFFECT_VOCAL_MORPHER	/usr/include/AL/efx.h	158;"	d
+AL_EFX_H	/usr/include/AL/efx.h	2;"	d
+AL_EQUALIZER_DEFAULT_HIGH_CUTOFF	/usr/include/AL/efx.h	719;"	d
+AL_EQUALIZER_DEFAULT_HIGH_GAIN	/usr/include/AL/efx.h	715;"	d
+AL_EQUALIZER_DEFAULT_LOW_CUTOFF	/usr/include/AL/efx.h	687;"	d
+AL_EQUALIZER_DEFAULT_LOW_GAIN	/usr/include/AL/efx.h	683;"	d
+AL_EQUALIZER_DEFAULT_MID1_CENTER	/usr/include/AL/efx.h	695;"	d
+AL_EQUALIZER_DEFAULT_MID1_GAIN	/usr/include/AL/efx.h	691;"	d
+AL_EQUALIZER_DEFAULT_MID1_WIDTH	/usr/include/AL/efx.h	699;"	d
+AL_EQUALIZER_DEFAULT_MID2_CENTER	/usr/include/AL/efx.h	707;"	d
+AL_EQUALIZER_DEFAULT_MID2_GAIN	/usr/include/AL/efx.h	703;"	d
+AL_EQUALIZER_DEFAULT_MID2_WIDTH	/usr/include/AL/efx.h	711;"	d
+AL_EQUALIZER_HIGH_CUTOFF	/usr/include/AL/efx.h	143;"	d
+AL_EQUALIZER_HIGH_GAIN	/usr/include/AL/efx.h	142;"	d
+AL_EQUALIZER_LOW_CUTOFF	/usr/include/AL/efx.h	135;"	d
+AL_EQUALIZER_LOW_GAIN	/usr/include/AL/efx.h	134;"	d
+AL_EQUALIZER_MAX_HIGH_CUTOFF	/usr/include/AL/efx.h	718;"	d
+AL_EQUALIZER_MAX_HIGH_GAIN	/usr/include/AL/efx.h	714;"	d
+AL_EQUALIZER_MAX_LOW_CUTOFF	/usr/include/AL/efx.h	686;"	d
+AL_EQUALIZER_MAX_LOW_GAIN	/usr/include/AL/efx.h	682;"	d
+AL_EQUALIZER_MAX_MID1_CENTER	/usr/include/AL/efx.h	694;"	d
+AL_EQUALIZER_MAX_MID1_GAIN	/usr/include/AL/efx.h	690;"	d
+AL_EQUALIZER_MAX_MID1_WIDTH	/usr/include/AL/efx.h	698;"	d
+AL_EQUALIZER_MAX_MID2_CENTER	/usr/include/AL/efx.h	706;"	d
+AL_EQUALIZER_MAX_MID2_GAIN	/usr/include/AL/efx.h	702;"	d
+AL_EQUALIZER_MAX_MID2_WIDTH	/usr/include/AL/efx.h	710;"	d
+AL_EQUALIZER_MID1_CENTER	/usr/include/AL/efx.h	137;"	d
+AL_EQUALIZER_MID1_GAIN	/usr/include/AL/efx.h	136;"	d
+AL_EQUALIZER_MID1_WIDTH	/usr/include/AL/efx.h	138;"	d
+AL_EQUALIZER_MID2_CENTER	/usr/include/AL/efx.h	140;"	d
+AL_EQUALIZER_MID2_GAIN	/usr/include/AL/efx.h	139;"	d
+AL_EQUALIZER_MID2_WIDTH	/usr/include/AL/efx.h	141;"	d
+AL_EQUALIZER_MIN_HIGH_CUTOFF	/usr/include/AL/efx.h	717;"	d
+AL_EQUALIZER_MIN_HIGH_GAIN	/usr/include/AL/efx.h	713;"	d
+AL_EQUALIZER_MIN_LOW_CUTOFF	/usr/include/AL/efx.h	685;"	d
+AL_EQUALIZER_MIN_LOW_GAIN	/usr/include/AL/efx.h	681;"	d
+AL_EQUALIZER_MIN_MID1_CENTER	/usr/include/AL/efx.h	693;"	d
+AL_EQUALIZER_MIN_MID1_GAIN	/usr/include/AL/efx.h	689;"	d
+AL_EQUALIZER_MIN_MID1_WIDTH	/usr/include/AL/efx.h	697;"	d
+AL_EQUALIZER_MIN_MID2_CENTER	/usr/include/AL/efx.h	705;"	d
+AL_EQUALIZER_MIN_MID2_GAIN	/usr/include/AL/efx.h	701;"	d
+AL_EQUALIZER_MIN_MID2_WIDTH	/usr/include/AL/efx.h	709;"	d
+AL_EXPONENT_DISTANCE	/usr/include/AL/al.h	360;"	d
+AL_EXPONENT_DISTANCE_CLAMPED	/usr/include/AL/al.h	361;"	d
+AL_EXTENSIONS	/usr/include/AL/al.h	329;"	d
+AL_EXT_IMA4	/usr/include/AL/alext.h	108;"	d
+AL_EXT_MCFORMATS	/usr/include/AL/alext.h	78;"	d
+AL_EXT_MULAW_MCFORMATS	/usr/include/AL/alext.h	97;"	d
+AL_EXT_STATIC_BUFFER	/usr/include/AL/alext.h	114;"	d
+AL_EXT_double	/usr/include/AL/alext.h	59;"	d
+AL_EXT_float32	/usr/include/AL/alext.h	53;"	d
+AL_EXT_source_distance_model	/usr/include/AL/alext.h	142;"	d
+AL_EXT_vorbis	/usr/include/AL/alext.h	42;"	d
+AL_FALSE	/usr/include/AL/al.h	96;"	d
+AL_FILTER_BANDPASS	/usr/include/AL/efx.h	199;"	d
+AL_FILTER_FIRST_PARAMETER	/usr/include/AL/efx.h	191;"	d
+AL_FILTER_HIGHPASS	/usr/include/AL/efx.h	198;"	d
+AL_FILTER_LAST_PARAMETER	/usr/include/AL/efx.h	192;"	d
+AL_FILTER_LOWPASS	/usr/include/AL/efx.h	197;"	d
+AL_FILTER_NULL	/usr/include/AL/efx.h	196;"	d
+AL_FILTER_TYPE	/usr/include/AL/efx.h	193;"	d
+AL_FLANGER_DEFAULT_DELAY	/usr/include/AL/efx.h	553;"	d
+AL_FLANGER_DEFAULT_DEPTH	/usr/include/AL/efx.h	545;"	d
+AL_FLANGER_DEFAULT_FEEDBACK	/usr/include/AL/efx.h	549;"	d
+AL_FLANGER_DEFAULT_PHASE	/usr/include/AL/efx.h	537;"	d
+AL_FLANGER_DEFAULT_RATE	/usr/include/AL/efx.h	541;"	d
+AL_FLANGER_DEFAULT_WAVEFORM	/usr/include/AL/efx.h	533;"	d
+AL_FLANGER_DELAY	/usr/include/AL/efx.h	100;"	d
+AL_FLANGER_DEPTH	/usr/include/AL/efx.h	98;"	d
+AL_FLANGER_FEEDBACK	/usr/include/AL/efx.h	99;"	d
+AL_FLANGER_MAX_DELAY	/usr/include/AL/efx.h	552;"	d
+AL_FLANGER_MAX_DEPTH	/usr/include/AL/efx.h	544;"	d
+AL_FLANGER_MAX_FEEDBACK	/usr/include/AL/efx.h	548;"	d
+AL_FLANGER_MAX_PHASE	/usr/include/AL/efx.h	536;"	d
+AL_FLANGER_MAX_RATE	/usr/include/AL/efx.h	540;"	d
+AL_FLANGER_MAX_WAVEFORM	/usr/include/AL/efx.h	532;"	d
+AL_FLANGER_MIN_DELAY	/usr/include/AL/efx.h	551;"	d
+AL_FLANGER_MIN_DEPTH	/usr/include/AL/efx.h	543;"	d
+AL_FLANGER_MIN_FEEDBACK	/usr/include/AL/efx.h	547;"	d
+AL_FLANGER_MIN_PHASE	/usr/include/AL/efx.h	535;"	d
+AL_FLANGER_MIN_RATE	/usr/include/AL/efx.h	539;"	d
+AL_FLANGER_MIN_WAVEFORM	/usr/include/AL/efx.h	531;"	d
+AL_FLANGER_PHASE	/usr/include/AL/efx.h	96;"	d
+AL_FLANGER_RATE	/usr/include/AL/efx.h	97;"	d
+AL_FLANGER_WAVEFORM	/usr/include/AL/efx.h	95;"	d
+AL_FLANGER_WAVEFORM_SINUSOID	/usr/include/AL/efx.h	528;"	d
+AL_FLANGER_WAVEFORM_TRIANGLE	/usr/include/AL/efx.h	529;"	d
+AL_FORMAT_51CHN16	/usr/include/AL/alext.h	86;"	d
+AL_FORMAT_51CHN32	/usr/include/AL/alext.h	87;"	d
+AL_FORMAT_51CHN8	/usr/include/AL/alext.h	85;"	d
+AL_FORMAT_51CHN_MULAW	/usr/include/AL/alext.h	102;"	d
+AL_FORMAT_61CHN16	/usr/include/AL/alext.h	89;"	d
+AL_FORMAT_61CHN32	/usr/include/AL/alext.h	90;"	d
+AL_FORMAT_61CHN8	/usr/include/AL/alext.h	88;"	d
+AL_FORMAT_61CHN_MULAW	/usr/include/AL/alext.h	103;"	d
+AL_FORMAT_71CHN16	/usr/include/AL/alext.h	92;"	d
+AL_FORMAT_71CHN32	/usr/include/AL/alext.h	93;"	d
+AL_FORMAT_71CHN8	/usr/include/AL/alext.h	91;"	d
+AL_FORMAT_71CHN_MULAW	/usr/include/AL/alext.h	104;"	d
+AL_FORMAT_IMA_ADPCM_MONO16_EXT	/usr/include/AL/alext.h	32;"	d
+AL_FORMAT_IMA_ADPCM_STEREO16_EXT	/usr/include/AL/alext.h	33;"	d
+AL_FORMAT_MONO16	/usr/include/AL/al.h	233;"	d
+AL_FORMAT_MONO8	/usr/include/AL/al.h	232;"	d
+AL_FORMAT_MONO_DOUBLE_EXT	/usr/include/AL/alext.h	60;"	d
+AL_FORMAT_MONO_FLOAT32	/usr/include/AL/alext.h	54;"	d
+AL_FORMAT_MONO_IMA4	/usr/include/AL/alext.h	109;"	d
+AL_FORMAT_MONO_MULAW	/usr/include/AL/alext.h	98;"	d
+AL_FORMAT_QUAD16	/usr/include/AL/alext.h	80;"	d
+AL_FORMAT_QUAD16_LOKI	/usr/include/AL/alext.h	49;"	d
+AL_FORMAT_QUAD32	/usr/include/AL/alext.h	81;"	d
+AL_FORMAT_QUAD8	/usr/include/AL/alext.h	79;"	d
+AL_FORMAT_QUAD8_LOKI	/usr/include/AL/alext.h	48;"	d
+AL_FORMAT_QUAD_MULAW	/usr/include/AL/alext.h	100;"	d
+AL_FORMAT_REAR16	/usr/include/AL/alext.h	83;"	d
+AL_FORMAT_REAR32	/usr/include/AL/alext.h	84;"	d
+AL_FORMAT_REAR8	/usr/include/AL/alext.h	82;"	d
+AL_FORMAT_REAR_MULAW	/usr/include/AL/alext.h	101;"	d
+AL_FORMAT_STEREO16	/usr/include/AL/al.h	235;"	d
+AL_FORMAT_STEREO8	/usr/include/AL/al.h	234;"	d
+AL_FORMAT_STEREO_DOUBLE_EXT	/usr/include/AL/alext.h	61;"	d
+AL_FORMAT_STEREO_FLOAT32	/usr/include/AL/alext.h	55;"	d
+AL_FORMAT_STEREO_IMA4	/usr/include/AL/alext.h	110;"	d
+AL_FORMAT_STEREO_MULAW	/usr/include/AL/alext.h	99;"	d
+AL_FORMAT_VORBIS_EXT	/usr/include/AL/alext.h	43;"	d
+AL_FORMAT_WAVE_EXT	/usr/include/AL/alext.h	38;"	d
+AL_FREQUENCY	/usr/include/AL/al.h	280;"	d
+AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY	/usr/include/AL/efx.h	558;"	d
+AL_FREQUENCY_SHIFTER_DEFAULT_LEFT_DIRECTION	/usr/include/AL/efx.h	562;"	d
+AL_FREQUENCY_SHIFTER_DEFAULT_RIGHT_DIRECTION	/usr/include/AL/efx.h	570;"	d
+AL_FREQUENCY_SHIFTER_DIRECTION_DOWN	/usr/include/AL/efx.h	564;"	d
+AL_FREQUENCY_SHIFTER_DIRECTION_OFF	/usr/include/AL/efx.h	566;"	d
+AL_FREQUENCY_SHIFTER_DIRECTION_UP	/usr/include/AL/efx.h	565;"	d
+AL_FREQUENCY_SHIFTER_FREQUENCY	/usr/include/AL/efx.h	103;"	d
+AL_FREQUENCY_SHIFTER_LEFT_DIRECTION	/usr/include/AL/efx.h	104;"	d
+AL_FREQUENCY_SHIFTER_MAX_FREQUENCY	/usr/include/AL/efx.h	557;"	d
+AL_FREQUENCY_SHIFTER_MAX_LEFT_DIRECTION	/usr/include/AL/efx.h	561;"	d
+AL_FREQUENCY_SHIFTER_MAX_RIGHT_DIRECTION	/usr/include/AL/efx.h	569;"	d
+AL_FREQUENCY_SHIFTER_MIN_FREQUENCY	/usr/include/AL/efx.h	556;"	d
+AL_FREQUENCY_SHIFTER_MIN_LEFT_DIRECTION	/usr/include/AL/efx.h	560;"	d
+AL_FREQUENCY_SHIFTER_MIN_RIGHT_DIRECTION	/usr/include/AL/efx.h	568;"	d
+AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION	/usr/include/AL/efx.h	105;"	d
+AL_GAIN	/usr/include/AL/al.h	171;"	d
+AL_HIGHPASS_GAIN	/usr/include/AL/efx.h	182;"	d
+AL_HIGHPASS_GAINLF	/usr/include/AL/efx.h	183;"	d
+AL_ILLEGAL_COMMAND	/usr/include/AL/al.h	44;"	d
+AL_ILLEGAL_ENUM	/usr/include/AL/al.h	43;"	d
+AL_INITIAL	/usr/include/AL/al.h	202;"	d
+AL_INVALID	/usr/include/AL/al.h	42;"	d
+AL_INVALID_ENUM	/usr/include/AL/al.h	306;"	d
+AL_INVALID_NAME	/usr/include/AL/al.h	301;"	d
+AL_INVALID_OPERATION	/usr/include/AL/al.h	316;"	d
+AL_INVALID_VALUE	/usr/include/AL/al.h	311;"	d
+AL_INVERSE_DISTANCE	/usr/include/AL/al.h	356;"	d
+AL_INVERSE_DISTANCE_CLAMPED	/usr/include/AL/al.h	357;"	d
+AL_LINEAR_DISTANCE	/usr/include/AL/al.h	358;"	d
+AL_LINEAR_DISTANCE_CLAMPED	/usr/include/AL/al.h	359;"	d
+AL_LOKI_IMA_ADPCM_format	/usr/include/AL/alext.h	31;"	d
+AL_LOKI_WAVE_format	/usr/include/AL/alext.h	37;"	d
+AL_LOKI_quadriphonic	/usr/include/AL/alext.h	47;"	d
+AL_LOOPING	/usr/include/AL/al.h	151;"	d
+AL_LOOP_POINTS_SOFT	/usr/include/AL/alext.h	158;"	d
+AL_LOWPASS_GAIN	/usr/include/AL/efx.h	178;"	d
+AL_LOWPASS_GAINHF	/usr/include/AL/efx.h	179;"	d
+AL_MAX_AIR_ABSORPTION_FACTOR	/usr/include/AL/efx.h	724;"	d
+AL_MAX_AUXILIARY_SEND_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	744;"	d
+AL_MAX_AUXILIARY_SEND_FILTER_GAIN_AUTO	/usr/include/AL/efx.h	740;"	d
+AL_MAX_CONE_OUTER_GAINHF	/usr/include/AL/efx.h	732;"	d
+AL_MAX_DIRECT_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	736;"	d
+AL_MAX_DISTANCE	/usr/include/AL/al.h	272;"	d
+AL_MAX_GAIN	/usr/include/AL/al.h	189;"	d
+AL_MAX_METERS_PER_UNIT	/usr/include/AL/efx.h	750;"	d
+AL_MAX_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	728;"	d
+AL_METERS_PER_UNIT	/usr/include/AL/efx.h	17;"	d
+AL_MIN_AIR_ABSORPTION_FACTOR	/usr/include/AL/efx.h	723;"	d
+AL_MIN_AUXILIARY_SEND_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	743;"	d
+AL_MIN_AUXILIARY_SEND_FILTER_GAIN_AUTO	/usr/include/AL/efx.h	739;"	d
+AL_MIN_CONE_OUTER_GAINHF	/usr/include/AL/efx.h	731;"	d
+AL_MIN_DIRECT_FILTER_GAINHF_AUTO	/usr/include/AL/efx.h	735;"	d
+AL_MIN_GAIN	/usr/include/AL/al.h	180;"	d
+AL_MIN_METERS_PER_UNIT	/usr/include/AL/efx.h	749;"	d
+AL_MIN_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	727;"	d
+AL_NONE	/usr/include/AL/al.h	93;"	d
+AL_NO_ERROR	/usr/include/AL/al.h	296;"	d
+AL_ORIENTATION	/usr/include/AL/al.h	196;"	d
+AL_OUT_OF_MEMORY	/usr/include/AL/al.h	322;"	d
+AL_PAUSED	/usr/include/AL/al.h	204;"	d
+AL_PENDING	/usr/include/AL/al.h	291;"	d
+AL_PITCH	/usr/include/AL/al.h	125;"	d
+AL_PITCH_SHIFTER_COARSE_TUNE	/usr/include/AL/efx.h	116;"	d
+AL_PITCH_SHIFTER_DEFAULT_COARSE_TUNE	/usr/include/AL/efx.h	635;"	d
+AL_PITCH_SHIFTER_DEFAULT_FINE_TUNE	/usr/include/AL/efx.h	639;"	d
+AL_PITCH_SHIFTER_FINE_TUNE	/usr/include/AL/efx.h	117;"	d
+AL_PITCH_SHIFTER_MAX_COARSE_TUNE	/usr/include/AL/efx.h	634;"	d
+AL_PITCH_SHIFTER_MAX_FINE_TUNE	/usr/include/AL/efx.h	638;"	d
+AL_PITCH_SHIFTER_MIN_COARSE_TUNE	/usr/include/AL/efx.h	633;"	d
+AL_PITCH_SHIFTER_MIN_FINE_TUNE	/usr/include/AL/efx.h	637;"	d
+AL_PLAYING	/usr/include/AL/al.h	203;"	d
+AL_POSITION	/usr/include/AL/al.h	137;"	d
+AL_PROCESSED	/usr/include/AL/al.h	292;"	d
+AL_REFERENCE_DISTANCE	/usr/include/AL/al.h	245;"	d
+AL_RENDERER	/usr/include/AL/al.h	328;"	d
+AL_REVERB_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	43;"	d
+AL_REVERB_DECAY_HFLIMIT	/usr/include/AL/efx.h	45;"	d
+AL_REVERB_DECAY_HFRATIO	/usr/include/AL/efx.h	38;"	d
+AL_REVERB_DECAY_TIME	/usr/include/AL/efx.h	37;"	d
+AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	358;"	d
+AL_REVERB_DEFAULT_DECAY_HFLIMIT	/usr/include/AL/efx.h	366;"	d
+AL_REVERB_DEFAULT_DECAY_HFRATIO	/usr/include/AL/efx.h	338;"	d
+AL_REVERB_DEFAULT_DECAY_TIME	/usr/include/AL/efx.h	334;"	d
+AL_REVERB_DEFAULT_DENSITY	/usr/include/AL/efx.h	318;"	d
+AL_REVERB_DEFAULT_DIFFUSION	/usr/include/AL/efx.h	322;"	d
+AL_REVERB_DEFAULT_GAIN	/usr/include/AL/efx.h	326;"	d
+AL_REVERB_DEFAULT_GAINHF	/usr/include/AL/efx.h	330;"	d
+AL_REVERB_DEFAULT_LATE_REVERB_DELAY	/usr/include/AL/efx.h	354;"	d
+AL_REVERB_DEFAULT_LATE_REVERB_GAIN	/usr/include/AL/efx.h	350;"	d
+AL_REVERB_DEFAULT_REFLECTIONS_DELAY	/usr/include/AL/efx.h	346;"	d
+AL_REVERB_DEFAULT_REFLECTIONS_GAIN	/usr/include/AL/efx.h	342;"	d
+AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	362;"	d
+AL_REVERB_DENSITY	/usr/include/AL/efx.h	33;"	d
+AL_REVERB_DIFFUSION	/usr/include/AL/efx.h	34;"	d
+AL_REVERB_GAIN	/usr/include/AL/efx.h	35;"	d
+AL_REVERB_GAINHF	/usr/include/AL/efx.h	36;"	d
+AL_REVERB_LATE_REVERB_DELAY	/usr/include/AL/efx.h	42;"	d
+AL_REVERB_LATE_REVERB_GAIN	/usr/include/AL/efx.h	41;"	d
+AL_REVERB_MAX_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	357;"	d
+AL_REVERB_MAX_DECAY_HFLIMIT	/usr/include/AL/efx.h	365;"	d
+AL_REVERB_MAX_DECAY_HFRATIO	/usr/include/AL/efx.h	337;"	d
+AL_REVERB_MAX_DECAY_TIME	/usr/include/AL/efx.h	333;"	d
+AL_REVERB_MAX_DENSITY	/usr/include/AL/efx.h	317;"	d
+AL_REVERB_MAX_DIFFUSION	/usr/include/AL/efx.h	321;"	d
+AL_REVERB_MAX_GAIN	/usr/include/AL/efx.h	325;"	d
+AL_REVERB_MAX_GAINHF	/usr/include/AL/efx.h	329;"	d
+AL_REVERB_MAX_LATE_REVERB_DELAY	/usr/include/AL/efx.h	353;"	d
+AL_REVERB_MAX_LATE_REVERB_GAIN	/usr/include/AL/efx.h	349;"	d
+AL_REVERB_MAX_REFLECTIONS_DELAY	/usr/include/AL/efx.h	345;"	d
+AL_REVERB_MAX_REFLECTIONS_GAIN	/usr/include/AL/efx.h	341;"	d
+AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	361;"	d
+AL_REVERB_MIN_AIR_ABSORPTION_GAINHF	/usr/include/AL/efx.h	356;"	d
+AL_REVERB_MIN_DECAY_HFLIMIT	/usr/include/AL/efx.h	364;"	d
+AL_REVERB_MIN_DECAY_HFRATIO	/usr/include/AL/efx.h	336;"	d
+AL_REVERB_MIN_DECAY_TIME	/usr/include/AL/efx.h	332;"	d
+AL_REVERB_MIN_DENSITY	/usr/include/AL/efx.h	316;"	d
+AL_REVERB_MIN_DIFFUSION	/usr/include/AL/efx.h	320;"	d
+AL_REVERB_MIN_GAIN	/usr/include/AL/efx.h	324;"	d
+AL_REVERB_MIN_GAINHF	/usr/include/AL/efx.h	328;"	d
+AL_REVERB_MIN_LATE_REVERB_DELAY	/usr/include/AL/efx.h	352;"	d
+AL_REVERB_MIN_LATE_REVERB_GAIN	/usr/include/AL/efx.h	348;"	d
+AL_REVERB_MIN_REFLECTIONS_DELAY	/usr/include/AL/efx.h	344;"	d
+AL_REVERB_MIN_REFLECTIONS_GAIN	/usr/include/AL/efx.h	340;"	d
+AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	360;"	d
+AL_REVERB_REFLECTIONS_DELAY	/usr/include/AL/efx.h	40;"	d
+AL_REVERB_REFLECTIONS_GAIN	/usr/include/AL/efx.h	39;"	d
+AL_REVERB_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	44;"	d
+AL_RING_MODULATOR_DEFAULT_FREQUENCY	/usr/include/AL/efx.h	644;"	d
+AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF	/usr/include/AL/efx.h	648;"	d
+AL_RING_MODULATOR_DEFAULT_WAVEFORM	/usr/include/AL/efx.h	656;"	d
+AL_RING_MODULATOR_FREQUENCY	/usr/include/AL/efx.h	120;"	d
+AL_RING_MODULATOR_HIGHPASS_CUTOFF	/usr/include/AL/efx.h	121;"	d
+AL_RING_MODULATOR_MAX_FREQUENCY	/usr/include/AL/efx.h	643;"	d
+AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF	/usr/include/AL/efx.h	647;"	d
+AL_RING_MODULATOR_MAX_WAVEFORM	/usr/include/AL/efx.h	655;"	d
+AL_RING_MODULATOR_MIN_FREQUENCY	/usr/include/AL/efx.h	642;"	d
+AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF	/usr/include/AL/efx.h	646;"	d
+AL_RING_MODULATOR_MIN_WAVEFORM	/usr/include/AL/efx.h	654;"	d
+AL_RING_MODULATOR_SAWTOOTH	/usr/include/AL/efx.h	651;"	d
+AL_RING_MODULATOR_SINUSOID	/usr/include/AL/efx.h	650;"	d
+AL_RING_MODULATOR_SQUARE	/usr/include/AL/efx.h	652;"	d
+AL_RING_MODULATOR_WAVEFORM	/usr/include/AL/efx.h	122;"	d
+AL_ROLLOFF_FACTOR	/usr/include/AL/al.h	253;"	d
+AL_ROOM_ROLLOFF_FACTOR	/usr/include/AL/efx.h	23;"	d
+AL_SAMPLE_OFFSET	/usr/include/AL/al.h	217;"	d
+AL_SAMPLE_RW_OFFSETS_SOFT	/usr/include/AL/alext.h	149;"	d
+AL_SEC_OFFSET	/usr/include/AL/al.h	216;"	d
+AL_SIZE	/usr/include/AL/al.h	283;"	d
+AL_SOFT_buffer_sub_data	/usr/include/AL/alext.h	147;"	d
+AL_SOFT_loop_points	/usr/include/AL/alext.h	157;"	d
+AL_SOURCE_DISTANCE_MODEL	/usr/include/AL/alext.h	143;"	d
+AL_SOURCE_RELATIVE	/usr/include/AL/al.h	102;"	d
+AL_SOURCE_STATE	/usr/include/AL/al.h	201;"	d
+AL_SOURCE_TYPE	/usr/include/AL/al.h	226;"	d
+AL_SPEED_OF_SOUND	/usr/include/AL/al.h	346;"	d
+AL_STATIC	/usr/include/AL/al.h	227;"	d
+AL_STOPPED	/usr/include/AL/al.h	205;"	d
+AL_STREAMING	/usr/include/AL/al.h	228;"	d
+AL_TRUE	/usr/include/AL/al.h	99;"	d
+AL_UNDETERMINED	/usr/include/AL/al.h	229;"	d
+AL_UNUSED	/usr/include/AL/al.h	290;"	d
+AL_VELOCITY	/usr/include/AL/al.h	143;"	d
+AL_VENDOR	/usr/include/AL/al.h	326;"	d
+AL_VERSION	/usr/include/AL/al.h	327;"	d
+AL_VERSION_1_0	/usr/include/AL/al.h	46;"	d
+AL_VERSION_1_1	/usr/include/AL/al.h	47;"	d
+AL_VOCAL_MORPHER_DEFAULT_PHONEMEA	/usr/include/AL/efx.h	575;"	d
+AL_VOCAL_MORPHER_DEFAULT_PHONEMEA_COARSE_TUNING	/usr/include/AL/efx.h	579;"	d
+AL_VOCAL_MORPHER_DEFAULT_PHONEMEB	/usr/include/AL/efx.h	583;"	d
+AL_VOCAL_MORPHER_DEFAULT_PHONEMEB_COARSE_TUNING	/usr/include/AL/efx.h	587;"	d
+AL_VOCAL_MORPHER_DEFAULT_RATE	/usr/include/AL/efx.h	630;"	d
+AL_VOCAL_MORPHER_DEFAULT_WAVEFORM	/usr/include/AL/efx.h	626;"	d
+AL_VOCAL_MORPHER_MAX_PHONEMEA	/usr/include/AL/efx.h	574;"	d
+AL_VOCAL_MORPHER_MAX_PHONEMEA_COARSE_TUNING	/usr/include/AL/efx.h	578;"	d
+AL_VOCAL_MORPHER_MAX_PHONEMEB	/usr/include/AL/efx.h	582;"	d
+AL_VOCAL_MORPHER_MAX_PHONEMEB_COARSE_TUNING	/usr/include/AL/efx.h	586;"	d
+AL_VOCAL_MORPHER_MAX_RATE	/usr/include/AL/efx.h	629;"	d
+AL_VOCAL_MORPHER_MAX_WAVEFORM	/usr/include/AL/efx.h	625;"	d
+AL_VOCAL_MORPHER_MIN_PHONEMEA	/usr/include/AL/efx.h	573;"	d
+AL_VOCAL_MORPHER_MIN_PHONEMEA_COARSE_TUNING	/usr/include/AL/efx.h	577;"	d
+AL_VOCAL_MORPHER_MIN_PHONEMEB	/usr/include/AL/efx.h	581;"	d
+AL_VOCAL_MORPHER_MIN_PHONEMEB_COARSE_TUNING	/usr/include/AL/efx.h	585;"	d
+AL_VOCAL_MORPHER_MIN_RATE	/usr/include/AL/efx.h	628;"	d
+AL_VOCAL_MORPHER_MIN_WAVEFORM	/usr/include/AL/efx.h	624;"	d
+AL_VOCAL_MORPHER_PHONEMEA	/usr/include/AL/efx.h	108;"	d
+AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING	/usr/include/AL/efx.h	109;"	d
+AL_VOCAL_MORPHER_PHONEMEB	/usr/include/AL/efx.h	110;"	d
+AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING	/usr/include/AL/efx.h	111;"	d
+AL_VOCAL_MORPHER_PHONEME_A	/usr/include/AL/efx.h	589;"	d
+AL_VOCAL_MORPHER_PHONEME_AA	/usr/include/AL/efx.h	594;"	d
+AL_VOCAL_MORPHER_PHONEME_AE	/usr/include/AL/efx.h	595;"	d
+AL_VOCAL_MORPHER_PHONEME_AH	/usr/include/AL/efx.h	596;"	d
+AL_VOCAL_MORPHER_PHONEME_AO	/usr/include/AL/efx.h	597;"	d
+AL_VOCAL_MORPHER_PHONEME_B	/usr/include/AL/efx.h	604;"	d
+AL_VOCAL_MORPHER_PHONEME_D	/usr/include/AL/efx.h	605;"	d
+AL_VOCAL_MORPHER_PHONEME_E	/usr/include/AL/efx.h	590;"	d
+AL_VOCAL_MORPHER_PHONEME_EH	/usr/include/AL/efx.h	598;"	d
+AL_VOCAL_MORPHER_PHONEME_ER	/usr/include/AL/efx.h	599;"	d
+AL_VOCAL_MORPHER_PHONEME_F	/usr/include/AL/efx.h	606;"	d
+AL_VOCAL_MORPHER_PHONEME_G	/usr/include/AL/efx.h	607;"	d
+AL_VOCAL_MORPHER_PHONEME_I	/usr/include/AL/efx.h	591;"	d
+AL_VOCAL_MORPHER_PHONEME_IH	/usr/include/AL/efx.h	600;"	d
+AL_VOCAL_MORPHER_PHONEME_IY	/usr/include/AL/efx.h	601;"	d
+AL_VOCAL_MORPHER_PHONEME_J	/usr/include/AL/efx.h	608;"	d
+AL_VOCAL_MORPHER_PHONEME_K	/usr/include/AL/efx.h	609;"	d
+AL_VOCAL_MORPHER_PHONEME_L	/usr/include/AL/efx.h	610;"	d
+AL_VOCAL_MORPHER_PHONEME_M	/usr/include/AL/efx.h	611;"	d
+AL_VOCAL_MORPHER_PHONEME_N	/usr/include/AL/efx.h	612;"	d
+AL_VOCAL_MORPHER_PHONEME_O	/usr/include/AL/efx.h	592;"	d
+AL_VOCAL_MORPHER_PHONEME_P	/usr/include/AL/efx.h	613;"	d
+AL_VOCAL_MORPHER_PHONEME_R	/usr/include/AL/efx.h	614;"	d
+AL_VOCAL_MORPHER_PHONEME_S	/usr/include/AL/efx.h	615;"	d
+AL_VOCAL_MORPHER_PHONEME_T	/usr/include/AL/efx.h	616;"	d
+AL_VOCAL_MORPHER_PHONEME_U	/usr/include/AL/efx.h	593;"	d
+AL_VOCAL_MORPHER_PHONEME_UH	/usr/include/AL/efx.h	602;"	d
+AL_VOCAL_MORPHER_PHONEME_UW	/usr/include/AL/efx.h	603;"	d
+AL_VOCAL_MORPHER_PHONEME_V	/usr/include/AL/efx.h	617;"	d
+AL_VOCAL_MORPHER_PHONEME_Z	/usr/include/AL/efx.h	618;"	d
+AL_VOCAL_MORPHER_RATE	/usr/include/AL/efx.h	113;"	d
+AL_VOCAL_MORPHER_WAVEFORM	/usr/include/AL/efx.h	112;"	d
+AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH	/usr/include/AL/efx.h	622;"	d
+AL_VOCAL_MORPHER_WAVEFORM_SINUSOID	/usr/include/AL/efx.h	620;"	d
+AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE	/usr/include/AL/efx.h	621;"	d
+ALboolean	/usr/include/AL/al.h	/^typedef char ALboolean;$/;"	t
+ALbyte	/usr/include/AL/al.h	/^typedef signed char ALbyte;$/;"	t
+ALchar	/usr/include/AL/al.h	/^typedef char ALchar;$/;"	t
+ALdouble	/usr/include/AL/al.h	/^typedef double ALdouble;$/;"	t
+ALenum	/usr/include/AL/al.h	/^typedef int ALenum;$/;"	t
+ALfloat	/usr/include/AL/al.h	/^typedef float ALfloat;$/;"	t
+ALint	/usr/include/AL/al.h	/^typedef int ALint;$/;"	t
+ALshort	/usr/include/AL/al.h	/^typedef short ALshort;$/;"	t
+ALsizei	/usr/include/AL/al.h	/^typedef int ALsizei;$/;"	t
+ALubyte	/usr/include/AL/al.h	/^typedef unsigned char ALubyte;$/;"	t
+ALuint	/usr/include/AL/al.h	/^typedef unsigned int ALuint;$/;"	t
+ALushort	/usr/include/AL/al.h	/^typedef unsigned short ALushort;$/;"	t
+ALvoid	/usr/include/AL/al.h	/^typedef void ALvoid;$/;"	t
+BANDPASS_DEFAULT_GAIN	/usr/include/AL/efx.h	302;"	d
+BANDPASS_DEFAULT_GAINHF	/usr/include/AL/efx.h	306;"	d
+BANDPASS_DEFAULT_GAINLF	/usr/include/AL/efx.h	310;"	d
+BANDPASS_MAX_GAIN	/usr/include/AL/efx.h	301;"	d
+BANDPASS_MAX_GAINHF	/usr/include/AL/efx.h	305;"	d
+BANDPASS_MAX_GAINLF	/usr/include/AL/efx.h	309;"	d
+BANDPASS_MIN_GAIN	/usr/include/AL/efx.h	300;"	d
+BANDPASS_MIN_GAINHF	/usr/include/AL/efx.h	304;"	d
+BANDPASS_MIN_GAINLF	/usr/include/AL/efx.h	308;"	d
+HIGHPASS_DEFAULT_GAIN	/usr/include/AL/efx.h	293;"	d
+HIGHPASS_DEFAULT_GAINLF	/usr/include/AL/efx.h	297;"	d
+HIGHPASS_MAX_GAIN	/usr/include/AL/efx.h	292;"	d
+HIGHPASS_MAX_GAINLF	/usr/include/AL/efx.h	296;"	d
+HIGHPASS_MIN_GAIN	/usr/include/AL/efx.h	291;"	d
+HIGHPASS_MIN_GAINLF	/usr/include/AL/efx.h	295;"	d
+LOWPASS_DEFAULT_GAIN	/usr/include/AL/efx.h	284;"	d
+LOWPASS_DEFAULT_GAINHF	/usr/include/AL/efx.h	288;"	d
+LOWPASS_MAX_GAIN	/usr/include/AL/efx.h	283;"	d
+LOWPASS_MAX_GAINHF	/usr/include/AL/efx.h	287;"	d
+LOWPASS_MIN_GAIN	/usr/include/AL/efx.h	282;"	d
+LOWPASS_MIN_GAINHF	/usr/include/AL/efx.h	286;"	d
+LPALAUXILIARYEFFECTSLOTF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALAUXILIARYEFFECTSLOTF)(ALuint, ALenum, ALfloat);$/;"	t
+LPALAUXILIARYEFFECTSLOTFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALAUXILIARYEFFECTSLOTFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALAUXILIARYEFFECTSLOTI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALAUXILIARYEFFECTSLOTI)(ALuint, ALenum, ALint);$/;"	t
+LPALAUXILIARYEFFECTSLOTIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALAUXILIARYEFFECTSLOTIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALBUFFER3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFER3F)( ALuint bid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	t
+LPALBUFFER3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFER3I)( ALuint bid, ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	t
+LPALBUFFERDATA	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFERDATA)( ALuint bid, ALenum format, const ALvoid* data, ALsizei size, ALsizei freq );$/;"	t
+LPALBUFFERF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFERF)( ALuint bid, ALenum param, ALfloat value);$/;"	t
+LPALBUFFERFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFERFV)( ALuint bid, ALenum param, const ALfloat* values );$/;"	t
+LPALBUFFERI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFERI)( ALuint bid, ALenum param, ALint value);$/;"	t
+LPALBUFFERIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALBUFFERIV)( ALuint bid, ALenum param, const ALint* values );$/;"	t
+LPALCCAPTURECLOSEDEVICE	/usr/include/AL/alc.h	/^typedef ALCboolean     (ALC_APIENTRY *LPALCCAPTURECLOSEDEVICE)( ALCdevice *device );$/;"	t
+LPALCCAPTUREOPENDEVICE	/usr/include/AL/alc.h	/^typedef ALCdevice *    (ALC_APIENTRY *LPALCCAPTUREOPENDEVICE)( const ALCchar *devicename, ALCuint frequency, ALCenum format, ALCsizei buffersize );$/;"	t
+LPALCCAPTURESAMPLES	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCCAPTURESAMPLES)( ALCdevice *device, ALCvoid *buffer, ALCsizei samples );$/;"	t
+LPALCCAPTURESTART	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCCAPTURESTART)( ALCdevice *device );$/;"	t
+LPALCCAPTURESTOP	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCCAPTURESTOP)( ALCdevice *device );$/;"	t
+LPALCCLOSEDEVICE	/usr/include/AL/alc.h	/^typedef ALCboolean     (ALC_APIENTRY *LPALCCLOSEDEVICE)( ALCdevice *device );$/;"	t
+LPALCCREATECONTEXT	/usr/include/AL/alc.h	/^typedef ALCcontext *   (ALC_APIENTRY *LPALCCREATECONTEXT) (ALCdevice *device, const ALCint *attrlist);$/;"	t
+LPALCDESTROYCONTEXT	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCDESTROYCONTEXT)( ALCcontext *context );$/;"	t
+LPALCGETCONTEXTSDEVICE	/usr/include/AL/alc.h	/^typedef ALCdevice *    (ALC_APIENTRY *LPALCGETCONTEXTSDEVICE)( ALCcontext *context );$/;"	t
+LPALCGETCURRENTCONTEXT	/usr/include/AL/alc.h	/^typedef ALCcontext *   (ALC_APIENTRY *LPALCGETCURRENTCONTEXT)( void );$/;"	t
+LPALCGETENUMVALUE	/usr/include/AL/alc.h	/^typedef ALCenum        (ALC_APIENTRY *LPALCGETENUMVALUE)(ALCdevice *device, const ALCchar *enumname );$/;"	t
+LPALCGETERROR	/usr/include/AL/alc.h	/^typedef ALCenum        (ALC_APIENTRY *LPALCGETERROR)( ALCdevice *device );$/;"	t
+LPALCGETINTEGERV	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCGETINTEGERV)( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *dest );$/;"	t
+LPALCGETPROCADDRESS	/usr/include/AL/alc.h	/^typedef void *         (ALC_APIENTRY *LPALCGETPROCADDRESS)(ALCdevice *device, const ALCchar *funcname );$/;"	t
+LPALCGETSTRING	/usr/include/AL/alc.h	/^typedef const ALCchar* (ALC_APIENTRY *LPALCGETSTRING)( ALCdevice *device, ALCenum param );$/;"	t
+LPALCISEXTENSIONPRESENT	/usr/include/AL/alc.h	/^typedef ALCboolean     (ALC_APIENTRY *LPALCISEXTENSIONPRESENT)( ALCdevice *device, const ALCchar *extname );$/;"	t
+LPALCMAKECONTEXTCURRENT	/usr/include/AL/alc.h	/^typedef ALCboolean     (ALC_APIENTRY *LPALCMAKECONTEXTCURRENT)( ALCcontext *context );$/;"	t
+LPALCOPENDEVICE	/usr/include/AL/alc.h	/^typedef ALCdevice *    (ALC_APIENTRY *LPALCOPENDEVICE)( const ALCchar *devicename );$/;"	t
+LPALCPROCESSCONTEXT	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCPROCESSCONTEXT)( ALCcontext *context );$/;"	t
+LPALCSUSPENDCONTEXT	/usr/include/AL/alc.h	/^typedef void           (ALC_APIENTRY *LPALCSUSPENDCONTEXT)( ALCcontext *context );$/;"	t
+LPALDELETEAUXILIARYEFFECTSLOTS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALDELETEAUXILIARYEFFECTSLOTS)(ALsizei, ALuint*);$/;"	t
+LPALDELETEBUFFERS	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDELETEBUFFERS)( ALsizei n, const ALuint* buffers );$/;"	t
+LPALDELETEEFFECTS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALDELETEEFFECTS)(ALsizei, ALuint*);$/;"	t
+LPALDELETEFILTERS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALDELETEFILTERS)(ALsizei, ALuint*);$/;"	t
+LPALDELETESOURCES	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDELETESOURCES)( ALsizei n, const ALuint* sources );$/;"	t
+LPALDISABLE	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDISABLE)( ALenum capability ); $/;"	t
+LPALDISTANCEMODEL	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDISTANCEMODEL)( ALenum distanceModel );$/;"	t
+LPALDOPPLERFACTOR	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDOPPLERFACTOR)( ALfloat value );$/;"	t
+LPALDOPPLERVELOCITY	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALDOPPLERVELOCITY)( ALfloat value );$/;"	t
+LPALEFFECTF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALEFFECTF)(ALuint, ALenum, ALfloat);$/;"	t
+LPALEFFECTFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALEFFECTFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALEFFECTI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALEFFECTI)(ALuint, ALenum, ALint);$/;"	t
+LPALEFFECTIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALEFFECTIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALENABLE	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALENABLE)( ALenum capability );$/;"	t
+LPALFILTERF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALFILTERF)(ALuint, ALenum, ALfloat);$/;"	t
+LPALFILTERFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALFILTERFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALFILTERI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALFILTERI)(ALuint, ALenum, ALint);$/;"	t
+LPALFILTERIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALFILTERIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALGENAUXILIARYEFFECTSLOTS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGENAUXILIARYEFFECTSLOTS)(ALsizei, ALuint*);$/;"	t
+LPALGENBUFFERS	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGENBUFFERS)( ALsizei n, ALuint* buffers );$/;"	t
+LPALGENEFFECTS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGENEFFECTS)(ALsizei, ALuint*);$/;"	t
+LPALGENFILTERS	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGENFILTERS)(ALsizei, ALuint*);$/;"	t
+LPALGENSOURCES	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGENSOURCES)( ALsizei n, ALuint* sources ); $/;"	t
+LPALGETAUXILIARYEFFECTSLOTF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETAUXILIARYEFFECTSLOTF)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETAUXILIARYEFFECTSLOTFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETAUXILIARYEFFECTSLOTFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETAUXILIARYEFFECTSLOTI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETAUXILIARYEFFECTSLOTI)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETAUXILIARYEFFECTSLOTIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETAUXILIARYEFFECTSLOTIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETBOOLEAN	/usr/include/AL/al.h	/^typedef ALboolean      (AL_APIENTRY *LPALGETBOOLEAN)( ALenum param );$/;"	t
+LPALGETBOOLEANV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBOOLEANV)( ALenum param, ALboolean* data );$/;"	t
+LPALGETBUFFER3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFER3F)( ALuint bid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3);$/;"	t
+LPALGETBUFFER3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFER3I)( ALuint bid, ALenum param, ALint* value1, ALint* value2, ALint* value3);$/;"	t
+LPALGETBUFFERF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFERF)( ALuint bid, ALenum param, ALfloat* value );$/;"	t
+LPALGETBUFFERFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFERFV)( ALuint bid, ALenum param, ALfloat* values );$/;"	t
+LPALGETBUFFERI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFERI)( ALuint bid, ALenum param, ALint* value );$/;"	t
+LPALGETBUFFERIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETBUFFERIV)( ALuint bid, ALenum param, ALint* values );$/;"	t
+LPALGETDOUBLE	/usr/include/AL/al.h	/^typedef ALdouble       (AL_APIENTRY *LPALGETDOUBLE)( ALenum param );$/;"	t
+LPALGETDOUBLEV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETDOUBLEV)( ALenum param, ALdouble* data );$/;"	t
+LPALGETEFFECTF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETEFFECTF)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETEFFECTFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETEFFECTFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETEFFECTI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETEFFECTI)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETEFFECTIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETEFFECTIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETENUMVALUE	/usr/include/AL/al.h	/^typedef ALenum         (AL_APIENTRY *LPALGETENUMVALUE)( const ALchar* ename );$/;"	t
+LPALGETERROR	/usr/include/AL/al.h	/^typedef ALenum         (AL_APIENTRY *LPALGETERROR)( void );$/;"	t
+LPALGETFILTERF	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETFILTERF)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETFILTERFV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETFILTERFV)(ALuint, ALenum, ALfloat*);$/;"	t
+LPALGETFILTERI	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETFILTERI)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETFILTERIV	/usr/include/AL/efx.h	/^typedef void (AL_APIENTRY *LPALGETFILTERIV)(ALuint, ALenum, ALint*);$/;"	t
+LPALGETFLOAT	/usr/include/AL/al.h	/^typedef ALfloat        (AL_APIENTRY *LPALGETFLOAT)( ALenum param );$/;"	t
+LPALGETFLOATV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETFLOATV)( ALenum param, ALfloat* data );$/;"	t
+LPALGETINTEGER	/usr/include/AL/al.h	/^typedef ALint          (AL_APIENTRY *LPALGETINTEGER)( ALenum param );$/;"	t
+LPALGETINTEGERV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETINTEGERV)( ALenum param, ALint* data );$/;"	t
+LPALGETLISTENER3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENER3F)( ALenum param, ALfloat *value1, ALfloat *value2, ALfloat *value3 );$/;"	t
+LPALGETLISTENER3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENER3I)( ALenum param, ALint *value1, ALint *value2, ALint *value3 );$/;"	t
+LPALGETLISTENERF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENERF)( ALenum param, ALfloat* value );$/;"	t
+LPALGETLISTENERFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENERFV)( ALenum param, ALfloat* values );$/;"	t
+LPALGETLISTENERI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENERI)( ALenum param, ALint* value );$/;"	t
+LPALGETLISTENERIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETLISTENERIV)( ALenum param, ALint* values );$/;"	t
+LPALGETPROCADDRESS	/usr/include/AL/al.h	/^typedef void*          (AL_APIENTRY *LPALGETPROCADDRESS)( const ALchar* fname );$/;"	t
+LPALGETSOURCE3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCE3F)( ALuint sid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3);$/;"	t
+LPALGETSOURCE3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCE3I)( ALuint sid, ALenum param, ALint* value1, ALint* value2, ALint* value3);$/;"	t
+LPALGETSOURCEF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCEF)( ALuint sid, ALenum param, ALfloat* value );$/;"	t
+LPALGETSOURCEFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCEFV)( ALuint sid, ALenum param, ALfloat* values );$/;"	t
+LPALGETSOURCEI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCEI)( ALuint sid, ALenum param, ALint* value );$/;"	t
+LPALGETSOURCEIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALGETSOURCEIV)( ALuint sid, ALenum param, ALint* values );$/;"	t
+LPALGETSTRING	/usr/include/AL/al.h	/^typedef const ALchar*  (AL_APIENTRY *LPALGETSTRING)( ALenum param );$/;"	t
+LPALISAUXILIARYEFFECTSLOT	/usr/include/AL/efx.h	/^typedef ALboolean (AL_APIENTRY *LPALISAUXILIARYEFFECTSLOT)(ALuint);$/;"	t
+LPALISBUFFER	/usr/include/AL/al.h	/^typedef ALboolean      (AL_APIENTRY *LPALISBUFFER)( ALuint bid );$/;"	t
+LPALISEFFECT	/usr/include/AL/efx.h	/^typedef ALboolean (AL_APIENTRY *LPALISEFFECT)(ALuint);$/;"	t
+LPALISENABLED	/usr/include/AL/al.h	/^typedef ALboolean      (AL_APIENTRY *LPALISENABLED)( ALenum capability ); $/;"	t
+LPALISEXTENSIONPRESENT	/usr/include/AL/al.h	/^typedef ALboolean      (AL_APIENTRY *LPALISEXTENSIONPRESENT)(const ALchar* extname );$/;"	t
+LPALISFILTER	/usr/include/AL/efx.h	/^typedef ALboolean (AL_APIENTRY *LPALISFILTER)(ALuint);$/;"	t
+LPALISSOURCE	/usr/include/AL/al.h	/^typedef ALboolean      (AL_APIENTRY *LPALISSOURCE)( ALuint sid ); $/;"	t
+LPALLISTENER3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENER3F)( ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	t
+LPALLISTENER3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENER3I)( ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	t
+LPALLISTENERF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENERF)( ALenum param, ALfloat value );$/;"	t
+LPALLISTENERFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENERFV)( ALenum param, const ALfloat* values );$/;"	t
+LPALLISTENERI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENERI)( ALenum param, ALint value );$/;"	t
+LPALLISTENERIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALLISTENERIV)( ALenum param, const ALint* values );$/;"	t
+LPALSOURCE3F	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCE3F)( ALuint sid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	t
+LPALSOURCE3I	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCE3I)( ALuint sid, ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	t
+LPALSOURCEF	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEF)( ALuint sid, ALenum param, ALfloat value); $/;"	t
+LPALSOURCEFV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEFV)( ALuint sid, ALenum param, const ALfloat* values );$/;"	t
+LPALSOURCEI	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEI)( ALuint sid, ALenum param, ALint value); $/;"	t
+LPALSOURCEIV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEIV)( ALuint sid, ALenum param, const ALint* values );$/;"	t
+LPALSOURCEPAUSE	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEPAUSE)( ALuint sid );$/;"	t
+LPALSOURCEPAUSEV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEPAUSEV)( ALsizei ns, const ALuint *sids );$/;"	t
+LPALSOURCEPLAY	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEPLAY)( ALuint sid );$/;"	t
+LPALSOURCEPLAYV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEPLAYV)( ALsizei ns, const ALuint *sids );$/;"	t
+LPALSOURCEQUEUEBUFFERS	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEQUEUEBUFFERS)(ALuint sid, ALsizei numEntries, const ALuint *bids );$/;"	t
+LPALSOURCEREWIND	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEREWIND)( ALuint sid );$/;"	t
+LPALSOURCEREWINDV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEREWINDV)( ALsizei ns, const ALuint *sids );$/;"	t
+LPALSOURCESTOP	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCESTOP)( ALuint sid );$/;"	t
+LPALSOURCESTOPV	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCESTOPV)( ALsizei ns, const ALuint *sids );$/;"	t
+LPALSOURCEUNQUEUEBUFFERS	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSOURCEUNQUEUEBUFFERS)(ALuint sid, ALsizei numEntries, ALuint *bids );$/;"	t
+LPALSPEEDOFSOUND	/usr/include/AL/al.h	/^typedef void           (AL_APIENTRY *LPALSPEEDOFSOUND)( ALfloat value );$/;"	t
+OPENAL	/usr/include/AL/al.h	39;"	d
+PFNALBUFFERDATASTATICPROC	/usr/include/AL/alext.h	/^typedef ALvoid (AL_APIENTRY*PFNALBUFFERDATASTATICPROC)(const ALint,ALenum,ALvoid*,ALsizei,ALsizei);$/;"	t
+PFNALBUFFERSUBDATASOFTPROC	/usr/include/AL/alext.h	/^typedef ALvoid (AL_APIENTRY*PFNALBUFFERSUBDATASOFTPROC)(ALuint,ALenum,const ALvoid*,ALsizei,ALsizei);$/;"	t
+PFNALCGETTHREADCONTEXTPROC	/usr/include/AL/alext.h	/^typedef ALCcontext* (ALC_APIENTRY*PFNALCGETTHREADCONTEXTPROC)(void);$/;"	t
+PFNALCSETTHREADCONTEXTPROC	/usr/include/AL/alext.h	/^typedef ALCboolean  (ALC_APIENTRY*PFNALCSETTHREADCONTEXTPROC)(ALCcontext *context);$/;"	t
+alAuxiliaryEffectSlotf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alAuxiliaryEffectSlotf(ALuint effectslot, ALenum param, ALfloat flValue);$/;"	p	signature:(ALuint effectslot, ALenum param, ALfloat flValue)
+alAuxiliaryEffectSlotfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alAuxiliaryEffectSlotfv(ALuint effectslot, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint effectslot, ALenum param, ALfloat *pflValues)
+alAuxiliaryEffectSloti	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alAuxiliaryEffectSloti(ALuint effectslot, ALenum param, ALint iValue);$/;"	p	signature:(ALuint effectslot, ALenum param, ALint iValue)
+alAuxiliaryEffectSlotiv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alAuxiliaryEffectSlotiv(ALuint effectslot, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint effectslot, ALenum param, ALint *piValues)
+alBuffer3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBuffer3f( ALuint bid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	p	signature:( ALuint bid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 )
+alBuffer3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBuffer3i( ALuint bid, ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	p	signature:( ALuint bid, ALenum param, ALint value1, ALint value2, ALint value3 )
+alBufferData	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBufferData( ALuint bid, ALenum format, const ALvoid* data, ALsizei size, ALsizei freq );$/;"	p	signature:( ALuint bid, ALenum format, const ALvoid* data, ALsizei size, ALsizei freq )
+alBufferDataStatic	/usr/include/AL/alext.h	/^AL_API ALvoid AL_APIENTRY alBufferDataStatic(const ALint buffer, ALenum format, ALvoid *data, ALsizei len, ALsizei freq);$/;"	p	signature:(const ALint buffer, ALenum format, ALvoid *data, ALsizei len, ALsizei freq)
+alBufferSubDataSOFT	/usr/include/AL/alext.h	/^AL_API ALvoid AL_APIENTRY alBufferSubDataSOFT(ALuint buffer,ALenum format,const ALvoid *data,ALsizei offset,ALsizei length);$/;"	p	signature:(ALuint buffer,ALenum format,const ALvoid *data,ALsizei offset,ALsizei length)
+alBufferf	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBufferf( ALuint bid, ALenum param, ALfloat value );$/;"	p	signature:( ALuint bid, ALenum param, ALfloat value )
+alBufferfv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBufferfv( ALuint bid, ALenum param, const ALfloat* values );$/;"	p	signature:( ALuint bid, ALenum param, const ALfloat* values )
+alBufferi	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBufferi( ALuint bid, ALenum param, ALint value );$/;"	p	signature:( ALuint bid, ALenum param, ALint value )
+alBufferiv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alBufferiv( ALuint bid, ALenum param, const ALint* values );$/;"	p	signature:( ALuint bid, ALenum param, const ALint* values )
+alDeleteAuxiliaryEffectSlots	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alDeleteAuxiliaryEffectSlots(ALsizei n, ALuint *effectslots);$/;"	p	signature:(ALsizei n, ALuint *effectslots)
+alDeleteBuffers	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDeleteBuffers( ALsizei n, const ALuint* buffers );$/;"	p	signature:( ALsizei n, const ALuint* buffers )
+alDeleteEffects	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alDeleteEffects(ALsizei n, ALuint *effects);$/;"	p	signature:(ALsizei n, ALuint *effects)
+alDeleteFilters	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alDeleteFilters(ALsizei n, ALuint *filters);$/;"	p	signature:(ALsizei n, ALuint *filters)
+alDeleteSources	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDeleteSources( ALsizei n, const ALuint* sources );$/;"	p	signature:( ALsizei n, const ALuint* sources )
+alDisable	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDisable( ALenum capability ); $/;"	p	signature:( ALenum capability )
+alDistanceModel	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDistanceModel( ALenum distanceModel );$/;"	p	signature:( ALenum distanceModel )
+alDopplerFactor	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDopplerFactor( ALfloat value );$/;"	p	signature:( ALfloat value )
+alDopplerVelocity	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alDopplerVelocity( ALfloat value );$/;"	p	signature:( ALfloat value )
+alEffectf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alEffectf(ALuint effect, ALenum param, ALfloat flValue);$/;"	p	signature:(ALuint effect, ALenum param, ALfloat flValue)
+alEffectfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alEffectfv(ALuint effect, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint effect, ALenum param, ALfloat *pflValues)
+alEffecti	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alEffecti(ALuint effect, ALenum param, ALint iValue);$/;"	p	signature:(ALuint effect, ALenum param, ALint iValue)
+alEffectiv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alEffectiv(ALuint effect, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint effect, ALenum param, ALint *piValues)
+alEnable	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alEnable( ALenum capability );$/;"	p	signature:( ALenum capability )
+alFilterf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alFilterf(ALuint filter, ALenum param, ALfloat flValue);$/;"	p	signature:(ALuint filter, ALenum param, ALfloat flValue)
+alFilterfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alFilterfv(ALuint filter, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint filter, ALenum param, ALfloat *pflValues)
+alFilteri	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alFilteri(ALuint filter, ALenum param, ALint iValue);$/;"	p	signature:(ALuint filter, ALenum param, ALint iValue)
+alFilteriv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alFilteriv(ALuint filter, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint filter, ALenum param, ALint *piValues)
+alGenAuxiliaryEffectSlots	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGenAuxiliaryEffectSlots(ALsizei n, ALuint *effectslots);$/;"	p	signature:(ALsizei n, ALuint *effectslots)
+alGenBuffers	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGenBuffers( ALsizei n, ALuint* buffers );$/;"	p	signature:( ALsizei n, ALuint* buffers )
+alGenEffects	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGenEffects(ALsizei n, ALuint *effects);$/;"	p	signature:(ALsizei n, ALuint *effects)
+alGenFilters	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGenFilters(ALsizei n, ALuint *filters);$/;"	p	signature:(ALsizei n, ALuint *filters)
+alGenSources	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGenSources( ALsizei n, ALuint* sources ); $/;"	p	signature:( ALsizei n, ALuint* sources )
+alGetAuxiliaryEffectSlotf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetAuxiliaryEffectSlotf(ALuint effectslot, ALenum param, ALfloat *pflValue);$/;"	p	signature:(ALuint effectslot, ALenum param, ALfloat *pflValue)
+alGetAuxiliaryEffectSlotfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetAuxiliaryEffectSlotfv(ALuint effectslot, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint effectslot, ALenum param, ALfloat *pflValues)
+alGetAuxiliaryEffectSloti	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetAuxiliaryEffectSloti(ALuint effectslot, ALenum param, ALint *piValue);$/;"	p	signature:(ALuint effectslot, ALenum param, ALint *piValue)
+alGetAuxiliaryEffectSlotiv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetAuxiliaryEffectSlotiv(ALuint effectslot, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint effectslot, ALenum param, ALint *piValues)
+alGetBoolean	/usr/include/AL/al.h	/^AL_API ALboolean AL_APIENTRY alGetBoolean( ALenum param );$/;"	p	signature:( ALenum param )
+alGetBooleanv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBooleanv( ALenum param, ALboolean* data );$/;"	p	signature:( ALenum param, ALboolean* data )
+alGetBuffer3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBuffer3f( ALuint bid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3);$/;"	p	signature:( ALuint bid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3)
+alGetBuffer3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBuffer3i( ALuint bid, ALenum param, ALint* value1, ALint* value2, ALint* value3);$/;"	p	signature:( ALuint bid, ALenum param, ALint* value1, ALint* value2, ALint* value3)
+alGetBufferf	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBufferf( ALuint bid, ALenum param, ALfloat* value );$/;"	p	signature:( ALuint bid, ALenum param, ALfloat* value )
+alGetBufferfv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBufferfv( ALuint bid, ALenum param, ALfloat* values );$/;"	p	signature:( ALuint bid, ALenum param, ALfloat* values )
+alGetBufferi	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBufferi( ALuint bid, ALenum param, ALint* value );$/;"	p	signature:( ALuint bid, ALenum param, ALint* value )
+alGetBufferiv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetBufferiv( ALuint bid, ALenum param, ALint* values );$/;"	p	signature:( ALuint bid, ALenum param, ALint* values )
+alGetDouble	/usr/include/AL/al.h	/^AL_API ALdouble AL_APIENTRY alGetDouble( ALenum param );$/;"	p	signature:( ALenum param )
+alGetDoublev	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetDoublev( ALenum param, ALdouble* data );$/;"	p	signature:( ALenum param, ALdouble* data )
+alGetEffectf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetEffectf(ALuint effect, ALenum param, ALfloat *pflValue);$/;"	p	signature:(ALuint effect, ALenum param, ALfloat *pflValue)
+alGetEffectfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetEffectfv(ALuint effect, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint effect, ALenum param, ALfloat *pflValues)
+alGetEffecti	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetEffecti(ALuint effect, ALenum param, ALint *piValue);$/;"	p	signature:(ALuint effect, ALenum param, ALint *piValue)
+alGetEffectiv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetEffectiv(ALuint effect, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint effect, ALenum param, ALint *piValues)
+alGetEnumValue	/usr/include/AL/al.h	/^AL_API ALenum AL_APIENTRY alGetEnumValue( const ALchar* ename );$/;"	p	signature:( const ALchar* ename )
+alGetError	/usr/include/AL/al.h	/^AL_API ALenum AL_APIENTRY alGetError( void );$/;"	p	signature:( void )
+alGetFilterf	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetFilterf(ALuint filter, ALenum param, ALfloat *pflValue);$/;"	p	signature:(ALuint filter, ALenum param, ALfloat *pflValue)
+alGetFilterfv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetFilterfv(ALuint filter, ALenum param, ALfloat *pflValues);$/;"	p	signature:(ALuint filter, ALenum param, ALfloat *pflValues)
+alGetFilteri	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetFilteri(ALuint filter, ALenum param, ALint *piValue);$/;"	p	signature:(ALuint filter, ALenum param, ALint *piValue)
+alGetFilteriv	/usr/include/AL/efx.h	/^AL_API ALvoid AL_APIENTRY alGetFilteriv(ALuint filter, ALenum param, ALint *piValues);$/;"	p	signature:(ALuint filter, ALenum param, ALint *piValues)
+alGetFloat	/usr/include/AL/al.h	/^AL_API ALfloat AL_APIENTRY alGetFloat( ALenum param );$/;"	p	signature:( ALenum param )
+alGetFloatv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetFloatv( ALenum param, ALfloat* data );$/;"	p	signature:( ALenum param, ALfloat* data )
+alGetInteger	/usr/include/AL/al.h	/^AL_API ALint AL_APIENTRY alGetInteger( ALenum param );$/;"	p	signature:( ALenum param )
+alGetIntegerv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetIntegerv( ALenum param, ALint* data );$/;"	p	signature:( ALenum param, ALint* data )
+alGetListener3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListener3f( ALenum param, ALfloat *value1, ALfloat *value2, ALfloat *value3 );$/;"	p	signature:( ALenum param, ALfloat *value1, ALfloat *value2, ALfloat *value3 )
+alGetListener3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListener3i( ALenum param, ALint *value1, ALint *value2, ALint *value3 );$/;"	p	signature:( ALenum param, ALint *value1, ALint *value2, ALint *value3 )
+alGetListenerf	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListenerf( ALenum param, ALfloat* value );$/;"	p	signature:( ALenum param, ALfloat* value )
+alGetListenerfv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListenerfv( ALenum param, ALfloat* values );$/;"	p	signature:( ALenum param, ALfloat* values )
+alGetListeneri	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListeneri( ALenum param, ALint* value );$/;"	p	signature:( ALenum param, ALint* value )
+alGetListeneriv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetListeneriv( ALenum param, ALint* values );$/;"	p	signature:( ALenum param, ALint* values )
+alGetProcAddress	/usr/include/AL/al.h	/^AL_API void* AL_APIENTRY alGetProcAddress( const ALchar* fname );$/;"	p	signature:( const ALchar* fname )
+alGetSource3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSource3f( ALuint sid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3);$/;"	p	signature:( ALuint sid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3)
+alGetSource3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSource3i( ALuint sid, ALenum param, ALint* value1, ALint* value2, ALint* value3);$/;"	p	signature:( ALuint sid, ALenum param, ALint* value1, ALint* value2, ALint* value3)
+alGetSourcef	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSourcef( ALuint sid, ALenum param, ALfloat* value );$/;"	p	signature:( ALuint sid, ALenum param, ALfloat* value )
+alGetSourcefv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSourcefv( ALuint sid, ALenum param, ALfloat* values );$/;"	p	signature:( ALuint sid, ALenum param, ALfloat* values )
+alGetSourcei	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSourcei( ALuint sid,  ALenum param, ALint* value );$/;"	p	signature:( ALuint sid, ALenum param, ALint* value )
+alGetSourceiv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alGetSourceiv( ALuint sid,  ALenum param, ALint* values );$/;"	p	signature:( ALuint sid, ALenum param, ALint* values )
+alGetString	/usr/include/AL/al.h	/^AL_API const ALchar* AL_APIENTRY alGetString( ALenum param );$/;"	p	signature:( ALenum param )
+alIsAuxiliaryEffectSlot	/usr/include/AL/efx.h	/^AL_API ALboolean AL_APIENTRY alIsAuxiliaryEffectSlot(ALuint effectslot);$/;"	p	signature:(ALuint effectslot)
+alIsBuffer	/usr/include/AL/al.h	/^AL_API ALboolean AL_APIENTRY alIsBuffer( ALuint bid );$/;"	p	signature:( ALuint bid )
+alIsEffect	/usr/include/AL/efx.h	/^AL_API ALboolean AL_APIENTRY alIsEffect(ALuint effect);$/;"	p	signature:(ALuint effect)
+alIsEnabled	/usr/include/AL/al.h	/^AL_API ALboolean AL_APIENTRY alIsEnabled( ALenum capability ); $/;"	p	signature:( ALenum capability )
+alIsExtensionPresent	/usr/include/AL/al.h	/^AL_API ALboolean AL_APIENTRY alIsExtensionPresent( const ALchar* extname );$/;"	p	signature:( const ALchar* extname )
+alIsFilter	/usr/include/AL/efx.h	/^AL_API ALboolean AL_APIENTRY alIsFilter(ALuint filter);$/;"	p	signature:(ALuint filter)
+alIsSource	/usr/include/AL/al.h	/^AL_API ALboolean AL_APIENTRY alIsSource( ALuint sid ); $/;"	p	signature:( ALuint sid )
+alListener3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListener3f( ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	p	signature:( ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 )
+alListener3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListener3i( ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	p	signature:( ALenum param, ALint value1, ALint value2, ALint value3 )
+alListenerf	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListenerf( ALenum param, ALfloat value );$/;"	p	signature:( ALenum param, ALfloat value )
+alListenerfv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListenerfv( ALenum param, const ALfloat* values ); $/;"	p	signature:( ALenum param, const ALfloat* values )
+alListeneri	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListeneri( ALenum param, ALint value );$/;"	p	signature:( ALenum param, ALint value )
+alListeneriv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alListeneriv( ALenum param, const ALint* values );$/;"	p	signature:( ALenum param, const ALint* values )
+alSource3f	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSource3f( ALuint sid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );$/;"	p	signature:( ALuint sid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 )
+alSource3i	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSource3i( ALuint sid, ALenum param, ALint value1, ALint value2, ALint value3 );$/;"	p	signature:( ALuint sid, ALenum param, ALint value1, ALint value2, ALint value3 )
+alSourcePause	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcePause( ALuint sid );$/;"	p	signature:( ALuint sid )
+alSourcePausev	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcePausev( ALsizei ns, const ALuint *sids );$/;"	p	signature:( ALsizei ns, const ALuint *sids )
+alSourcePlay	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcePlay( ALuint sid );$/;"	p	signature:( ALuint sid )
+alSourcePlayv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcePlayv( ALsizei ns, const ALuint *sids );$/;"	p	signature:( ALsizei ns, const ALuint *sids )
+alSourceQueueBuffers	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceQueueBuffers( ALuint sid, ALsizei numEntries, const ALuint *bids );$/;"	p	signature:( ALuint sid, ALsizei numEntries, const ALuint *bids )
+alSourceRewind	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceRewind( ALuint sid );$/;"	p	signature:( ALuint sid )
+alSourceRewindv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceRewindv( ALsizei ns, const ALuint *sids );$/;"	p	signature:( ALsizei ns, const ALuint *sids )
+alSourceStop	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceStop( ALuint sid );$/;"	p	signature:( ALuint sid )
+alSourceStopv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceStopv( ALsizei ns, const ALuint *sids );$/;"	p	signature:( ALsizei ns, const ALuint *sids )
+alSourceUnqueueBuffers	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceUnqueueBuffers( ALuint sid, ALsizei numEntries, ALuint *bids );$/;"	p	signature:( ALuint sid, ALsizei numEntries, ALuint *bids )
+alSourcef	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcef( ALuint sid, ALenum param, ALfloat value ); $/;"	p	signature:( ALuint sid, ALenum param, ALfloat value )
+alSourcefv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcefv( ALuint sid, ALenum param, const ALfloat* values ); $/;"	p	signature:( ALuint sid, ALenum param, const ALfloat* values )
+alSourcei	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourcei( ALuint sid, ALenum param, ALint value ); $/;"	p	signature:( ALuint sid, ALenum param, ALint value )
+alSourceiv	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSourceiv( ALuint sid, ALenum param, const ALint* values );$/;"	p	signature:( ALuint sid, ALenum param, const ALint* values )
+alSpeedOfSound	/usr/include/AL/al.h	/^AL_API void AL_APIENTRY alSpeedOfSound( ALfloat value );$/;"	p	signature:( ALfloat value )
+alcCaptureCloseDevice	/usr/include/AL/alc.h	/^ALC_API ALCboolean      ALC_APIENTRY alcCaptureCloseDevice( ALCdevice *device );$/;"	p	signature:( ALCdevice *device )
+alcCaptureOpenDevice	/usr/include/AL/alc.h	/^ALC_API ALCdevice*      ALC_APIENTRY alcCaptureOpenDevice( const ALCchar *devicename, ALCuint frequency, ALCenum format, ALCsizei buffersize );$/;"	p	signature:( const ALCchar *devicename, ALCuint frequency, ALCenum format, ALCsizei buffersize )
+alcCaptureSamples	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcCaptureSamples( ALCdevice *device, ALCvoid *buffer, ALCsizei samples );$/;"	p	signature:( ALCdevice *device, ALCvoid *buffer, ALCsizei samples )
+alcCaptureStart	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcCaptureStart( ALCdevice *device );$/;"	p	signature:( ALCdevice *device )
+alcCaptureStop	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcCaptureStop( ALCdevice *device );$/;"	p	signature:( ALCdevice *device )
+alcCloseDevice	/usr/include/AL/alc.h	/^ALC_API ALCboolean      ALC_APIENTRY alcCloseDevice( ALCdevice *device );$/;"	p	signature:( ALCdevice *device )
+alcCreateContext	/usr/include/AL/alc.h	/^ALC_API ALCcontext *    ALC_APIENTRY alcCreateContext( ALCdevice *device, const ALCint* attrlist );$/;"	p	signature:( ALCdevice *device, const ALCint* attrlist )
+alcDestroyContext	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcDestroyContext( ALCcontext *context );$/;"	p	signature:( ALCcontext *context )
+alcGetContextsDevice	/usr/include/AL/alc.h	/^ALC_API ALCdevice*      ALC_APIENTRY alcGetContextsDevice( ALCcontext *context );$/;"	p	signature:( ALCcontext *context )
+alcGetCurrentContext	/usr/include/AL/alc.h	/^ALC_API ALCcontext *    ALC_APIENTRY alcGetCurrentContext( void );$/;"	p	signature:( void )
+alcGetEnumValue	/usr/include/AL/alc.h	/^ALC_API ALCenum         ALC_APIENTRY alcGetEnumValue( ALCdevice *device, const ALCchar *enumname );$/;"	p	signature:( ALCdevice *device, const ALCchar *enumname )
+alcGetError	/usr/include/AL/alc.h	/^ALC_API ALCenum         ALC_APIENTRY alcGetError( ALCdevice *device );$/;"	p	signature:( ALCdevice *device )
+alcGetIntegerv	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcGetIntegerv( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *data );$/;"	p	signature:( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *data )
+alcGetProcAddress	/usr/include/AL/alc.h	/^ALC_API void  *         ALC_APIENTRY alcGetProcAddress( ALCdevice *device, const ALCchar *funcname );$/;"	p	signature:( ALCdevice *device, const ALCchar *funcname )
+alcGetString	/usr/include/AL/alc.h	/^ALC_API const ALCchar * ALC_APIENTRY alcGetString( ALCdevice *device, ALCenum param );$/;"	p	signature:( ALCdevice *device, ALCenum param )
+alcGetThreadContext	/usr/include/AL/alext.h	/^ALC_API ALCcontext* ALC_APIENTRY alcGetThreadContext(void);$/;"	p	signature:(void)
+alcIsExtensionPresent	/usr/include/AL/alc.h	/^ALC_API ALCboolean      ALC_APIENTRY alcIsExtensionPresent( ALCdevice *device, const ALCchar *extname );$/;"	p	signature:( ALCdevice *device, const ALCchar *extname )
+alcMakeContextCurrent	/usr/include/AL/alc.h	/^ALC_API ALCboolean      ALC_APIENTRY alcMakeContextCurrent( ALCcontext *context );$/;"	p	signature:( ALCcontext *context )
+alcOpenDevice	/usr/include/AL/alc.h	/^ALC_API ALCdevice *     ALC_APIENTRY alcOpenDevice( const ALCchar *devicename );$/;"	p	signature:( const ALCchar *devicename )
+alcProcessContext	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcProcessContext( ALCcontext *context );$/;"	p	signature:( ALCcontext *context )
+alcSetThreadContext	/usr/include/AL/alext.h	/^ALC_API ALCboolean  ALC_APIENTRY alcSetThreadContext(ALCcontext *context);$/;"	p	signature:(ALCcontext *context)
+alcSuspendContext	/usr/include/AL/alc.h	/^ALC_API void            ALC_APIENTRY alcSuspendContext( ALCcontext *context );$/;"	p	signature:( ALCcontext *context )
+alutCreateBufferFromFile	/usr/include/AL/alut.h	/^ALUT_API ALuint ALUT_APIENTRY alutCreateBufferFromFile (const char *fileName);$/;"	p	signature:(const char *fileName)
+alutCreateBufferFromFileImage	/usr/include/AL/alut.h	/^ALUT_API ALuint ALUT_APIENTRY alutCreateBufferFromFileImage (const ALvoid *data, ALsizei length);$/;"	p	signature:(const ALvoid *data, ALsizei length)
+alutCreateBufferHelloWorld	/usr/include/AL/alut.h	/^ALUT_API ALuint ALUT_APIENTRY alutCreateBufferHelloWorld (void);$/;"	p	signature:(void)
+alutCreateBufferWaveform	/usr/include/AL/alut.h	/^ALUT_API ALuint ALUT_APIENTRY alutCreateBufferWaveform (ALenum waveshape, ALfloat frequency, ALfloat phase, ALfloat duration);$/;"	p	signature:(ALenum waveshape, ALfloat frequency, ALfloat phase, ALfloat duration)
+alutExit	/usr/include/AL/alut.h	/^ALUT_API ALboolean ALUT_APIENTRY alutExit (void);$/;"	p	signature:(void)
+alutGetError	/usr/include/AL/alut.h	/^ALUT_API ALenum ALUT_APIENTRY alutGetError (void);$/;"	p	signature:(void)
+alutGetErrorString	/usr/include/AL/alut.h	/^ALUT_API const char *ALUT_APIENTRY alutGetErrorString (ALenum error);$/;"	p	signature:(ALenum error)
+alutGetMIMETypes	/usr/include/AL/alut.h	/^ALUT_API const char *ALUT_APIENTRY alutGetMIMETypes (ALenum loader);$/;"	p	signature:(ALenum loader)
+alutGetMajorVersion	/usr/include/AL/alut.h	/^ALUT_API ALint ALUT_APIENTRY alutGetMajorVersion (void);$/;"	p	signature:(void)
+alutGetMinorVersion	/usr/include/AL/alut.h	/^ALUT_API ALint ALUT_APIENTRY alutGetMinorVersion (void);$/;"	p	signature:(void)
+alutInit	/usr/include/AL/alut.h	/^ALUT_API ALboolean ALUT_APIENTRY alutInit (int *argcp, char **argv);$/;"	p	signature:(int *argcp, char **argv)
+alutInitWithoutContext	/usr/include/AL/alut.h	/^ALUT_API ALboolean ALUT_APIENTRY alutInitWithoutContext (int *argcp, char **argv);$/;"	p	signature:(int *argcp, char **argv)
+alutLoadMemoryFromFile	/usr/include/AL/alut.h	/^ALUT_API ALvoid *ALUT_APIENTRY alutLoadMemoryFromFile (const char *fileName, ALenum *format, ALsizei *size, ALfloat *frequency);$/;"	p	signature:(const char *fileName, ALenum *format, ALsizei *size, ALfloat *frequency)
+alutLoadMemoryFromFileImage	/usr/include/AL/alut.h	/^ALUT_API ALvoid *ALUT_APIENTRY alutLoadMemoryFromFileImage (const ALvoid *data, ALsizei length, ALenum *format, ALsizei *size, ALfloat *frequency);$/;"	p	signature:(const ALvoid *data, ALsizei length, ALenum *format, ALsizei *size, ALfloat *frequency)
+alutLoadMemoryHelloWorld	/usr/include/AL/alut.h	/^ALUT_API ALvoid *ALUT_APIENTRY alutLoadMemoryHelloWorld (ALenum *format, ALsizei *size, ALfloat *frequency);$/;"	p	signature:(ALenum *format, ALsizei *size, ALfloat *frequency)
+alutLoadMemoryWaveform	/usr/include/AL/alut.h	/^ALUT_API ALvoid *ALUT_APIENTRY alutLoadMemoryWaveform (ALenum waveshape, ALfloat frequency, ALfloat phase, ALfloat duration, ALenum *format, ALsizei *size, ALfloat *freq);$/;"	p	signature:(ALenum waveshape, ALfloat frequency, ALfloat phase, ALfloat duration, ALenum *format, ALsizei *size, ALfloat *freq)
+alutLoadWAVFile	/usr/include/AL/alut.h	/^ALUT_API ALUT_ATTRIBUTE_DEPRECATED void ALUT_APIENTRY alutLoadWAVFile (ALbyte *fileName, ALenum *format, void **data, ALsizei *size, ALsizei *frequency);$/;"	p	signature:(ALbyte *fileName, ALenum *format, void **data, ALsizei *size, ALsizei *frequency)
+alutLoadWAVFile	/usr/include/AL/alut.h	/^ALUT_API ALUT_ATTRIBUTE_DEPRECATED void ALUT_APIENTRY alutLoadWAVFile (ALbyte *fileName, ALenum *format, void **data, ALsizei *size, ALsizei *frequency, ALboolean *loop);$/;"	p	signature:(ALbyte *fileName, ALenum *format, void **data, ALsizei *size, ALsizei *frequency, ALboolean *loop)
+alutLoadWAVMemory	/usr/include/AL/alut.h	/^ALUT_API ALUT_ATTRIBUTE_DEPRECATED void ALUT_APIENTRY alutLoadWAVMemory (ALbyte *buffer, ALenum *format, void **data, ALsizei *size, ALsizei *frequency);$/;"	p	signature:(ALbyte *buffer, ALenum *format, void **data, ALsizei *size, ALsizei *frequency)
+alutLoadWAVMemory	/usr/include/AL/alut.h	/^ALUT_API ALUT_ATTRIBUTE_DEPRECATED void ALUT_APIENTRY alutLoadWAVMemory (ALbyte *buffer, ALenum *format, void **data, ALsizei *size, ALsizei *frequency, ALboolean *loop);$/;"	p	signature:(ALbyte *buffer, ALenum *format, void **data, ALsizei *size, ALsizei *frequency, ALboolean *loop)
+alutSleep	/usr/include/AL/alut.h	/^ALUT_API ALboolean ALUT_APIENTRY alutSleep (ALfloat duration);$/;"	p	signature:(ALfloat duration)
+alutUnloadWAV	/usr/include/AL/alut.h	/^ALUT_API ALUT_ATTRIBUTE_DEPRECATED void ALUT_APIENTRY alutUnloadWAV (ALenum format, ALvoid *data, ALsizei size, ALsizei frequency);$/;"	p	signature:(ALenum format, ALvoid *data, ALsizei size, ALsizei frequency)
