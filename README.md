@@ -1,1 +1,2 @@
-make `ln -s ~/.vimrc ~/.vim/.vimrc && ln -s ~/.gvimrc ~/.vim/.gvimrc`
+type next commands
+`ln -s ~/.vim/.vimrc ~/.vimrc && ln -s ~/.vim/.gvimrc ~/.gvimrc`
