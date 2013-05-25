@@ -8,7 +8,6 @@ let g:jedi#goto_command = "<leader>g"
 let g:jedi#get_definition_command = "<leader>d"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
-let g:jedi#autocompletion_command = "<C-x><C-o>"
 let g:jedi#show_function_definition = "0"
 
 "let g:pymode_lint = 0
@@ -101,3 +100,20 @@ map <silent> \im o= models.ImageField(upload_to=generate_upload_name, verbose_na
 
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>
+
+" Better navigating through omnicomplete option list
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+"set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>

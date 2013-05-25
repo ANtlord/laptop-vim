@@ -24,7 +24,7 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-
+let mapleader = ","
 filetype plugin indent on     " required!
 syntax on
 set mouse=a        " Enable mouse usage (all modes)
@@ -62,9 +62,7 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
-"imap <C-c> <Esc>"+ya
 map <C-c> "+y
-"imap <C-x> <Esc>"+da
 map <C-x> "+d
 imap <C-v> <Esc>"+pa
 map <C-v> "+p
@@ -114,3 +112,15 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let NERDTreeShowHidden=1
 
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
+" ==============================================
+" JEDI vim
+" ==============================================
+Bundle 'https://github.com/davidhalter/jedi-vim.git'
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+"let g:jedi#goto_command = "<leader>g"
+"let g:jedi#related_names_command = "<leader>n"
+"let g:jedi#get_definition_command = "<leader>d"
+let g:jedi#popup_on_dot = 1
+let g:jedi#popup_select_first = 1
+let g:jedi#show_function_definition = 1
