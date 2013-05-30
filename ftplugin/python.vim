@@ -1,15 +1,3 @@
-" ==============================================
-" JEDI vim
-" ==============================================
-Bundle 'https://github.com/davidhalter/jedi-vim.git'
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#goto_command = "<leader>g"
-let g:jedi#get_definition_command = "<leader>d"
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
-let g:jedi#show_function_definition = "0"
-
 "let g:pymode_lint = 0
 "let g:pymode_rope = 0
 
@@ -18,6 +6,7 @@ let g:jedi#show_function_definition = "0"
 "filetype plugin on
 hi Folded guifg=#cccccc guibg=#222222 
 hi Constant guifg=#44ff44
+let NERDTreeIgnore = ['\.pyc$']
 "hi Folded guifg=#cccccc guibg=#111111 gui=bold 
 "hi Folded guifg=#84b9ae guibg=#444444
 "let fdm='fold-syntax'
@@ -103,7 +92,7 @@ map <silent> \setfunc :call SetFunc()<CR>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-"set completeopt=longest,menuone
+set completeopt=longest,menuone
 function! OmniPopup(action)
     if pumvisible()
         if a:action == 'j'

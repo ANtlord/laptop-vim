@@ -24,7 +24,7 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-let mapleader = ","
+let mapleader = "\\"
 filetype plugin indent on     " required!
 syntax on
 set mouse=a        " Enable mouse usage (all modes)
