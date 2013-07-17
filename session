@@ -148,6 +148,9 @@ imap  :e.
 imap  "+pa
 imap = gt
 imap - gT
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ( ()<Left>
 map и b
 map з p
 map вв dd
@@ -169,6 +172,7 @@ imap <silent> \bf = models.BooleanField(default=False, verbose_name=u'')I <Lef
 imap <silent> \if = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'')I <Left>
 imap <silent> \fk = models.ForeignKey('to model', related_name='name for access', verbose_name=u'')I <Left>
 imap <silent> \cf = models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')I <Left>
+inoremap { {}<Left>
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
@@ -201,29 +205,17 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 transoil/apps/catalog/admin.py
-badd +116 /media/data/www/domino-django/tatus
-badd +56 /media/data/www/domino-django/domino/settings.py
-badd +22 /media/data/www/domino-django/domino/apps/seo.py
-badd +36 transoil/settings.py
-badd +27 requirements.pip
-badd +24 transoil/seo.py
-badd +7 /media/data/www/domino-django/domino/apps/catalog/models.py
-badd +0 /media/data/www/domino-django/domino/apps/catalog/admin.py
-badd +17 transoil/apps/catalog/urls.py
-badd +4 transoil/apps/catalog/models.py
-badd +94 /media/data/www/luxnovias-django/luxnovias/apps/catalog/models.py
-badd +19 transoil/apps/catalog/views.py
-badd +27 /media/data/www/domino-django/domino/apps/catalog/views.py
-badd +1 /media/data/www/domino-django/domino/urls.py
-badd +2 /media/data/www/domino-django/domino/seo.py
-badd +0 /media/data/www/domino-django/domino/apps/catalog/urls.py
-badd +52 /media/data/www/luxnovias-django/luxnovias/settings.py
-badd +1 transoil/__init__.py
-badd +6 transoil/templates/base.html
-badd +0 transoil/templates/catalog/base.html
-args /media/data/www/domino-django/domino/apps/catalog/views.py
-edit transoil/templates/catalog/base.html
+badd +0 transoil/templates/base.html
+badd +0 transoil/static/markup/pages/index/index.html
+badd +0 /media/data/www/luxnovias-django/luxnovias/templates/base.html
+badd +4 /media/data/www/luxnovias-django/luxnovias/settings.py
+badd +11 /media/data/www/luxnovias-django/luxnovias/_settings/template.py
+badd +17 /media/data/www/luxnovias-django/luxnovias/apps/catalog/views.py
+badd +2 transoil/templates/catalog/base.html
+badd +0 transoil/apps/catalog/views.py
+badd +1 transoil/templates/catalog/index_view.html
+silent! argdel *
+edit transoil/static/markup/pages/index/index.html
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -237,8 +229,8 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 97 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 144 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 105 + 137) / 274)
+exe 'vert 3resize ' . ((&columns * 136 + 137) / 274)
 argglobal
 enew
 file NERD_tree_1
@@ -481,7 +473,7 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/html.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/media/data/www/transoil/transoil/static/markup/.git/html.tags,/media/data/www/transoil/transoil/static/markup/.git/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -491,15 +483,136 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 32) / 64)
+let s:l = 3 - ((2 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 02l
+3
+normal! 0
 wincmd w
 argglobal
-edit transoil/apps/catalog/admin.py
+edit transoil/templates/base.html
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'htmldjango'
+setlocal filetype=htmldjango
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndent()
+setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'htmldjango'
+setlocal syntax=htmldjango
+endif
+setlocal tabstop=4
+setlocal tags=/media/data/www/transoil/.git/htmldjango.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 32) / 64)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 04l
+wincmd w
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 105 + 137) / 274)
+exe 'vert 3resize ' . ((&columns * 136 + 137) / 274)
+tabedit transoil/apps/catalog/views.py
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <C-Space> 
@@ -614,18 +727,14 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 32) / 64)
+let s:l = 11 - ((10 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 012l
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 97 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 144 + 137) / 274)
-tabedit /media/data/www/domino-django/domino/apps/catalog/admin.py
+11
+normal! 025l
+3wincmd w
+tabedit transoil/templates/catalog/index_view.html
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -638,9 +747,396 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 30 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 98 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 144 + 137) / 274)
+exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
+exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
+argglobal
+enew
+file NERD_tree_3
+let s:cpo_save=&cpo
+set cpo&vim
+nnoremap <buffer> <silent> <NL> :call nerdtree#invokeKeyMap("<C-j>")
+nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap("<C-k>")
+nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap('o')
+nnoremap <buffer> <silent> ? :call nerdtree#invokeKeyMap("?")
+nnoremap <buffer> <silent> A :call nerdtree#invokeKeyMap("A")
+nnoremap <buffer> <silent> B :call nerdtree#invokeKeyMap("B")
+nnoremap <buffer> <silent> CD :call nerdtree#invokeKeyMap("CD")
+nnoremap <buffer> <silent> C :call nerdtree#invokeKeyMap("C")
+nnoremap <buffer> <silent> D :call nerdtree#invokeKeyMap("D")
+nnoremap <buffer> <silent> F :call nerdtree#invokeKeyMap("F")
+nnoremap <buffer> <silent> I :call nerdtree#invokeKeyMap("I")
+nnoremap <buffer> <silent> J :call nerdtree#invokeKeyMap("J")
+nnoremap <buffer> <silent> K :call nerdtree#invokeKeyMap("K")
+nnoremap <buffer> <silent> O :call nerdtree#invokeKeyMap("O")
+nnoremap <buffer> <silent> P :call nerdtree#invokeKeyMap("P")
+nnoremap <buffer> <silent> R :call nerdtree#invokeKeyMap("R")
+nnoremap <buffer> <silent> T :call nerdtree#invokeKeyMap("T")
+nnoremap <buffer> <silent> U :call nerdtree#invokeKeyMap("U")
+nnoremap <buffer> <silent> X :call nerdtree#invokeKeyMap("X")
+nnoremap <buffer> <silent> cd :call nerdtree#invokeKeyMap("cd")
+nnoremap <buffer> <silent> e :call nerdtree#invokeKeyMap("e")
+nnoremap <buffer> <silent> f :call nerdtree#invokeKeyMap("f")
+nnoremap <buffer> <silent> gi :call nerdtree#invokeKeyMap("gi")
+nnoremap <buffer> <silent> gs :call nerdtree#invokeKeyMap("gs")
+nnoremap <buffer> <silent> go :call nerdtree#invokeKeyMap("go")
+nnoremap <buffer> <silent> i :call nerdtree#invokeKeyMap("i")
+nnoremap <buffer> <silent> m :call nerdtree#invokeKeyMap("m")
+nnoremap <buffer> <silent> o :call nerdtree#invokeKeyMap("o")
+nnoremap <buffer> <silent> p :call nerdtree#invokeKeyMap("p")
+nnoremap <buffer> <silent> q :call nerdtree#invokeKeyMap("q")
+nnoremap <buffer> <silent> r :call nerdtree#invokeKeyMap("r")
+nnoremap <buffer> <silent> s :call nerdtree#invokeKeyMap("s")
+nnoremap <buffer> <silent> t :call nerdtree#invokeKeyMap("t")
+nnoremap <buffer> <silent> u :call nerdtree#invokeKeyMap("u")
+nnoremap <buffer> <silent> x :call nerdtree#invokeKeyMap("x")
+nnoremap <buffer> <silent> <2-LeftMouse> :call nerdtree#invokeKeyMap("<2-LeftMouse>")
+nnoremap <buffer> <silent> <LeftRelease> <LeftRelease>:call nerdtree#invokeKeyMap("<LeftRelease>")
+nnoremap <buffer> <silent> <MiddleRelease> :call nerdtree#invokeKeyMap("<MiddleRelease>")
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=hide
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'nerdtree'
+setlocal filetype=nerdtree
+endif
+setlocal foldcolumn=0
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'nerdtree'
+setlocal syntax=nerdtree
+endif
+setlocal tabstop=4
+setlocal tags=/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal winfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+wincmd w
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'html'
+setlocal filetype=html
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndent()
+setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'html'
+setlocal syntax=html
+endif
+setlocal tabstop=4
+setlocal tags=/media/data/www/transoil/.git/html.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 32) / 64)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 05l
+wincmd w
+argglobal
+edit transoil/templates/catalog/base.html
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'htmldjango'
+setlocal filetype=htmldjango
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndent()
+setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'htmldjango'
+setlocal syntax=htmldjango
+endif
+setlocal tabstop=4
+setlocal tags=/media/data/www/transoil/.git/html.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 32) / 64)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02l
+wincmd w
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
+exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
+tabedit /media/data/www/luxnovias-django/luxnovias/templates/base.html
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 242 + 137) / 274)
 argglobal
 enew
 file NERD_tree_2
@@ -753,7 +1249,7 @@ setlocal nrformats=octal,hex
 set number
 setlocal nonumber
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=htmlcomplete#CompleteTags
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -790,17 +1286,6 @@ setlocal nowrap
 setlocal wrapmargin=0
 wincmd w
 argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <C-Space> 
-nnoremap <buffer> <silent> K :call jedi#show_pydoc()
-noremap <buffer> \r :call jedi#rename()
-noremap <buffer> \n :call jedi#related_names()
-noremap <buffer> \d :call jedi#get_definition()
-noremap <buffer> \g :call jedi#goto()
-inoremap <buffer> <silent> . .=jedi#do_popup_on_dot() ? "\<C-X>\<C-O>\<C-N>" : ""
-let &cpo=s:cpo_save
-unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -813,302 +1298,8 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=jedi#complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/domino-django/.git/python.tags,/media/data/www/domino-django/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 31 - ((30 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-31
-normal! 047l
-wincmd w
-argglobal
-edit /media/data/www/domino-django/domino/apps/catalog/models.py
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <C-Space> 
-nnoremap <buffer> <silent> K :call jedi#show_pydoc()
-noremap <buffer> \r :call jedi#rename()
-noremap <buffer> \n :call jedi#related_names()
-noremap <buffer> \d :call jedi#get_definition()
-noremap <buffer> \g :call jedi#goto()
-inoremap <buffer> <silent> . .=jedi#do_popup_on_dot() ? "\<C-X>\<C-O>\<C-N>" : ""
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=jedi#complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/domino-django/.git/python.tags,/media/data/www/domino-django/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 79 - ((61 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-79
-normal! 0
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 30 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 98 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 144 + 137) / 274)
-tabedit transoil/apps/catalog/views.py
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 242 + 137) / 274)
-argglobal
-enew
-file NERD_tree_4
-let s:cpo_save=&cpo
-set cpo&vim
-nnoremap <buffer> <silent> <NL> :call nerdtree#invokeKeyMap("<C-j>")
-nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap("<C-k>")
-nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap('o')
-nnoremap <buffer> <silent> ? :call nerdtree#invokeKeyMap("?")
-nnoremap <buffer> <silent> A :call nerdtree#invokeKeyMap("A")
-nnoremap <buffer> <silent> B :call nerdtree#invokeKeyMap("B")
-nnoremap <buffer> <silent> CD :call nerdtree#invokeKeyMap("CD")
-nnoremap <buffer> <silent> C :call nerdtree#invokeKeyMap("C")
-nnoremap <buffer> <silent> D :call nerdtree#invokeKeyMap("D")
-nnoremap <buffer> <silent> F :call nerdtree#invokeKeyMap("F")
-nnoremap <buffer> <silent> I :call nerdtree#invokeKeyMap("I")
-nnoremap <buffer> <silent> J :call nerdtree#invokeKeyMap("J")
-nnoremap <buffer> <silent> K :call nerdtree#invokeKeyMap("K")
-nnoremap <buffer> <silent> O :call nerdtree#invokeKeyMap("O")
-nnoremap <buffer> <silent> P :call nerdtree#invokeKeyMap("P")
-nnoremap <buffer> <silent> R :call nerdtree#invokeKeyMap("R")
-nnoremap <buffer> <silent> T :call nerdtree#invokeKeyMap("T")
-nnoremap <buffer> <silent> U :call nerdtree#invokeKeyMap("U")
-nnoremap <buffer> <silent> X :call nerdtree#invokeKeyMap("X")
-nnoremap <buffer> <silent> cd :call nerdtree#invokeKeyMap("cd")
-nnoremap <buffer> <silent> e :call nerdtree#invokeKeyMap("e")
-nnoremap <buffer> <silent> f :call nerdtree#invokeKeyMap("f")
-nnoremap <buffer> <silent> gi :call nerdtree#invokeKeyMap("gi")
-nnoremap <buffer> <silent> gs :call nerdtree#invokeKeyMap("gs")
-nnoremap <buffer> <silent> go :call nerdtree#invokeKeyMap("go")
-nnoremap <buffer> <silent> i :call nerdtree#invokeKeyMap("i")
-nnoremap <buffer> <silent> m :call nerdtree#invokeKeyMap("m")
-nnoremap <buffer> <silent> o :call nerdtree#invokeKeyMap("o")
-nnoremap <buffer> <silent> p :call nerdtree#invokeKeyMap("p")
-nnoremap <buffer> <silent> q :call nerdtree#invokeKeyMap("q")
-nnoremap <buffer> <silent> r :call nerdtree#invokeKeyMap("r")
-nnoremap <buffer> <silent> s :call nerdtree#invokeKeyMap("s")
-nnoremap <buffer> <silent> t :call nerdtree#invokeKeyMap("t")
-nnoremap <buffer> <silent> u :call nerdtree#invokeKeyMap("u")
-nnoremap <buffer> <silent> x :call nerdtree#invokeKeyMap("x")
-nnoremap <buffer> <silent> <2-LeftMouse> :call nerdtree#invokeKeyMap("<2-LeftMouse>")
-nnoremap <buffer> <silent> <LeftRelease> <LeftRelease>:call nerdtree#invokeKeyMap("<LeftRelease>")
-nnoremap <buffer> <silent> <MiddleRelease> :call nerdtree#invokeKeyMap("<MiddleRelease>")
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=hide
-setlocal nobuflisted
-setlocal buftype=nofile
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -1125,123 +1316,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'nerdtree'
-setlocal filetype=nerdtree
-endif
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal nomodifiable
-setlocal nrformats=octal,hex
-set number
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
-setlocal suffixesadd=
-setlocal noswapfile
-setlocal synmaxcol=3000
-if &syntax != 'nerdtree'
-setlocal syntax=nerdtree
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal winfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-wincmd w
-argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <C-Space> 
-nnoremap <buffer> <silent> K :call jedi#show_pydoc()
-noremap <buffer> \r :call jedi#rename()
-noremap <buffer> \n :call jedi#related_names()
-noremap <buffer> \d :call jedi#get_definition()
-noremap <buffer> \g :call jedi#goto()
-inoremap <buffer> <silent> . .=jedi#do_popup_on_dot() ? "\<C-X>\<C-O>\<C-N>" : ""
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
+if &filetype != 'htmldjango'
+setlocal filetype=htmldjango
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -1261,8 +1337,8 @@ setlocal iminsert=0
 setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,<:>,=elif,=except
+setlocal indentexpr=HtmlIndent()
+setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -1270,14 +1346,14 @@ setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
+setlocal matchpairs=(:),{:},[:],<:>
 setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=jedi#complete
+setlocal omnifunc=htmlcomplete#CompleteTags
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -1299,11 +1375,11 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
+if &syntax != 'htmldjango'
+setlocal syntax=htmldjango
 endif
 setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/python.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/media/data/www/luxnovias-django/.git/htmldjango.tags,/media/data/www/luxnovias-django/.git/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -1313,429 +1389,16 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 32) / 64)
+let s:l = 5 - ((4 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
+5
 normal! 0
 wincmd w
-2wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
 exe 'vert 2resize ' . ((&columns * 242 + 137) / 274)
-tabedit /media/data/www/domino-django/domino/apps/catalog/urls.py
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
-argglobal
-enew
-file NERD_tree_5
-let s:cpo_save=&cpo
-set cpo&vim
-nnoremap <buffer> <silent> <NL> :call nerdtree#invokeKeyMap("<C-j>")
-nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap("<C-k>")
-nnoremap <buffer> <silent>  :call nerdtree#invokeKeyMap('o')
-nnoremap <buffer> <silent> ? :call nerdtree#invokeKeyMap("?")
-nnoremap <buffer> <silent> A :call nerdtree#invokeKeyMap("A")
-nnoremap <buffer> <silent> B :call nerdtree#invokeKeyMap("B")
-nnoremap <buffer> <silent> CD :call nerdtree#invokeKeyMap("CD")
-nnoremap <buffer> <silent> C :call nerdtree#invokeKeyMap("C")
-nnoremap <buffer> <silent> D :call nerdtree#invokeKeyMap("D")
-nnoremap <buffer> <silent> F :call nerdtree#invokeKeyMap("F")
-nnoremap <buffer> <silent> I :call nerdtree#invokeKeyMap("I")
-nnoremap <buffer> <silent> J :call nerdtree#invokeKeyMap("J")
-nnoremap <buffer> <silent> K :call nerdtree#invokeKeyMap("K")
-nnoremap <buffer> <silent> O :call nerdtree#invokeKeyMap("O")
-nnoremap <buffer> <silent> P :call nerdtree#invokeKeyMap("P")
-nnoremap <buffer> <silent> R :call nerdtree#invokeKeyMap("R")
-nnoremap <buffer> <silent> T :call nerdtree#invokeKeyMap("T")
-nnoremap <buffer> <silent> U :call nerdtree#invokeKeyMap("U")
-nnoremap <buffer> <silent> X :call nerdtree#invokeKeyMap("X")
-nnoremap <buffer> <silent> cd :call nerdtree#invokeKeyMap("cd")
-nnoremap <buffer> <silent> e :call nerdtree#invokeKeyMap("e")
-nnoremap <buffer> <silent> f :call nerdtree#invokeKeyMap("f")
-nnoremap <buffer> <silent> gi :call nerdtree#invokeKeyMap("gi")
-nnoremap <buffer> <silent> gs :call nerdtree#invokeKeyMap("gs")
-nnoremap <buffer> <silent> go :call nerdtree#invokeKeyMap("go")
-nnoremap <buffer> <silent> i :call nerdtree#invokeKeyMap("i")
-nnoremap <buffer> <silent> m :call nerdtree#invokeKeyMap("m")
-nnoremap <buffer> <silent> o :call nerdtree#invokeKeyMap("o")
-nnoremap <buffer> <silent> p :call nerdtree#invokeKeyMap("p")
-nnoremap <buffer> <silent> q :call nerdtree#invokeKeyMap("q")
-nnoremap <buffer> <silent> r :call nerdtree#invokeKeyMap("r")
-nnoremap <buffer> <silent> s :call nerdtree#invokeKeyMap("s")
-nnoremap <buffer> <silent> t :call nerdtree#invokeKeyMap("t")
-nnoremap <buffer> <silent> u :call nerdtree#invokeKeyMap("u")
-nnoremap <buffer> <silent> x :call nerdtree#invokeKeyMap("x")
-nnoremap <buffer> <silent> <2-LeftMouse> :call nerdtree#invokeKeyMap("<2-LeftMouse>")
-nnoremap <buffer> <silent> <LeftRelease> <LeftRelease>:call nerdtree#invokeKeyMap("<LeftRelease>")
-nnoremap <buffer> <silent> <MiddleRelease> :call nerdtree#invokeKeyMap("<MiddleRelease>")
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=hide
-setlocal nobuflisted
-setlocal buftype=nofile
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'nerdtree'
-setlocal filetype=nerdtree
-endif
-setlocal foldcolumn=0
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal nomodifiable
-setlocal nrformats=octal,hex
-set number
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
-setlocal suffixesadd=
-setlocal noswapfile
-setlocal synmaxcol=3000
-if &syntax != 'nerdtree'
-setlocal syntax=nerdtree
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal winfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-wincmd w
-argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <C-Space> 
-nnoremap <buffer> <silent> K :call jedi#show_pydoc()
-noremap <buffer> \r :call jedi#rename()
-noremap <buffer> \n :call jedi#related_names()
-noremap <buffer> \d :call jedi#get_definition()
-noremap <buffer> \g :call jedi#goto()
-inoremap <buffer> <silent> . .=jedi#do_popup_on_dot() ? "\<C-X>\<C-O>\<C-N>" : ""
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=jedi#complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/domino-django/.git/python.tags,/media/data/www/domino-django/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 15 - ((12 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-15
-normal! 023l
-wincmd w
-argglobal
-edit /media/data/www/domino-django/domino/apps/catalog/views.py
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <C-Space> 
-nnoremap <buffer> <silent> K :call jedi#show_pydoc()
-noremap <buffer> \r :call jedi#rename()
-noremap <buffer> \n :call jedi#related_names()
-noremap <buffer> \d :call jedi#get_definition()
-noremap <buffer> \g :call jedi#goto()
-inoremap <buffer> <silent> . .=jedi#do_popup_on_dot() ? "\<C-X>\<C-O>\<C-N>" : ""
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'python'
-setlocal filetype=python
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetPythonIndent(v:lnum)
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,<:>,=elif,=except
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=jedi#complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'python'
-setlocal syntax=python
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/domino-django/.git/python.tags,/media/data/www/domino-django/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-11
-normal! 0
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
