@@ -1,7 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=/home/lantlord/.vim/bundle/vundle/
+set rtp+=/home/wantlord/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -43,10 +44,10 @@ set nocursorline
 colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
-imap <F3> <Esc>:mksession! /home/lantlord/.vim/session<CR>
-map <F3> <Esc>:mksession! /home/lantlord/.vim/session<CR>
-imap <F4> <Esc>:source /home/lantlord/.vim/session<CR>
-map <F4> <Esc>:source /home/lantlord/.vim/session<CR>
+imap <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>
+map <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>
+imap <F4> <Esc>:source /home/wantlord/.vim/session<CR>
+map <F4> <Esc>:source /home/wantlord/.vim/session<CR>
 nmap <C-n> :tabnew<CR>
 "imap <F10> <Esc>:q<CR>
 "map <F10> <Esc>:q<CR>
@@ -124,3 +125,7 @@ let g:jedi#auto_vim_configuration = 1
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#show_function_definition = 1
+inoremap { {}<Left>
+inoremap ( ()<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
