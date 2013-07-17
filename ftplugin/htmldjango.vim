@@ -32,3 +32,9 @@ syn region djangoComment start="{%\s*comment\s*%}" end="{%\s*endcomment\s*%}" co
 syn region djangoComBlock start="{#" end="#}" contains=djangoTodo containedin=ALLBUT,@djangoBlocks
 
 let b:current_syntax = "htmldjango"
+
+"" ANtlord's bindings
+imap <silent> \sc {% comment %
+map <silent> \sc O{% comment %<ESC>
+imap <silent> \ec {% endcomment %
+map <silent> \ec o{% endcomment %<ESC>
