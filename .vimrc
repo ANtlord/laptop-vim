@@ -129,3 +129,4 @@ inoremap { {}<Left>
 inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
+let NERDTreeIgnore = ['\.pyc$']
