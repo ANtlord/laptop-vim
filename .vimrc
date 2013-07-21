@@ -1,7 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=/home/wantlord/.vim/bundle/vundle/
+set rtp+=/home/lantlord/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -41,7 +41,7 @@ set shiftwidth=4
 set fencs=utf8,cp1251
 set ffs=unix,dos
 set nocursorline
-colorscheme peachpuff
+"colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 imap <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>

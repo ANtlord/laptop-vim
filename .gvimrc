@@ -1,4 +1,6 @@
-colorscheme torte
+"colorscheme torte
+colorscheme blackboard
+"colorscheme solarized 
 hi Pmenu guifg=#ffffff guibg=#444444
 hi PmenuSel guifg=black
 hi CursorLine guibg=#272727
@@ -16,6 +18,9 @@ set cursorline
 
 "call pathogen#infect()
 "call pathogen#helptags()
+"pythonFuncParams
+"hi pythonFuncName guifg=#77f
+"pythonKeyword
 
 "filetype plugin indent on
 "Bundle 'https://github.com/vim-scripts/Pydiction.git'
