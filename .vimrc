@@ -1,7 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=/home/lantlord/.vim/bundle/vundle/
+set rtp+=/home/wantlord/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -18,6 +18,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/vim-scripts/The-NERD-Commenter.git'
+Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -41,7 +42,7 @@ set shiftwidth=4
 set fencs=utf8,cp1251
 set ffs=unix,dos
 set nocursorline
-"colorscheme peachpuff
+colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 imap <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>
@@ -125,8 +126,9 @@ let g:jedi#auto_vim_configuration = 1
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#show_function_definition = 1
-inoremap { {}<Left>
-inoremap ( ()<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap ( ()<Left>
+"inoremap ' ''<Left>
+"inoremap " ""<Left>
 let NERDTreeIgnore = ['\.pyc$']
