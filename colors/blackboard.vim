@@ -22,7 +22,7 @@ hi NonText 		guifg=#808080 guibg=black	gui=none
 
 hi CursorLine guibg=#222
 hi Constant guifg=#00aa00
-hi Visual       gui=reverse
+hi Visual       gui=reverse guibg=#000
 hi VertSplit    guifg=#444444 guibg=#444444
 hi StatusLine   guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC guifg=#857b6f guibg=#444444

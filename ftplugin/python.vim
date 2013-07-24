@@ -623,6 +623,9 @@ map <silent> \bf o= models.BooleanField(default=False, verbose_name=u'')<ESC>I<s
 imap <silent> \im = models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)<ESC>I<space><left>
 map <silent> \im o= models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)<ESC>I<space><left>
 
+imap <silent> \ff = models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
+map <silent> \ff o= models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
+
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>
 
