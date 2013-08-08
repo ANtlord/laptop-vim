@@ -76,6 +76,7 @@ imap <C-a> <Esc>:1<CR>vG<end>
 map <C-a> :1<CR>vG<end>
 map <tab> >gv
 map <S-tab> <gv
+map г u
 map р h
 map о j
 map л k
@@ -119,6 +120,7 @@ let NERDTreeShowHidden=1
 " ==============================================
 Bundle 'https://github.com/davidhalter/jedi-vim.git'
 Bundle 'https://github.com/kevinw/pyflakes-vim.git'
+Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 "let g:jedi#goto_command = "<leader>g"
