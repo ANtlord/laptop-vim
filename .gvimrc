@@ -40,4 +40,4 @@ set guioptions-=b " отключаем нижний scrollbar
 set guioptions-=l " отключаем левый scrollbar
 set guioptions-=L " отключаем левый scrollbar при вертикальном разделении окна
 set guioptions-=T " отключаем панель инструментов
-"set guioptions-=m " отключаем меню
+set guioptions-=m " отключаем меню

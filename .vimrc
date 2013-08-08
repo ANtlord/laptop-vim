@@ -118,6 +118,7 @@ let NERDTreeShowHidden=1
 " JEDI vim
 " ==============================================
 Bundle 'https://github.com/davidhalter/jedi-vim.git'
+Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 "let g:jedi#goto_command = "<leader>g"

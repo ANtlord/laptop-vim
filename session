@@ -28,8 +28,6 @@ map = gt
 map - gT
 nmap Q gqap
 vmap Q gq
-map <silent> \ec o{% endcomment %
-map <silent> \sc O{% comment %
 map <silent> \setfunc :call SetFunc()
 map <silent> \ff o= models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)I <Left>
 map <silent> \im o= models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)I <Left>
@@ -37,6 +35,8 @@ map <silent> \bf o= models.BooleanField(default=False, verbose_name=u'')I <Lef
 map <silent> \if o= models.IntegerField(default=0, blank=True, null=True, verbose_name=u'')I <Left>
 map <silent> \fk o= models.ForeignKey('to model', related_name='name for access', verbose_name=u'')I <Left>
 map <silent> \cf o= models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')I <Left>
+map <silent> \ec o{%endcomment
+map <silent> \sc O{%comment
 nnoremap <silent> \b :CommandTBuffer
 nnoremap <silent> \t :CommandT
 nmap \ca <Plug>NERDCommenterAltDelims
@@ -169,8 +169,6 @@ map ц w
 map щ o
 map ш i
 map р h
-imap <silent> \ec {% endcomment %
-imap <silent> \sc {% comment %
 imap <silent> \setfunc :call SetFunc()
 imap <silent> \ff = models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)I <Left>
 imap <silent> \im = models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)I <Left>
@@ -178,18 +176,21 @@ imap <silent> \bf = models.BooleanField(default=False, verbose_name=u'')I <Lef
 imap <silent> \if = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'')I <Left>
 imap <silent> \fk = models.ForeignKey('to model', related_name='name for access', verbose_name=u'')I <Left>
 imap <silent> \cf = models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')I <Left>
+imap <silent> \ec {%endcomment
+imap <silent> \sc {%comment
+imap {% {%  %}<Left><Left><Left>
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
 set background=dark
 set backspace=indent,eol,start
-set completeopt=longest,menuone
+set completeopt=menuone,longest,preview
 set directory=/tmp
 set expandtab
 set fileencodings=utf8,cp1251
 set guicursor=a:blinkon0
 set guifont=Liberation\ Mono\ 9
-set guioptions=agimt
+set guioptions=agit
 set helplang=ru
 set hlsearch
 set ignorecase
@@ -201,7 +202,7 @@ set shiftwidth=4
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabline=%!MyTabLine()
 set tabstop=4
-set window=66
+set window=67
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -210,23 +211,96 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +46 transoil/templates/pages/contacts_view.html
+badd +2 .venv/src/oil_base/oil_base/catalog/models.py
+badd +7 transoil/apps/catalog/models.py
+badd +62 transoil/settings.py
+badd +40 requirements.pip
+badd +57 .venv/src/clever-tools/Makefile
+badd +0 .venv/src/clever-tools/how
+badd +58 .venv/src/clever-tools/setup.py
+badd +2 transoil/oilbase/.gitignore
+badd +8 README.md
+badd +2 transoil/oilbase/catalog/models.py
+badd +2 transoil/oilbase/catalog/views.py
+badd +7 transoil/apps/catalog/views.py
+badd +2 transoil/oilbase/catalog/forms.py
+badd +3 oilbase/catalog/forms.py
+badd +3 transoil/apps/catalog/forms.py
+badd +7 oilbase/catalog/views.py
+badd +28 oilbase/feedback/models.py
+badd +4 transoil/apps/feedback/models.py
+badd +0 transoil/apps/feedback/forms.py
+badd +46 .venv/src/clever-tools/clever/catalog/models.py
+badd +2 /media/data/www/transoil/.venv/src/clever-tools/clever/deferred/__init__.py
+badd +66 /media/data/www/transoil/.venv/src/clever-tools/clever/deferred/base.py
+badd +2 /media/data/www/transoil/.venv/src/clever-tools/clever/deferred/fields.py
+badd +19 oilbase/catalog/models.py
+badd +0 oilbase/catalog/__init__.py
 badd +1 manage.py
-badd +4 transoil/templates/news/news_list.html
-badd +12 transoil/templates/news/index.html
-badd +6 transoil/apps/catalog/urls.py
-badd +5 transoil/apps/news/urls.py
-badd +54 transoil/static/news_script.js
-badd +17 transoil/apps/catalog/views.py
-badd +65 transoil/apps/news/views.py
-badd +44 transoil/static/markup/blocks/b-news-list/b-news-list.bemhtml
-badd +1 /media/data/www/transoil/transoil/templates/news/detail.html
-badd +26 transoil/templates/base.html
-badd +12 transoil/_settings/template.py
-badd +8 transoil/settings.py
-badd +27 .venv/src/clever-tools/clever/core/templates/base_layout.html
-badd +0 transoil/static/markup/pages/news/news.html
-silent! argdel *
-edit transoil/static/news_script.js
+badd +12 fabfile.py
+badd +15 .gitignore
+badd +2 project/settings.py
+badd +1 project/_settings/__init__.py
+badd +1 project/_settings/fixtures.py
+badd +1 project/_settings/logging.py
+badd +10 project/_settings/media.py
+badd +1 project/_settings/middlewares.py
+badd +1 project/_settings/session.py
+badd +1 project/_settings/template.py
+badd +1 project/_settings/applications/__init__.py
+badd +1 project/_settings/applications/autoslug.py
+badd +1 project/_settings/applications/bem.py
+badd +1 project/_settings/applications/ckeditor.py
+badd +1 project/_settings/applications/clever.py
+badd +1 project/_settings/applications/compress.py
+badd +1 project/_settings/applications/debug.py
+badd +1 project/_settings/applications/email.py
+badd +1 project/_settings/applications/grapelli.py
+badd +1 project/_settings/applications/haystack.py
+badd +1 project/_settings/applications/redis.py
+badd +1 project/_settings/applications/templates.py
+badd +1 project/_settings/applications/thumbnail.py
+badd +1 project/apps/catalog/models.py
+badd +18 project/apps/catalog/admin.py
+badd +1 project/apps/catalog/forms.py
+badd +1 project/apps/catalog/tests.py
+badd +1 project/apps/catalog/urls.py
+badd +12 project/apps/catalog/views.py
+badd +1 project/apps/feedback/__init__.py
+badd +1 project/apps/feedback/admin.py
+badd +1 project/apps/feedback/forms.py
+badd +9 project/apps/feedback/models.py
+badd +1 project/apps/feedback/urls.py
+badd +1 project/apps/feedback/views.py
+badd +1 project/apps/news/admin.py
+badd +1 project/apps/news/models.py
+badd +1 project/apps/news/tests.py
+badd +1 project/apps/news/urls.py
+badd +1 project/apps/news/views.py
+badd +1 project/apps/pages/admin.py
+badd +1 project/apps/pages/forms.py
+badd +1 project/apps/pages/models.py
+badd +1 project/apps/pages/tests.py
+badd +1 project/apps/pages/urls.py
+badd +19 project/apps/pages/views.py
+badd +1 project/apps/search/__init__.py
+badd +1 project/apps/search/admin.py
+badd +1 project/apps/search/models.py
+badd +1 project/apps/search/tests.py
+badd +1 project/apps/search/urls.py
+badd +3 project/apps/search/views.py
+badd +1 project/apps/__init__.py
+badd +1 project/urls.py
+badd +1 project/_settings/cache.py
+badd +1 project/local_settings.py
+badd +1 project/apps/catalog/__init__.py
+badd +2 project/templates/pages/homepage_view.html
+badd +23 project/templates/pages/promo_block.html
+badd +0 project/templates/base.html
+badd +0 project/templates/footer.html
+args oilbase/catalog/models.py
+edit project/templates/footer.html
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -244,7 +318,7 @@ exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
 exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
 argglobal
 enew
-file NERD_tree_1
+file NERD_tree_10
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <silent> <BS> =AutoPairsDelete()
@@ -438,422 +512,6 @@ setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=j1,J1
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/javascript.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 04l
-wincmd w
-argglobal
-edit transoil/templates/news/index.html
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <silent> <BS> =AutoPairsDelete()
-inoremap <buffer> <silent> î :call AutoPairsJump()a
-inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
-inoremap <buffer> <silent> â =AutoPairsBackInsert()
-inoremap <buffer> <silent> å =AutoPairsFastWrap()
-inoremap <buffer> <silent>  =AutoPairsDelete()
-inoremap <buffer> <silent>   =AutoPairsSpace()
-inoremap <buffer> <silent> " =AutoPairsInsert('"')
-inoremap <buffer> <silent> ' =AutoPairsInsert('''')
-inoremap <buffer> <silent> ( =AutoPairsInsert('(')
-inoremap <buffer> <silent> ) =AutoPairsInsert(')')
-noremap <buffer> <silent> î :call AutoPairsJump()
-noremap <buffer> <silent> ð :call AutoPairsToggle()
-inoremap <buffer> <silent> [ =AutoPairsInsert('[')
-inoremap <buffer> <silent> ] =AutoPairsInsert(']')
-inoremap <buffer> <silent> ` =AutoPairsInsert('`')
-inoremap <buffer> <silent> { =AutoPairsInsert('{')
-inoremap <buffer> <silent> } =AutoPairsInsert('}')
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
-setlocal commentstring=<!--%s-->
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'htmldjango'
-setlocal filetype=htmldjango
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=HtmlIndent()
-setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'htmldjango'
-setlocal syntax=htmldjango
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/htmldjango.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-5
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
-exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
-tabedit /media/data/www/transoil/transoil/templates/news/detail.html
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 137 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 136 + 137) / 274)
-argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <silent> <BS> =AutoPairsDelete()
-inoremap <buffer> <silent> î :call AutoPairsJump()a
-inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
-inoremap <buffer> <silent> â =AutoPairsBackInsert()
-inoremap <buffer> <silent> å =AutoPairsFastWrap()
-inoremap <buffer> <silent>  =AutoPairsDelete()
-inoremap <buffer> <silent>   =AutoPairsSpace()
-inoremap <buffer> <silent> " =AutoPairsInsert('"')
-inoremap <buffer> <silent> ' =AutoPairsInsert('''')
-inoremap <buffer> <silent> ( =AutoPairsInsert('(')
-inoremap <buffer> <silent> ) =AutoPairsInsert(')')
-noremap <buffer> <silent> î :call AutoPairsJump()
-noremap <buffer> <silent> ð :call AutoPairsToggle()
-inoremap <buffer> <silent> [ =AutoPairsInsert('[')
-inoremap <buffer> <silent> ] =AutoPairsInsert(']')
-inoremap <buffer> <silent> ` =AutoPairsInsert('`')
-inoremap <buffer> <silent> { =AutoPairsInsert('{')
-inoremap <buffer> <silent> } =AutoPairsInsert('}')
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
-setlocal commentstring=<!--%s-->
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'htmldjango'
-setlocal filetype=htmldjango
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=HtmlIndent()
-setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'htmldjango'
-setlocal syntax=htmldjango
-endif
-setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/.git/htmldjango.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-set nowrap
-setlocal nowrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 32) / 64)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 042l
-wincmd w
-argglobal
-edit transoil/static/markup/pages/news/news.html
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <silent> <BS> =AutoPairsDelete()
-inoremap <buffer> <silent> î :call AutoPairsJump()a
-inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
-inoremap <buffer> <silent> â =AutoPairsBackInsert()
-inoremap <buffer> <silent> å =AutoPairsFastWrap()
-inoremap <buffer> <silent>  =AutoPairsDelete()
-inoremap <buffer> <silent>   =AutoPairsSpace()
-inoremap <buffer> <silent> " =AutoPairsInsert('"')
-inoremap <buffer> <silent> ' =AutoPairsInsert('''')
-inoremap <buffer> <silent> ( =AutoPairsInsert('(')
-inoremap <buffer> <silent> ) =AutoPairsInsert(')')
-noremap <buffer> <silent> î :call AutoPairsJump()
-noremap <buffer> <silent> ð :call AutoPairsToggle()
-inoremap <buffer> <silent> [ =AutoPairsInsert('[')
-inoremap <buffer> <silent> ] =AutoPairsInsert(']')
-inoremap <buffer> <silent> ` =AutoPairsInsert('`')
-inoremap <buffer> <silent> { =AutoPairsInsert('{')
-inoremap <buffer> <silent> } =AutoPairsInsert('}')
-let &cpo=s:cpo_save
-unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
 setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
@@ -940,7 +598,7 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=4
-setlocal tags=/media/data/www/transoil/transoil/static/markup/.git/html.tags,/media/data/www/transoil/transoil/static/markup/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/media/data/www/transoil/.git/html.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -950,17 +608,152 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-96,108fold
-let s:l = 110 - ((35 * winheight(0) + 32) / 64)
+let s:l = 2 - ((1 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-110
-normal! 028l
+2
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 137 + 137) / 274)
-exe 'vert 2resize ' . ((&columns * 136 + 137) / 274)
-tabnext 2
+argglobal
+edit project/templates/base.html
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <BS> =AutoPairsDelete()
+inoremap <buffer> <silent> î :call AutoPairsJump()a
+inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
+inoremap <buffer> <silent> â =AutoPairsBackInsert()
+inoremap <buffer> <silent> å =AutoPairsFastWrap()
+inoremap <buffer> <silent>  =AutoPairsDelete()
+inoremap <buffer> <silent>   =AutoPairsSpace()
+inoremap <buffer> <silent> " =AutoPairsInsert('"')
+inoremap <buffer> <silent> ' =AutoPairsInsert('''')
+inoremap <buffer> <silent> ( =AutoPairsInsert('(')
+inoremap <buffer> <silent> ) =AutoPairsInsert(')')
+noremap <buffer> <silent> î :call AutoPairsJump()
+noremap <buffer> <silent> ð :call AutoPairsToggle()
+inoremap <buffer> <silent> [ =AutoPairsInsert('[')
+inoremap <buffer> <silent> ] =AutoPairsInsert(']')
+inoremap <buffer> <silent> ` =AutoPairsInsert('`')
+inoremap <buffer> <silent> { =AutoPairsInsert('{')
+inoremap <buffer> <silent> } =AutoPairsInsert('}')
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'htmldjango'
+setlocal filetype=htmldjango
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndent()
+setlocal indentkeys=o,O,<Return>,<>>,{,},!^F
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'htmldjango'
+setlocal syntax=htmldjango
+endif
+setlocal tabstop=4
+setlocal tags=/media/data/www/transoil/.git/htmldjango.tags,/media/data/www/transoil/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 33) / 66)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 137) / 274)
+exe 'vert 2resize ' . ((&columns * 121 + 137) / 274)
+exe 'vert 3resize ' . ((&columns * 120 + 137) / 274)
+tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
