@@ -52,8 +52,8 @@ map <F4> <Esc>:source /home/wantlord/.vim/session<CR>
 nmap <C-n> :tabnew<CR>
 "imap <F10> <Esc>:q<CR>
 "map <F10> <Esc>:q<CR>
-imap <C-o> <Esc>:e.<CR>
-map <C-o> <Esc>:e.<CR>
+imap <C-o> <Esc>:NERDTreeFind<CR>
+map <C-o> <Esc>:NERDTreeFind<CR>
 map - <Esc>gT
 imap - <Esc>gT
 map = <Esc>gt
@@ -129,9 +129,4 @@ let g:jedi#auto_vim_configuration = 1
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#show_function_definition = 1
-"inoremap [ []<Left>
-"inoremap { {}<Left>
-"inoremap ( ()<Left>
-"inoremap ' ''<Left>
-"inoremap " ""<Left>
 let NERDTreeIgnore = ['\.pyc$']
