@@ -21,6 +21,7 @@ hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold
 hi NonText 		guifg=#808080 guibg=black	gui=none
 
 hi CursorLine guibg=#222
+hi pythonDecorator guifg=#55f
 hi Constant guifg=#00aa00
 hi Visual       gui=reverse guibg=#000
 hi VertSplit    guifg=#444444 guibg=#444444
