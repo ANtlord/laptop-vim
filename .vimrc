@@ -77,6 +77,7 @@ map <C-a> :1<CR>vG<end>
 map <tab> >gv
 map <S-tab> <gv
 map г u
+map ф a
 map р h
 map о j
 map л k

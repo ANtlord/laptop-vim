@@ -614,8 +614,11 @@ map <silent> \cf o= models.CharField(max_length=255, blank=True, null=True, verb
 imap <silent> \fk = models.ForeignKey('to model', related_name='name for access', verbose_name=u'')<ESC>I<space><left>
 map <silent> \fk o= models.ForeignKey('to model', related_name='name for access', verbose_name=u'')<ESC>I<space><left>
 
-imap <silent> \if = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
-map <silent> \if o= models.IntegerField(default=0, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
+imap <silent> \if = models.IntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
+map <silent> \if o= models.IntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
+
+imap <silent> \pf = models.PositiveIntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
+map <silent> \pf o= models.PositiveIntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
 
 imap <silent> \bf = models.BooleanField(default=False, verbose_name=u'')<ESC>I<space><left>
 map <silent> \bf o= models.BooleanField(default=False, verbose_name=u'')<ESC>I<space><left>
