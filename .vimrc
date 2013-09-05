@@ -93,6 +93,12 @@ map з p
 map и b
 map ц w
 map т n
+map И B
+
+map <a-l> <C-w>l
+map <a-h> <C-w>h
+map <a-j> <C-w>j
+map <a-k> <C-w>k
 " Source a global configuration file if available
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
