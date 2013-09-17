@@ -11,6 +11,8 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'https://github.com/robhudson/snipmate_for_django.git'
+Bundle 'https://github.com/msanders/snipmate.vim.git'
 Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -112,6 +114,8 @@ nmap Q gqap
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType python set ft=python.django " For SnipMate
+"autocmd FileType html set ft=htmldjango.html " For SnipMate
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 :imap <C-BS> <C-W>
 :imap <A-BS> <C-W>
