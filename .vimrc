@@ -58,6 +58,7 @@ imap <C-o> <Esc>:NERDTreeFind<CR>
 map <C-o> <Esc>:NERDTreeFind<CR>
 map - <Esc>gT
 imap - <Esc>gT
+map fr gT
 map = <Esc>gt
 imap = <Esc>gt
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
@@ -124,7 +125,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
 let NERDTreeShowHidden=1
-
+let NERDChristmasTree=1
+let NERDTreeDirArrows=0
+let NERDTreeHighlightCursorline=0
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
 " ==============================================
 " JEDI vim
