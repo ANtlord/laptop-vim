@@ -17,16 +17,17 @@ Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+"Bundle 'tpope/vim-rails.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/vim-scripts/The-NERD-Commenter.git'
 Bundle 'https://github.com/jiangmiao/auto-pairs.git'
-" vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-" non github repos
 Bundle 'git://git.wincent.com/command-t.git'
-" ...
+Bundle 'Valloric/YouCompleteMe'
+"
+"
+"
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -112,9 +113,9 @@ nmap Q gqap
 "map < <gv
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType python set omnifunc=pysmell#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
@@ -128,19 +129,27 @@ let NERDTreeShowHidden=1
 let NERDChristmasTree=1
 let NERDTreeDirArrows=0
 let NERDTreeHighlightCursorline=0
+let NERDTreeIgnore = ['\.pyc$']
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
 " ==============================================
 " JEDI vim
 " ==============================================
-Bundle 'https://github.com/davidhalter/jedi-vim.git'
+"Bundle 'https://github.com/davidhalter/jedi-vim.git'
 Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
-"let g:jedi#goto_command = "<leader>g"
-"let g:jedi#related_names_command = "<leader>n"
-"let g:jedi#get_definition_command = "<leader>d"
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 1
-let g:jedi#show_function_definition = 1
-let NERDTreeIgnore = ['\.pyc$']
+"let g:jedi#auto_initialization = 1
+"let g:jedi#auto_vim_configuration = 1
+""let g:jedi#goto_command = "<leader>g"
+""let g:jedi#related_names_command = "<leader>n"
+""let g:jedi#get_definition_command = "<leader>d"
+"let g:jedi#popup_on_dot = 1
+"let g:jedi#popup_select_first = 1
+"let g:jedi#show_function_definition = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
