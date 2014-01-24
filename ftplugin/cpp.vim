@@ -1,11 +1,13 @@
 filetype plugin on
 set nocp
 Bundle 'https://github.com/vim-scripts/OmniCppComplete.git'
+Bundle 'octol/vim-cpp-enhanced-highlight'
 " configure tags - add additional tags here or comment out not-used ones
-set tags=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/al
-set tags+=~/.vim/tags/wx
+"set tags=~/.vim/tags/cpp
+"set tags=~/.vim/tags/ogre
+"set tags+=~/.vim/tags/gl
+"set tags+=~/.vim/tags/al
+"set tags+=~/.vim/tags/wx
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4
 " build tags of your own project with Ctrl-F12
@@ -80,3 +82,4 @@ imap <silent> \crc <ESC>:call CreateClass()<CR>
 map <silent> \crc :call CreateClass()<CR>
 imap <silent> \ce <ESC>:call CreateCharEnum()<CR>
 map <silent> \ce :call CreateCharEnum()<CR>
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'

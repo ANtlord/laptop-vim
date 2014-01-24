@@ -1,3 +1,4 @@
+set t_Co=65536
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -17,6 +18,7 @@ Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Tagbar'
 "Bundle 'tpope/vim-rails.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/vim-scripts/The-NERD-Commenter.git'
@@ -25,8 +27,8 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
-"
-"
+Bundle 'https://github.com/kevinw/pyflakes-vim.git'
+Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 "
 
 let mapleader = "\\"
@@ -48,10 +50,10 @@ set nocursorline
 colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
-imap <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>
-map <F3> <Esc>:mksession! /home/wantlord/.vim/session<CR>
-imap <F4> <Esc>:source /home/wantlord/.vim/session<CR>
-map <F4> <Esc>:source /home/wantlord/.vim/session<CR>
+imap <F3> <Esc>:mksession! ~/.vim/session<CR>
+map <F3> <Esc>:mksession! ~/.vim/session<CR>
+imap <F4> <Esc>:source ~/.vim/session<CR>
+map <F4> <Esc>:source ~/.vim/session<CR>
 nmap <C-n> :tabnew<CR>
 "imap <F10> <Esc>:q<CR>
 "map <F10> <Esc>:q<CR>
@@ -99,10 +101,32 @@ map ц w
 map т n
 map И B
 
+" Better navigating through omnicomplete option list
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" Bind for fast moving between splits.
 map <a-l> <C-w>l
 map <a-h> <C-w>h
 map <a-j> <C-w>j
 map <a-k> <C-w>k
+map h <C-w>h
+map l <C-w>l
+map j <C-w>j
+map k <C-w>k
 " Source a global configuration file if available
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
@@ -122,7 +146,7 @@ nmap Q gqap
 :imap <C-BS> <C-W>
 :imap <A-BS> <C-W>
 "au BufEnter *.py source ~/.vim/plugin/python.vim
-"let g:ctags_path='/home/wantlord/.vim/ctags.vim'
+"let g:ctags_path='/home/uantlord/.vim/ctags.vim'
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
 let NERDTreeShowHidden=1
@@ -135,8 +159,6 @@ let NERDTreeIgnore = ['\.pyc$']
 " JEDI vim
 " ==============================================
 "Bundle 'https://github.com/davidhalter/jedi-vim.git'
-Bundle 'https://github.com/kevinw/pyflakes-vim.git'
-Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 "let g:jedi#auto_initialization = 1
 "let g:jedi#auto_vim_configuration = 1
 ""let g:jedi#goto_command = "<leader>g"
@@ -149,7 +171,13 @@ Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_register_as_syntastic_checker = 1
+" It seems that old versions of vim do not support more than 256 color values?
+hi CursorLine cterm=NONE ctermbg=234
+hi Pmenu ctermfg=white ctermbg=238
+hi PmenuSel ctermfg=black
+set cursorline
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>

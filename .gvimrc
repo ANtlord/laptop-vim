@@ -11,7 +11,6 @@ hi TabLine guifg=black
 set guifont=Liberation\ Mono\ 9
 set lines=40
 set columns=160
-set cursorline
 "autocmd FileType python setlocal omnifunc=pysmell#Complete
 "Bundle 'https://github.com/klen/python-mode.git'
 "filetype off
