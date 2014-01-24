@@ -8,13 +8,9 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'https://github.com/robhudson/snipmate_for_django.git'
-Bundle 'https://github.com/msanders/snipmate.vim.git'
 Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
+Bundle 'https://github.com/msanders/snipmate.vim.git'
+Bundle 'https://github.com/robhudson/snipmate_for_django.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -27,7 +23,6 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 "
 
@@ -119,10 +114,6 @@ inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Bind for fast moving between splits.
-map <a-l> <C-w>l
-map <a-h> <C-w>h
-map <a-j> <C-w>j
-map <a-k> <C-w>k
 map h <C-w>h
 map l <C-w>l
 map j <C-w>j
@@ -173,11 +164,15 @@ let NERDTreeIgnore = ['\.pyc$']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_register_as_syntastic_checker = 0
 " It seems that old versions of vim do not support more than 256 color values?
 hi CursorLine cterm=NONE ctermbg=234
 hi Pmenu ctermfg=white ctermbg=238
+hi Search ctermfg=black
 hi PmenuSel ctermfg=black
+hi SpellBad ctermbg=088 ctermfg=white
 set cursorline
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+let g:ycm_key_list_select_completion = ['Down']
+let g:ycm_key_list_previous_completion = ['Up']

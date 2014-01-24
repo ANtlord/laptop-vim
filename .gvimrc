@@ -1,3 +1,7 @@
+map <a-l> <C-w>l
+map <a-h> <C-w>h
+map <a-j> <C-w>j
+map <a-k> <C-w>k
 "colorscheme torte
 colorscheme blackboard
 "colorscheme solarized 

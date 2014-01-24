@@ -81,6 +81,8 @@
 
 " For version 5.x: Clear all syntax items
 " For versions greater than 6.x: Quit when a syntax file was already loaded
+
+Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 if version < 600
   syntax clear
 elseif exists("b:current_syntax")
@@ -634,20 +636,3 @@ map <silent> <F5> oimport pdb; pdb.set_trace()<ESC>
 
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-"set completeopt=longest,menuone
-"function! OmniPopup(action)
-    "if pumvisible()
-        "if a:action == 'j'
-            "return "\<C-N>"
-        "elseif a:action == 'k'
-            "return "\<C-P>"
-        "endif
-    "endif
-    "return a:action
-"endfunction
-
-"inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-"inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
