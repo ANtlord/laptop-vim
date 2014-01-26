@@ -636,3 +636,6 @@ map <silent> <F5> oimport pdb; pdb.set_trace()<ESC>
 
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>
+
+hi pythonParamName ctermfg=027
+hi pythonClassName ctermfg=034

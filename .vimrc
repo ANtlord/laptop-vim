@@ -171,6 +171,7 @@ hi Pmenu ctermfg=white ctermbg=238
 hi Search ctermfg=black
 hi PmenuSel ctermfg=black
 hi SpellBad ctermbg=088 ctermfg=white
+hi Comment guifg=#777777 ctermfg=240
 set cursorline
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>

@@ -10,7 +10,6 @@ hi PmenuSel guifg=black
 hi CursorLine guibg=#272727
 hi Constant guifg=#00aa00
 hi Type guifg=#7777ff
-hi Comment guifg=#777777
 hi TabLine guifg=black
 set guifont=Liberation\ Mono\ 9
 set lines=40
