@@ -24,7 +24,6 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
-"
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -128,9 +127,9 @@ nmap Q gqap
 "map < <gv
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType python set omnifunc=pysmell#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
@@ -175,5 +174,6 @@ hi Comment guifg=#777777 ctermfg=240
 set cursorline
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = ['Down']
 let g:ycm_key_list_previous_completion = ['Up']
