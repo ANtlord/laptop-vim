@@ -53,6 +53,8 @@ nmap <C-n> :tabnew<CR>
 "map <F10> <Esc>:q<CR>
 imap <C-o> <Esc>:NERDTreeFind<CR>
 map <C-o> <Esc>:NERDTreeFind<CR>
+imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
+map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map - <Esc>gT
 imap - <Esc>gT
 map fr gT
@@ -76,6 +78,8 @@ imap <C-a> <Esc>:1<CR>vG<end>
 map <C-a> :1<CR>vG<end>
 map <tab> >gv
 map <S-tab> <gv
+map У E
+map у e
 map г u
 map ф a
 map р h
@@ -93,7 +97,11 @@ map з p
 map и b
 map ц w
 map т n
+map ы s
 map И B
+
+map . {>}``
+map , {<}``
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim

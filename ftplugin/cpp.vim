@@ -65,6 +65,15 @@ function! CreateClass()
 	exe ":norm o" . "};"
 endfunction
 
+function! DefineClassFile()
+    let file_name = expand('%:t')
+    let file_name = substitute(file_name, ".*", "\\U\\0", "")
+    let file_name = substitute(file_name, "\\.", "_", "")
+    exe ":norm ggO" . "#ifndef " . file_name
+    exe ":norm o" . "#define " . file_name
+    exe ":norm Go" . "#endif //" . file_name
+endfunction
+
 function! CreateCharEnum()
 	let a = input('Enter enum name: ')
 	exe ":norm o" . "enum ".a." : char {}"
