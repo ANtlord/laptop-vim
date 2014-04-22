@@ -185,3 +185,31 @@ nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = ['Down']
 let g:ycm_key_list_previous_completion = ['Up']
+
+"set path=$PWD/include,$PWD/src
+
+function! Mosh_Flip_Ext()
+    let file_name = expand('%:t')
+    if match(expand("%:t"),'\.cpp') > 0
+        let file_name = substitute(file_name, ".cpp", ".h", "")
+        let bufname = bufname(file_name)
+
+        if (strlen(bufname) > 0)
+            exe ":buffer ".bufname
+        else
+            exe ":open include/".file_name
+        endif
+
+    elseif match(expand("%:t"),"\.h") > 0
+        let file_name = substitute(file_name, ".h", ".cpp", "")
+        let bufname = bufname(file_name)
+
+        if (strlen(bufname) > 0)
+            exe ":buffer ".bufname
+        else
+            exe ":open src/".file_name
+        endif
+    endif
+endfun
+
+map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
