@@ -55,10 +55,10 @@ imap <C-o> <Esc>:NERDTreeFind<CR>
 map <C-o> <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
-map - <Esc>gT
+nmap - <Esc>gT
 imap - <Esc>gT
 map fr gT
-map = <Esc>gt
+nmap = <Esc>gt
 imap = <Esc>gt
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\<lt>C-n>" :
@@ -100,8 +100,8 @@ map т n
 map ы s
 map И B
 
-map . {>}``
-map , {<}``
+nmap . {>}``
+nmap , {<}``
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -121,10 +121,10 @@ inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Bind for fast moving between splits.
-map h <C-w>h
-map l <C-w>l
-map j <C-w>j
-map k <C-w>k
+nmap h <C-w>h
+nmap l <C-w>l
+nmap j <C-w>j
+nmap k <C-w>k
 " Source a global configuration file if available
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
@@ -141,8 +141,8 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
-:imap <C-BS> <C-W>
-:imap <A-BS> <C-W>
+imap <C-BS> <C-W>
+imap <A-BS> <C-W>
 "au BufEnter *.py source ~/.vim/plugin/python.vim
 "let g:ctags_path='/home/uantlord/.vim/ctags.vim'
 "let g:ctags_statusline=1 
