@@ -213,3 +213,6 @@ function! Mosh_Flip_Ext()
 endfun
 
 map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
+
+au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
+au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
