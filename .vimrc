@@ -51,8 +51,8 @@ map <F4> <Esc>:source ~/.vim/session<CR>
 nmap <C-n> :tabnew<CR>
 "imap <F10> <Esc>:q<CR>
 "map <F10> <Esc>:q<CR>
-imap <C-o> <Esc>:NERDTreeFind<CR>
-map <C-o> <Esc>:NERDTreeFind<CR>
+"imap  <A-o> <Esc>:NERDTreeFind<CR>
+nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 nmap - <Esc>gT
@@ -76,8 +76,8 @@ imap <C-h> <Esc> :%s///gc
 map <C-h> :%s///gc
 imap <C-a> <Esc>:1<CR>vG<end>
 map <C-a> :1<CR>vG<end>
-map <tab> >gv
-map <S-tab> <gv
+vmap <tab> >gv
+vmap <S-tab> <gv
 map У E
 map у e
 map г u
@@ -173,21 +173,15 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_register_as_syntastic_checker = 0
 " It seems that old versions of vim do not support more than 256 color values?
-hi CursorLine cterm=NONE ctermbg=234
-hi Pmenu ctermfg=white ctermbg=238
-hi Search ctermfg=black
-hi PmenuSel ctermfg=black
-hi SpellBad ctermbg=088 ctermfg=white
-hi Comment guifg=#777777 ctermfg=240
-set cursorline
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 1
-let g:ycm_key_list_select_completion = ['Down']
-let g:ycm_key_list_previous_completion = ['Up']
+"let g:ycm_key_list_select_completion = ['Down']
+"let g:ycm_key_list_previous_completion = ['Up']
 
 "set path=$PWD/include,$PWD/src
 
+" Method for switching between header and source file.
 function! Mosh_Flip_Ext()
     let file_name = expand('%:t')
     if match(expand("%:t"),'\.cpp') > 0
@@ -211,8 +205,17 @@ function! Mosh_Flip_Ext()
         endif
     endif
 endfun
-
 map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
 
+" For scripts of framework OGRE 3D
 au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
+au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
+
+hi CursorLine cterm=NONE ctermbg=235
+hi Pmenu ctermfg=white ctermbg=238
+hi Search ctermfg=black
+hi PmenuSel ctermfg=black
+hi SpellBad ctermbg=088 ctermfg=white
+hi Comment guifg=#777777 ctermfg=240
+set cursorline
