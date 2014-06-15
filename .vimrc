@@ -11,17 +11,17 @@ Bundle 'gmarik/vundle'
 Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
 Bundle 'https://github.com/msanders/snipmate.vim.git'
 Bundle 'https://github.com/robhudson/snipmate_for_django.git'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Tagbar'
 "Bundle 'tpope/vim-rails.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/vim-scripts/The-NERD-Commenter.git'
 Bundle 'https://github.com/jiangmiao/auto-pairs.git'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 
@@ -178,6 +178,7 @@ nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 1
 "let g:ycm_key_list_select_completion = ['Down']
 "let g:ycm_key_list_previous_completion = ['Up']
+let g:ycm_key_list_select_completion = []
 
 "set path=$PWD/include,$PWD/src
 
@@ -219,3 +220,4 @@ hi PmenuSel ctermfg=black
 hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
+let g:EasyMotion_leader_key = ',' 

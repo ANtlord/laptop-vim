@@ -28,8 +28,8 @@ endif
 
 
 "% Helper functions and variables
-let s:plugin_Root_direcoty = fnamemodify(expand("<sfile>"), ":h")
-let s:paths_Editorconfig = map(['~/.editorconfig', '~/.vim/.editorconfig', s:plugin_Root_direcoty.'/.editorconfig'], 'expand(v:val)')
+let s:plugin_Root_directory = fnamemodify(expand("<sfile>"), ":h")
+let s:paths_Editorconfig = map(['$HOME/.editorconfig', '$HOME/.vim/.editorconfig', s:plugin_Root_directory.'/.editorconfig'], 'expand(v:val)')
 
 " Function for debugging
 " @param {Any} content Any type which will be converted
@@ -71,6 +71,21 @@ endfun
 " @return {String} The quoted string
 func! s:quote(str)
   return '"'.escape(a:str,'"').'"'
+endfun
+
+" convert string to JSON
+" @param {String} str Any string
+" @return {String} The JSON string
+func! s:toJSON(str)
+  let json = substitute(a:str, "'[", '[', 'g')
+  let json = substitute(json, "]'", ']', 'g')
+
+  let json = substitute(json, "'false'", 'false', 'g')
+  let json = substitute(json, "'true'", 'true', 'g')
+
+  let json = substitute(json, "'", '"', 'g')
+  let json = s:quote(json)
+  return json
 endfun
 
 " @param {String} The content of .editorconfig file
@@ -195,7 +210,7 @@ endfunction
 func s:getPathByType(type)
   let path = ''
   let type = a:type
-  let rootPtah = s:plugin_Root_direcoty."/lib/js/lib/"
+  let rootPtah = s:plugin_Root_directory."/lib/js/lib/"
 
   if type == 'js'
     let path = rootPtah."beautify.js"
@@ -239,7 +254,6 @@ endfunction
 
 "Converts number of non blank characters to cursor position (line and column)
 function! s:getCursorPosition(numberOfNonBlankCharactersFromTheStartOfFile)
-  "echo a:numberOfNonBlankCharactersFromTheStartOfFile
   let lineNumber = 1
   let nonBlankCount = 0
   while lineNumber <= line('$')
@@ -252,13 +266,15 @@ function! s:getCursorPosition(numberOfNonBlankCharactersFromTheStartOfFile)
       endif
       let charIndex = charIndex + 1
       if nonBlankCount == a:numberOfNonBlankCharactersFromTheStartOfFile 
-        "echo 'found position!'
+        "Found position!
         return {'line': lineNumber,'column': charIndex}
       end
     endwhile
     let lineNumber = lineNumber + 1
   endwhile
-  "echo "Oops, nothing found!"
+
+  "Oops, nothing found!
+  return {}
 endfunction
 
 
@@ -266,7 +282,10 @@ endfunction
 "Restoring current position by number of non blank characters
 function! s:setNumberOfNonSpaceCharactersBeforeCursor(mark,numberOfNonBlankCharactersFromTheStartOfFile)
   let location = s:getCursorPosition(a:numberOfNonBlankCharactersFromTheStartOfFile)
-  call setpos(a:mark, [0, location.line, location.column, 0])
+
+  if !empty(location)
+      call setpos(a:mark, [0, location.line, location.column, 0])
+  endif
 endfunction
 
 
@@ -368,23 +387,16 @@ func! Beautifier(...)
   let lines_length = len(getline(line1, line2))
 
   " Write content to temporary file
-  call writefile(content, g:tmp_file_Beautifier) 
+  call writefile(content, g:tmp_file_Beautifier)
   " String arguments which will be passed
   " to external command
 
-  " TODO make valid json
-  let opts_Beautifier_arg = substitute(string(opts), "'[", '[', 'g')
-  let opts_Beautifier_arg = substitute(opts_Beautifier_arg, "]'", ']', 'g')
-
-  let opts_Beautifier_arg = substitute(opts_Beautifier_arg, "'", '"', 'g')
-  let opts_Beautifier_arg = s:quote(opts_Beautifier_arg)
+  let opts_Beautifier_arg = s:toJSON(string(opts))
   let path_Beautifier_arg = s:quote(path)
   let tmp_file_Beautifier_arg = s:quote(g:tmp_file_Beautifier)
 
-
-
   if executable(engine)
-    let result = system(engine." ".fnameescape(s:plugin_Root_direcoty."/beautify.min.js")." --js_arguments ".tmp_file_Beautifier_arg." ".opts_Beautifier_arg." ".path_Beautifier_arg)
+    let result = system(engine." ".fnameescape(s:plugin_Root_directory."/beautify.min.js")." --js_arguments ".tmp_file_Beautifier_arg." ".opts_Beautifier_arg." ".path_Beautifier_arg)
   else
     " Executable bin doesn't exist
     call ErrorMsg('The '.engine.' is not executable!')
@@ -393,13 +405,14 @@ func! Beautifier(...)
 
   let lines_Beautify = split(result, "\n")
 
-  call setline(line1, lines_Beautify)
-
-  " delete excess lines
-  if lines_length > len(lines_Beautify)
-    let endline = len(lines_Beautify) + 1
-    silent exec endline.",$g/.*/d"
+  " issue 42
+  if !len(lines_Beautify)
+      return result
   endif
+
+  silent exec line1.",".line2."j"
+  call setline(line1, lines_Beautify[0])
+  call append(line1, lines_Beautify[1:])
 
   for [key,value] in items(cursorPositions)
     call s:setNumberOfNonSpaceCharactersBeforeCursor(key,value.characters)
@@ -451,12 +464,24 @@ endfun
 
 " @param {[Number|String]} a:0 Default value '1'
 " @param {[Number|String]} a:1 Default value '$'
+fun! RangeJsBeautify() range
+  return call('Beautifier', extend(['js'], [a:firstline, a:lastline]))
+endfun
+
 fun! JsBeautify(...)
   return call('Beautifier', extend(['js'], a:000))
 endfun
 
+fun! RangeHtmlBeautify() range
+  return call('Beautifier', extend(['html'], [a:firstline, a:lastline]))
+endfun
+
 fun! HtmlBeautify(...)
   return call('Beautifier', extend(['html'], a:000))
+endfun
+
+fun! RangeCSSBeautify() range
+  return call('Beautifier', extend(['css'], [a:firstline, a:lastline]))
 endfun
 
 fun! CSSBeautify(...)
