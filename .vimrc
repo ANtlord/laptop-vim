@@ -24,6 +24,7 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 "Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
+Bundle 'https://github.com/kien/ctrlp.vim.git'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -49,9 +50,6 @@ map <F3> <Esc>:mksession! ~/.vim/session<CR>
 imap <F4> <Esc>:source ~/.vim/session<CR>
 map <F4> <Esc>:source ~/.vim/session<CR>
 nmap <C-n> :tabnew<CR>
-"imap <F10> <Esc>:q<CR>
-"map <F10> <Esc>:q<CR>
-"imap  <A-o> <Esc>:NERDTreeFind<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
@@ -66,8 +64,10 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
-map <C-c> "+y
-map <C-x> "+d
+nmap <C-c> "+yy
+nmap <C-x> "+dd
+vmap <C-c> "+y
+vmap <C-x> "+d
 imap <C-v> <Esc>"+pa
 map <C-v> "+p
 imap <C-F12> :q<CR>
