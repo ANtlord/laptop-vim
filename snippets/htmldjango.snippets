@@ -1,0 +1,26 @@
+snippet span
+	<span class="${1:name}">
+		${2}
+	</span>
+snippet a
+	<a href="${1:name}">${2}</a>
+snippet div
+	<div class="${1:name}">
+		${2}
+	</div>
+snippet html
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+	<body>
+		${3}
+	</body>
+	</html>
+snippet script
+	<script src="{{STATIC_URL}}${1}.js"></script>
+snippet link
+	<link rel="${1:stylesheet}" href="{{STATIC_URL}}${2:/css/master.css}.css" type="text/css" />${4}

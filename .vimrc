@@ -2,6 +2,7 @@ set t_Co=65536
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -22,9 +23,15 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
+
+Bundle 'pangloss/vim-javascript'
+Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
+Bundle "burnettk/vim-angular"
+Bundle 'marijnh/tern_for_vim'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -138,8 +145,17 @@ nmap Q gqap
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType python setlocal omnifunc=jedi#complete
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
+"
+
+if has("autocmd") && exists("+omnifunc")
+	autocmd Filetype *
+		    \	if &omnifunc == "" |
+		    \		setlocal omnifunc=syntaxcomplete#Complete |
+		    \	endif
+    endif
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 imap <C-BS> <C-W>
 imap <A-BS> <C-W>
@@ -152,6 +168,18 @@ let NERDChristmasTree=1
 let NERDTreeDirArrows=0
 let NERDTreeHighlightCursorline=0
 let NERDTreeIgnore = ['\.pyc$']
+
+"py << EOF
+"import os
+"import sys
+"import vim
+"if 'VIRTUAL_ENV' in os.environ:
+    "project_base_dir = os.environ['VIRTUAL_ENV']
+    "sys.path.insert(0, project_base_dir)
+    "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    "execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
 " ==============================================
 " JEDI vim
@@ -164,7 +192,7 @@ let NERDTreeIgnore = ['\.pyc$']
 ""let g:jedi#get_definition_command = "<leader>d"
 "let g:jedi#popup_on_dot = 1
 "let g:jedi#popup_select_first = 1
-"let g:jedi#show_function_definition = 1
+"let g:jedi#show_call_signatures = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
@@ -172,13 +200,21 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_register_as_syntastic_checker = 0
-" It seems that old versions of vim do not support more than 256 color values?
+let g:ycm_complete_in_comments_and_strings = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 1
-"let g:ycm_key_list_select_completion = ['Down']
-"let g:ycm_key_list_previous_completion = ['Up']
 let g:ycm_key_list_select_completion = []
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" vim-javascript "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let b:javascript_fold = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" javascript-libraries-syntax "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:used_javascript_libs = 'jquery,angularjs'
 
 "set path=$PWD/include,$PWD/src
 

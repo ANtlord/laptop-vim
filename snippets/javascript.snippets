@@ -1,0 +1,8 @@
+snippet $http
+	$http({method: '${1:GET/POST/PUT/DELETE}', url: '${2:url}'}).
+		success(function(data, status, headers, config) {
+
+		}).
+		error(function(data, status, headers, config) {
+
+		});
