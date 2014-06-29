@@ -9,8 +9,10 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
-Bundle 'https://github.com/msanders/snipmate.vim.git'
+"Bundle 'https://github.com/msanders/snipmate.vim.git'
 Bundle 'https://github.com/robhudson/snipmate_for_django.git'
 "Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -31,7 +33,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle "burnettk/vim-angular"
-Bundle 'marijnh/tern_for_vim'
+"Bundle 'marijnh/tern_for_vim'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -52,10 +54,11 @@ set nocursorline
 colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
-imap <F3> <Esc>:mksession! ~/.vim/session<CR>
-map <F3> <Esc>:mksession! ~/.vim/session<CR>
-imap <F4> <Esc>:source ~/.vim/session<CR>
-map <F4> <Esc>:source ~/.vim/session<CR>
+"imap <F3> <Esc>:mksession! ~/.vim/session<CR>
+"map <F3> <Esc>:mksession! ~/.vim/session<CR>
+"imap <F4> <Esc>:source ~/.vim/session<CR>
+"map <F4> <Esc>:source ~/.vim/session<CR>
+map <F4> :TagbarToggle<CR>
 nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
@@ -79,7 +82,7 @@ imap <C-v> <Esc>"+pa
 map <C-v> "+p
 imap <C-F12> :q<CR>
 map <C-F12> :q<CR>
-imap <C-h> <Esc> :%s///gc
+"imap <C-h> <Esc> :%s///gc
 map <C-h> :%s///gc
 imap <C-a> <Esc>:1<CR>vG<end>
 map <C-a> :1<CR>vG<end>
@@ -128,6 +131,20 @@ inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Bind for fast moving between splits.
+"inoremap  <left>
+"imap <c-h> <left>
+"inoremap <C-j> <C-o>j
+"inoremap <C-k> <C-o>k
+"inoremap <C-l> <C-o>l
+"inoremap <c-k> <up>
+"inoremap <c-j> <down>
+"inoremap <c-h> <left>
+"inoremap <c-l> <right>noremap <c-k> <up>
+"inoremap <c-j> <down>
+"inoremap <c-h> <left>
+"inoremap <c-l> <right>remap <c-j> <down>
+"inoremap <c-h> <left>
+"inoremap <c-l> <right>
 nmap h <C-w>h
 nmap l <C-w>l
 nmap j <C-w>j
@@ -150,12 +167,12 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
 "
 
-if has("autocmd") && exists("+omnifunc")
-	autocmd Filetype *
-		    \	if &omnifunc == "" |
-		    \		setlocal omnifunc=syntaxcomplete#Complete |
-		    \	endif
-    endif
+"if has("autocmd") && exists("+omnifunc")
+	"autocmd Filetype *
+			"\	if &omnifunc == "" |
+			"\		setlocal omnifunc=syntaxcomplete#Complete |
+			"\	endif
+    "endif
 "Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 imap <C-BS> <C-W>
 imap <A-BS> <C-W>
@@ -197,14 +214,18 @@ let NERDTreeIgnore = ['\.pyc$']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_complete_in_comments_and_strings = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = []
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_goto_buffer_command = 'new-tab'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" vim-javascript "

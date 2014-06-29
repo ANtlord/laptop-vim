@@ -1,5 +1,22 @@
-snippet $http
-	$http({method: '${1:GET/POST/PUT/DELETE}', url: '${2:url}'}).
+snippet http
+	$http({method: '${1:GET/POST/PUT/DELETE}', url: '${2:url}',
+		data: '${3:data}'}).
+		success(function(data, status, headers, config) {
+
+		}).
+		error(function(data, status, headers, config) {
+
+		});
+snippet http.post
+	$http.post(url: '${1:url}', data: '${2:data}').
+		success(function(data, status, headers, config) {
+
+		}).
+		error(function(data, status, headers, config) {
+
+		});
+snippet http.get
+	$http.post(url: '${1:url}').
 		success(function(data, status, headers, config) {
 
 		}).
