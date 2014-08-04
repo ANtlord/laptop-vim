@@ -34,7 +34,8 @@ Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle "burnettk/vim-angular"
 "Bundle 'marijnh/tern_for_vim'
-Bundle 'Hackerpilot/DCD'    "Must have https://github.com/Hackerpilot/DCD for completion D.
+"Must have https://github.com/Hackerpilot/DCD for completion D.
+Bundle 'Hackerpilot/DCD'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
