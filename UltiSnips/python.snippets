@@ -1,0 +1,6 @@
+snippet mcl "class metaclass(type)" b
+class $1($2{type}):
+    def __new__(cls, name, bases, attrs):
+        _class = super($1, cls).__new__(cls, name, bases, attrs)
+		return _class
+endsnippet

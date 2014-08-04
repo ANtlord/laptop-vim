@@ -34,6 +34,7 @@ Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle "burnettk/vim-angular"
 "Bundle 'marijnh/tern_for_vim'
+Bundle 'Hackerpilot/DCD'    "Must have https://github.com/Hackerpilot/DCD for completion D.
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -285,3 +286,10 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" For coding by D. "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:dcd_path='/opt/DCD/'  "path to https://github.com/Hackerpilot/DCD
+let g:dcd_importPath=['/usr/include/dlang/dmd'] "path to libs of D.
+"set omnifnc=syntaxComplete#complete
