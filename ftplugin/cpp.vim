@@ -1,7 +1,8 @@
 filetype plugin on
+nmap <F3> :YcmDiags<CR>
 set nocp
 Bundle 'https://github.com/vim-scripts/OmniCppComplete.git'
-Bundle 'octol/vim-cpp-enhanced-highlight'
+"Bundle 'octol/vim-cpp-enhanced-highlight'
 " configure tags - add additional tags here or comment out not-used ones
 "set tags=~/.vim/tags/cpp
 "set tags=~/.vim/tags/ogre
@@ -80,6 +81,35 @@ function! CreateCharEnum()
     call feedkeys('i','n')
 endfunction
 
+if exists("*Mosh_Flip_Ext")
+    " do stuff here
+else
+    function! Mosh_Flip_Ext()
+        let file_name = expand('%:t')
+        if match(expand("%:t"),'\.cpp') > 0
+            let file_name = substitute(file_name, ".cpp", ".h", "")
+            let bufname = bufname(file_name)
+
+            if (strlen(bufname) > 0)
+                exe ":buffer ".bufname
+            else
+                exe ":open include/".file_name
+            endif
+
+        elseif match(expand("%:t"),"\.h") > 0
+            let file_name = substitute(file_name, ".h", ".cpp", "")
+            let bufname = bufname(file_name)
+
+            if (strlen(bufname) > 0)
+                exe ":buffer ".bufname
+            else
+                exe ":open src/".file_name
+            endif
+        endif
+    endfun
+endif
+
+map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
 map <F9> :w<CR>:make -j<CR>
 imap <silent> \vf <ESC>:call VoidMethod()<CR>
 map <silent> \vf :call VoidMethod()<CR>

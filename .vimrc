@@ -34,8 +34,6 @@ Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle "burnettk/vim-angular"
 "Bundle 'marijnh/tern_for_vim'
-"Must have https://github.com/Hackerpilot/DCD for completion D.
-Bundle 'Hackerpilot/DCD'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -53,8 +51,10 @@ set shiftwidth=4
 set fencs=utf8,cp1251
 set ffs=unix,dos
 set nocursorline
+set nobackup
+set noswapfile
 colorscheme peachpuff
-imap <F2> <Esc>:w<CR>
+imap <F2> <Esc><Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 "imap <F3> <Esc>:mksession! ~/.vim/session<CR>
 "map <F3> <Esc>:mksession! ~/.vim/session<CR>
@@ -70,12 +70,12 @@ imap - <Esc>gT
 map fr gT
 nmap = <Esc>gt
 imap = <Esc>gt
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-\ "\<lt>C-n>" :
-\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+"\ "\<lt>C-n>" :
+"\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+"\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+"\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+"imap <C-@> <C-Space>
 nmap <C-c> "+yy
 nmap <C-x> "+dd
 vmap <C-c> "+y
@@ -138,21 +138,6 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-" Bind for fast moving between splits.
-"inoremap  <left>
-"imap <c-h> <left>
-"inoremap <C-j> <C-o>j
-"inoremap <C-k> <C-o>k
-"inoremap <C-l> <C-o>l
-"inoremap <c-k> <up>
-"inoremap <c-j> <down>
-"inoremap <c-h> <left>
-"inoremap <c-l> <right>noremap <c-k> <up>
-"inoremap <c-j> <down>
-"inoremap <c-h> <left>
-"inoremap <c-l> <right>remap <c-j> <down>
-"inoremap <c-h> <left>
-"inoremap <c-l> <right>
 nmap h <C-w>h
 nmap l <C-w>l
 nmap j <C-w>j
@@ -163,10 +148,6 @@ if filereadable("/etc/vimrc.local")
 endif 
 vmap Q gq
 nmap Q gqap
-"map > >gv
-"map < <gv
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType python set omnifunc=pysmell#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -234,7 +215,6 @@ let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'new-tab'
-nmap <F3> :YcmDiags<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" vim-javascript "
@@ -247,33 +227,6 @@ nmap <F3> :YcmDiags<CR>
 let g:used_javascript_libs = 'jquery,angularjs'
 
 "set path=$PWD/include,$PWD/src
-
-" Method for switching between header and source file.
-function! Mosh_Flip_Ext()
-    let file_name = expand('%:t')
-    if match(expand("%:t"),'\.cpp') > 0
-        let file_name = substitute(file_name, ".cpp", ".h", "")
-        let bufname = bufname(file_name)
-
-        if (strlen(bufname) > 0)
-            exe ":buffer ".bufname
-        else
-            exe ":open include/".file_name
-        endif
-
-    elseif match(expand("%:t"),"\.h") > 0
-        let file_name = substitute(file_name, ".h", ".cpp", "")
-        let bufname = bufname(file_name)
-
-        if (strlen(bufname) > 0)
-            exe ":buffer ".bufname
-        else
-            exe ":open src/".file_name
-        endif
-    endif
-endfun
-map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
-
 " For scripts of framework OGRE 3D
 au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
@@ -287,10 +240,3 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" For coding by D. "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:dcd_path='/opt/DCD/'  "path to https://github.com/Hackerpilot/DCD
-let g:dcd_importPath=['/usr/include/dlang/dmd'] "path to libs of D.
-"set omnifnc=syntaxComplete#complete
