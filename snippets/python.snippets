@@ -137,11 +137,10 @@ snippet model
 			verbose_name_plural = u'$3${4}'
 
 		def __unicode__(self):
-			return ${5}
+			return ${5:self.name}
 
-		@models.permalink
 		def get_absolute_url(self):
-			return ('${6:view_or_url_name}' ${7:pk})
+			return reverse('${6:$1}', kwargs={'pk': self.pk})
 
 snippet modeladmin
 	class ${1:ModelName}Admin(admin.ModelAdmin):
