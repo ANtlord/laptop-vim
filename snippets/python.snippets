@@ -6,7 +6,7 @@ snippet get_c
 
 snippet get_q
 	def get_queryset(self, **kwargs):
-		qs = super(${1:ClassName}, self).get_context_data(**kwargs)
+		qs = super(${1:ClassName}, self).get_queryset(**kwargs)
 		${2:#code}
 		return qs
 

@@ -29,11 +29,8 @@ Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
 
-Bundle 'pangloss/vim-javascript'
-Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
-Bundle "burnettk/vim-angular"
-"Bundle 'marijnh/tern_for_vim'
+Bundle 'marijnh/tern_for_vim'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -54,7 +51,7 @@ set nocursorline
 set nobackup
 set noswapfile
 colorscheme peachpuff
-imap <F2> <Esc><Esc>:w<CR>
+imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 "imap <F3> <Esc>:mksession! ~/.vim/session<CR>
 "map <F3> <Esc>:mksession! ~/.vim/session<CR>
@@ -65,11 +62,7 @@ nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
-nmap - <Esc>gT
-imap - <Esc>gT
 map fr gT
-nmap = <Esc>gt
-imap = <Esc>gt
 "inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 "\ "\<lt>C-n>" :
 "\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
@@ -148,9 +141,9 @@ if filereadable("/etc/vimrc.local")
 endif 
 vmap Q gq
 nmap Q gqap
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType python setlocal omnifunc=jedi#complete
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
@@ -206,7 +199,7 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_register_as_syntastic_checker = 0
-"let g:ycm_complete_in_comments_and_strings = 1
+let g:ycm_complete_in_comments_and_strings = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 0
@@ -215,16 +208,6 @@ let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'new-tab'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" vim-javascript "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let b:javascript_fold = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" javascript-libraries-syntax "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:used_javascript_libs = 'jquery,angularjs'
 
 "set path=$PWD/include,$PWD/src
 " For scripts of framework OGRE 3D
