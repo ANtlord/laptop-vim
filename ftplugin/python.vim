@@ -82,7 +82,6 @@
 " For version 5.x: Clear all syntax items
 " For versions greater than 6.x: Quit when a syntax file was already loaded
 
-Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 if version < 600
   syntax clear
 elseif exists("b:current_syntax")

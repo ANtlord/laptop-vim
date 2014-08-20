@@ -58,6 +58,7 @@ map <F2> <Esc>:w<CR>
 "imap <F4> <Esc>:source ~/.vim/session<CR>
 "map <F4> <Esc>:source ~/.vim/session<CR>
 map <F4> :TagbarToggle<CR>
+map <F5> :TagbarShowTag<CR>
 nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
