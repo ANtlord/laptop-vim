@@ -78,6 +78,7 @@ imap <C-v> <Esc>"+pa
 map <C-v> "+p
 imap <C-F12> :q<CR>
 map <C-F12> :q<CR>
+inoremap <C-l> <C-o>l
 "imap <C-h> <Esc> :%s///gc
 map <C-h> :%s///gc
 imap <C-a> <Esc>:1<CR>vG<end>
