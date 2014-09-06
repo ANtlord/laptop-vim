@@ -201,6 +201,8 @@ if s:Enabled("g:python_highlight_space_errors")
   syn match pythonSpaceError	"\s\+$" display
 endif
 
+"syn match pythonClassName	"\s\+$"
+"syn region pythonClassName   start="\<class\>" end="(" end=":"
 "
 " Strings
 "
@@ -569,45 +571,6 @@ let NERDTreeIgnore = ['\.pyc$']
     "Snippet mfk models.ForeignKey(<{}>)<CR><{}>
     "Snippet m2m models.ManyToManyField(<{}>)<CR><{}>
     "Snippet o2o models.OneToOneField(<{}>)<CR><{}>
-
-function! SetFunc()
-    let a = input('Enter function name: ')
-    exe ":norm o" . "def ".a."():"
-    exe ":norm o"
-    call feedkeys('O','n')
-endfunction
-
-function! AddModel()
-    let a = input('Enter model name: ')
-    exe ":norm o" . "class ".a."(models.Model):"
-    exe ":norm o" . "class Meta:"
-    exe ":norm o" . "verbose_name=u''"
-    exe ":norm o" . "verbose_name_plural=u''"
-endfunction
-
-"function! ForeignKey()
-    "let a = input('Enter field name: ')
-    "exe "norm i".a." = models.ForeignKey(max_length=255, blank=True, null=True, verbose_name=u'')"
-    "exe ":norm o"
-"endfunction
-
-"function! IntegerField()
-    "let a = input('Enter field name: ')
-    "exe "norm ".a." = models.IntegerField(max_length=255, blank=True, null=True, verbose_name=u'')"
-    "exe ":norm o"
-"endfunction
-
-"function! BooleanField()
-    "let a = input('Enter field name: ')
-    "exe "norm i".a." = models.BooleanField(default=False, verbose_name=u'')"
-    "exe ":norm o"
-"endfunction
-
-"function! ImageField()
-    "let a = input('Enter field name: ')
-    "exe "norm i".a." = models.ImageField(upload_to=generate_upload_name, verbose_name=u'Файл')"
-    "exe ":norm o"
-"endfunction
 
 imap <silent> \cf = models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
 map <silent> \cf o= models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
