@@ -4,3 +4,11 @@ class $1($2{type}):
         _class = super($1, cls).__new__(cls, name, bases, attrs)
 		return _class
 endsnippet
+
+snippet spdb "pdb in pre_save" b
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+@receiver(pre_save, sender=$1)
+def pp_pre_save(sender, **kwargs):
+    import pdb; pdb.set_trace()
+endsnippet

@@ -28,7 +28,7 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
-
+Bundle 'https://github.com/vim-php/tagbar-phpctags.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle 'marijnh/tern_for_vim'
 
@@ -216,6 +216,7 @@ let g:ycm_goto_buffer_command = 'new-tab'
 au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
+au BufNewFile,BufRead    *.twig            set filetype=htmldjango    " [Feral:176/05@19:09] OGRE3d's material files
 
 hi CursorLine cterm=NONE ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
@@ -225,3 +226,7 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
+
+
+
+let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
