@@ -28,7 +28,7 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
-Bundle 'https://github.com/vim-php/tagbar-phpctags.vim.git'
+"Bundle 'https://github.com/vim-php/tagbar-phpctags.vim.git'
 Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle 'marijnh/tern_for_vim'
 
@@ -228,5 +228,4 @@ set cursorline
 let g:EasyMotion_leader_key = ',' 
 
 
-
-let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
+"let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
