@@ -226,6 +226,7 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
-
+set exrc
+set secure
 
 "let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
