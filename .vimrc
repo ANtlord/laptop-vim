@@ -29,8 +29,9 @@ Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
 "Bundle 'https://github.com/vim-php/tagbar-phpctags.vim.git'
-Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
+"Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'https://github.com/stephpy/vim-yaml.git'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -229,3 +230,5 @@ let g:EasyMotion_leader_key = ','
 
 
 "let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
+set exrc
+set secure
