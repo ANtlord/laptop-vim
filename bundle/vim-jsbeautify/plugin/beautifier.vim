@@ -25,7 +25,10 @@ if !exists('g:tmp_file_Beautifier')
   let g:tmp_file_Beautifier = fnameescape(tempname())
 endif
 
-
+" Which file types supported vim plugin
+" Default settings for this file types you can see
+" in file plugin/.editorconfig
+let s:supportedFileTypes = ['js', 'css', 'html', 'jsx', 'json']
 
 "% Helper functions and variables
 let s:plugin_Root_directory = fnamemodify(expand("<sfile>"), ":h")
@@ -61,7 +64,7 @@ endfun
 func! s:isAllowedType(type, ...)
   let haz = 1
   let type = a:type
-  let allowedTypes = get(a:000, 1, ['js', 'css', 'html'])
+  let allowedTypes = get(a:000, 1, s:supportedFileTypes)
 
   return index(allowedTypes, type) != -1
 endfun
@@ -95,7 +98,7 @@ func! s:processingEditconfigFile(content)
   let opts = {}
   let content = a:content
 
-  for type in ['js', 'css', 'html']
+  for type in s:supportedFileTypes
     " Get settings for javascript files
     " collect all data after [**.js] to
     " empty string
@@ -193,7 +196,7 @@ function s:updateConfig(value)
 
   let config = deepcopy(a:value)
 
-  for type in ['js', 'css', 'html']
+  for type in s:supportedFileTypes
     if has_key(config, type)
       call s:treatConfig(config[type])
     endif
@@ -208,13 +211,11 @@ endfunction
 " Get default path
 " @param {String} type Some of the types js, html or css
 func s:getPathByType(type)
-  let path = ''
   let type = a:type
   let rootPtah = s:plugin_Root_directory."/lib/js/lib/"
+  let path = rootPtah."beautify.js"
 
-  if type == 'js'
-    let path = rootPtah."beautify.js"
-  elseif type == 'html'
+  if type == 'html'
     let path = rootPtah."beautify-html.js"
   elseif type == 'css'
     let path = rootPtah."beautify-css.js"
@@ -377,8 +378,12 @@ func! Beautifier(...)
   let path = fnameescape(path)
   " Get external engine which will
   " be execute javascript file
-  " by default get node
-  let engine = get(opts, 'bin', 'node')
+  " by default get nodejs
+  let engine = get(opts, 'bin', 'nodejs')
+  " nodejs may be called node
+  if !executable(engine)
+      let engine = get(opts, 'bin', 'node')
+  endif
 
   " Get content from the files
   let content = getline(line1, line2)
@@ -447,11 +452,6 @@ func! BeautifierEditorconfigHook(config)
     return 1
   endif
 
-  if empty(get(b:config_Beautifier, type))
-    call WarningMsg('Type '.type.' is not presented in config')
-    return 1
-  endif
-
   let config = extend(b:config_Beautifier[type], config)
 
   call s:treatConfig(config)
@@ -470,6 +470,22 @@ endfun
 
 fun! JsBeautify(...)
   return call('Beautifier', extend(['js'], a:000))
+endfun
+
+fun! JsxBeautify(...)
+  return call('Beautifier', extend(['jsx'], a:000))
+endfun
+
+fun! RangeJsxBeautify() range
+  return call('Beautifier', extend(['jsx'], [a:firstline, a:lastline]))
+endfun
+
+fun! JsonBeautify(...)
+  return call('Beautifier', extend(['json'], a:000))
+endfun
+
+fun! RangeJsonBeautify() range
+  return call('Beautifier', extend(['json'], [a:firstline, a:lastline]))
 endfun
 
 fun! RangeHtmlBeautify() range

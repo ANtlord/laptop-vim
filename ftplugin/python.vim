@@ -593,8 +593,8 @@ map <silent> \im o= models.ImageField(upload_to=generate_upload_name, verbose_na
 imap <silent> \ff = models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
 map <silent> \ff o= models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
 
-imap <silent> <F5> from pprint import pprint; import pdb; pdb.set_trace()
-map <silent> <F5> ofrom pprint import pprint; import pdb; pdb.set_trace()<ESC>
+imap <silent> <F5> from pprint import pprint; import pdb; import rlcompleter; pdb.Pdb.complete=rlcompleter.Completer(locals()).complete; pdb.set_trace()
+map <silent> <F5> ofrom pprint import pprint; import pdb; import rlcompleter; pdb.Pdb.complete=rlcompleter.Completer(locals()).complete; pdb.set_trace()<ESC>
 
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>

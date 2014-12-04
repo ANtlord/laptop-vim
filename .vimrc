@@ -8,30 +8,34 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'https://github.com/maksimr/vim-jsbeautify.git'
-"Bundle 'https://github.com/msanders/snipmate.vim.git'
-Bundle 'https://github.com/robhudson/snipmate_for_django.git'
-"Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Tagbar'
-"Bundle 'tpope/vim-rails.git'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/vim-scripts/The-NERD-Commenter.git'
-Bundle 'https://github.com/jiangmiao/auto-pairs.git'
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-"Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'https://github.com/jmcantrell/vim-virtualenv.git'
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-Bundle 'https://github.com/kien/ctrlp.vim.git'
-"Bundle 'https://github.com/vim-php/tagbar-phpctags.vim.git'
-"Bundle 'https://github.com/vim-scripts/SyntaxComplete.git'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'https://github.com/stephpy/vim-yaml.git'
+Plugin 'gmarik/vundle'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
+"Plugin 'https://github.com/msanders/snipmate.vim.git'
+Plugin 'https://github.com/robhudson/snipmate_for_django.git'
+"Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Tagbar'
+"Plugin 'tpope/vim-rails.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/vim-scripts/The-NERD-Commenter.git'
+Plugin 'https://github.com/jiangmiao/auto-pairs.git'
+"Plugin 'L9'
+"Plugin 'FuzzyFinder'
+"Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'https://github.com/jmcantrell/vim-virtualenv.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/kien/ctrlp.vim.git'
+"Plugin 'https://github.com/vim-php/tagbar-phpctags.vim.git'
+"Plugin 'https://github.com/vim-scripts/SyntaxComplete.git'
+"js plugins"""""""""""""""""""""""
+Plugin 'marijnh/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+""""""""""""""""""""""""""""""""""
+Plugin 'https://github.com/stephpy/vim-yaml.git'
 
 let mapleader = "\\"
 filetype plugin indent on     " required!
@@ -158,7 +162,7 @@ nmap Q gqap
 			"\		setlocal omnifunc=syntaxcomplete#Complete |
 			"\	endif
     "endif
-"Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
+"Plugin 'git://github.com/vim-scripts/AutoComplPop.git'
 imap <C-BS> <C-W>
 imap <A-BS> <C-W>
 "au BufEnter *.py source ~/.vim/plugin/python.vim
@@ -186,7 +190,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " ==============================================
 " JEDI vim
 " ==============================================
-"Bundle 'https://github.com/davidhalter/jedi-vim.git'
+"Plugin 'https://github.com/davidhalter/jedi-vim.git'
 "let g:jedi#auto_initialization = 1
 "let g:jedi#auto_vim_configuration = 1
 ""let g:jedi#goto_command = "<leader>g"
@@ -233,3 +237,32 @@ set secure
 "let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
 set exrc
 set secure
+
+let g:ctrlp_custom_ignore = {
+    \ 'file': '\v\.(exe|so|dll|o)$',
+    \ }
+
+let g:tagbar_type_d = {
+    \ 'ctagstype' : 'd',
+    \ 'kinds'     : [
+        \ 'c:classes:0:1',
+        \ 'f:functions',
+        \ 'g:enums',
+        \ 'u:unions',
+        \ 's:structs',
+        \ 'm:members'
+    \ ],
+    \'sro': '.',
+    \ 'kind2scope' : {
+        \ 'c' : 'class',
+        \ 'g' : 'enum',
+        \ 's' : 'struct',
+        \ 'u' : 'union'
+    \},
+    \ 'scope2kind' : {
+        \ 'enum'      : 'g',
+        \ 'class'     : 'c',
+        \ 'struct'    : 's',
+        \ 'union'     : 'u'
+    \ }
+\ }
