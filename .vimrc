@@ -36,7 +36,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """"""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
-
 let mapleader = "\\"
 filetype plugin indent on     " required!
 syntax on
@@ -63,7 +62,8 @@ map <F2> <Esc>:w<CR>
 "imap <F4> <Esc>:source ~/.vim/session<CR>
 "map <F4> <Esc>:source ~/.vim/session<CR>
 map <F4> :TagbarToggle<CR>
-map <F5> :TagbarShowTag<CR>
+nmap <F5> :copen<CR>
+imap <esc><F5> :copen<CR>
 nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
@@ -231,8 +231,8 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
-set exrc
-set secure
+let g:EasyMotion_keys = 'qwerasdfzxc'
+set makeprg=make
 
 "let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
 set exrc
