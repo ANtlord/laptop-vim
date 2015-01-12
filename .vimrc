@@ -138,6 +138,10 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+nnoremap + <C-W>+
+nnoremap _ <C-W>-
+nnoremap = <C-W>>
+nnoremap - <C-W><
 nmap h <C-w>h
 nmap l <C-w>l
 nmap j <C-w>j
