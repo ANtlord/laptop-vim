@@ -36,6 +36,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """"""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
+
 let mapleader = "\\"
 filetype plugin indent on     " required!
 syntax on
@@ -236,7 +237,6 @@ hi Comment guifg=#777777 ctermfg=240
 set cursorline
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
-set makeprg=make
 
 "let g:tagbar_phpctags_bin='/media/storage/Apps/phpctags/build/phpctags.phar'
 set exrc
@@ -246,27 +246,59 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|o)$',
     \ }
 
+    "\ 'ctagsargs': '-f - --format=2 --excmd=pattern --fields=n --extra= --sort=no',
+    "\ 'ctagsbin': '/home/uantlord/Develop/Dscanner/bin/dscanner',
+    "\ 'ctagsargs': '--ctags',
+    "
+
+
+let g:tagbar_type_php = {
+\ 'ctagsbin' : '/opt/ctags/bin/ctags',
+\ 'ctagstype' : 'php',
+\ 'kinds'     : [
+    \ 'c:classes:0:1',
+    \ 'f:functions',
+    \ 'g:enums',
+    \ 'u:unions',
+    \ 's:structs',
+    \ 'm:members'
+\ ],
+\'sro': '.',
+\ 'kind2scope' : {
+    \ 'c' : 'class',
+    \ 'g' : 'enum',
+    \ 's' : 'struct',
+    \ 'u' : 'union'
+\},
+\ 'scope2kind' : {
+    \ 'class'     : 'c',
+    \ 'enum'      : 'g',
+    \ 'struct'    : 's',
+    \ 'union'     : 'u'
+\ }
+\}
 let g:tagbar_type_d = {
-    \ 'ctagstype' : 'd',
-    \ 'kinds'     : [
-        \ 'c:classes:0:1',
-        \ 'f:functions',
-        \ 'g:enums',
-        \ 'u:unions',
-        \ 's:structs',
-        \ 'm:members'
-    \ ],
-    \'sro': '.',
-    \ 'kind2scope' : {
-        \ 'c' : 'class',
-        \ 'g' : 'enum',
-        \ 's' : 'struct',
-        \ 'u' : 'union'
-    \},
-    \ 'scope2kind' : {
-        \ 'enum'      : 'g',
-        \ 'class'     : 'c',
-        \ 'struct'    : 's',
-        \ 'union'     : 'u'
-    \ }
+\ 'ctagsbin' : '/opt/ctags/bin/ctags',
+\ 'ctagstype' : 'd',
+\ 'kinds'     : [
+    \ 'c:classes:0:1',
+    \ 'f:functions',
+    \ 'g:enums',
+    \ 'u:unions',
+    \ 's:structs',
+    \ 'm:members'
+\ ],
+\'sro': '.',
+\ 'kind2scope' : {
+    \ 'c' : 'class',
+    \ 'g' : 'enum',
+    \ 's' : 'struct',
+    \ 'u' : 'union'
+\},
+\ 'scope2kind' : {
+    \ 'class'     : 'c',
+    \ 'enum'      : 'g',
+    \ 'struct'    : 's',
+    \ 'union'     : 'u'
+\ }
 \ }

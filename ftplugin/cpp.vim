@@ -27,44 +27,6 @@ set nocp
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
 
-function! VoidMethod()
-	let a = input('Enter function name: ')
-	exe ":norm o" . "void ".a."(){"
-	exe ":norm o" . "}"
-    call feedkeys('O','n')
-    "startinsert
-endfunction
-
-function! IntMethod()
-	let a = input('Enter function name: ')
-	exe ":norm o" . "int ".a."(){"
-	exe ":norm o" . "}"
-    call feedkeys('O','n')
-endfunction
-
-function! CharMethod()
-	let a = input('Enter function name: ')
-	exe ":norm o" . "char ".a."(){"
-	exe ":norm o" . "}"
-    call feedkeys('O','n')
-endfunction
-
-function! CreateClass()
-	let a = input('Enter class name: ')
-	exe ":norm o" . "class ".a." {"
-	exe ":norm o" . "public:"
-	exe ":norm o" . a . "();"
-	exe ":norm o~" . a . "();"
-	exe ":norm o"
-	exe ":norm o"
-	exe ":norm o" . "protected:"
-	exe ":norm o"
-	exe ":norm o"
-	exe ":norm o" . "private:"
-	exe ":norm o"
-	exe ":norm o"
-	exe ":norm o" . "};"
-endfunction
 
 function! DefineClassFile()
     let file_name = expand('%:t')
@@ -75,16 +37,11 @@ function! DefineClassFile()
     exe ":norm Go" . "#endif //" . file_name
 endfunction
 
-function! CreateCharEnum()
-	let a = input('Enter enum name: ')
-	exe ":norm o" . "enum ".a." : char {}"
-    call feedkeys('i','n')
-endfunction
-
 if exists("*Mosh_Flip_Ext")
     " do stuff here
 else
     function! Mosh_Flip_Ext()
+        let file_path = expand('%:r')
         let file_name = expand('%:t')
         if match(expand("%:t"),'\.cpp') > 0
             let file_name = substitute(file_name, ".cpp", ".h", "")
@@ -93,7 +50,7 @@ else
             if (strlen(bufname) > 0)
                 exe ":buffer ".bufname
             else
-                exe ":open include/".file_name
+                exe ":open ".(substitute(file_path, "^src", "include", "").".h")
             endif
 
         elseif match(expand("%:t"),"\.h") > 0
@@ -103,23 +60,14 @@ else
             if (strlen(bufname) > 0)
                 exe ":buffer ".bufname
             else
-                exe ":open src/".file_name
+                exe ":open ".(substitute(file_path, "^include", "src", "").".cpp")
             endif
         endif
     endfun
 endif
 
 map <F11> <ESC> :call Mosh_Flip_Ext()<CR>
-map <F9> :w<CR>:make -j<CR>
-imap <silent> \vf <ESC>:call VoidMethod()<CR>
-map <silent> \vf :call VoidMethod()<CR>
-imap <silent> \if <ESC>:call IntMethod()<CR>
-map <silent> \if :call IntMethod()<CR>
-imap <silent> \cf <ESC>:call CharMethod()<CR>
-map <silent> \cf :call CharMethod()<CR>
-imap <silent> \crc <ESC>:call CreateClass()<CR>
-map <silent> \crc :call CreateClass()<CR>
-imap <silent> \ce <ESC>:call CreateCharEnum()<CR>
-map <silent> \ce :call CreateCharEnum()<CR>
+"imap <F11> <ESC> :A<CR>
+map <F9> :w<CR>:make -j2<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 autocmd FileType tagbar setlocal ft=qwe
