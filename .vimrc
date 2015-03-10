@@ -2,7 +2,6 @@ set t_Co=65536
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -192,9 +191,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_register_as_syntastic_checker = 0
-let g:ycm_complete_in_comments_and_strings = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_comments = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 let g:ycm_always_populate_location_list = 0
@@ -223,6 +222,12 @@ let g:EasyMotion_keys = 'qwerasdfzxc'
 
 set exrc
 set secure
+
+function! MyMethod()
+    exe "!vpaste ft=".&ft
+endfun
+
+nmap <leader>sp :call MyMethod()<CR>
 
 let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|o)$',
@@ -284,3 +289,5 @@ let g:tagbar_type_d = {
         \ 'union'     : 'u'
     \ }
 \ }
+
+set tm=320

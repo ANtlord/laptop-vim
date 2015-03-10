@@ -5,7 +5,7 @@ if ($1) {
 endsnippet
 
 snippet for
-for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+for (uint32_t ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 	${4:/* code */}
 }
 endsnippet
@@ -55,5 +55,26 @@ endsnippet
 snippet forec
 for (const auto& item: $1) {
 	$2
+}
+endsnippet
+
+snippet	singleton
+class $1
+{
+public:
+	static $1 * getSingleton();
+private:
+	$1();
+	virtual ~$1();
+	static $1 * _self;
+};
+endsnippet
+
+snippet ife "if else"
+if ($1) {
+	$2
+}
+else {
+	$3
 }
 endsnippet
