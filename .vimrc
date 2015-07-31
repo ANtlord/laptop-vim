@@ -1,9 +1,9 @@
 set t_Co=65536
-set nocompatible               " be iMproved
-filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+set nocompatible               " be iMproved
+filetype off                   " required!
 
 " let Vundle manage Vundle
 " required! 
@@ -20,26 +20,36 @@ Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 Plugin 'https://github.com/jmcantrell/vim-virtualenv.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
-"js plugins"""""""""""""""""""""""
+Plugin 'https://github.com/scrooloose/syntastic.git'
+""js plugins"""""""""""""""""""""""
 Plugin 'marijnh/tern_for_vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
 
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'gitcommit': 1,
+  \ 'php': 1
+\}
 let mapleader = "\\"
-filetype plugin indent on     " required!
+filetype plugin indent on     " required!*/
 syntax on
 set mouse=a        " Enable mouse usage (all modes)
 set number
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               Indention                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent
 set nowrap
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
 set ic
 set hls
 set directory=/tmp
-set tabstop=4
-set expandtab
-set shiftwidth=4
 set fencs=utf8,cp1251
 set ffs=unix,dos
 set nocursorline
@@ -103,11 +113,11 @@ let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 set completeopt=longest,menuone
 function! OmniPopup(action)
     if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
+	if a:action == 'j'
+	    return "\<C-N>"
+	elseif a:action == 'k'
+	    return "\<C-P>"
+	endif
     endif
     return a:action
 endfunction
@@ -242,25 +252,25 @@ let g:tagbar_type_php = {
     \ 'ctagsbin' : '/opt/ctags/bin/ctags',
     \ 'ctagstype' : 'php',
     \ 'kinds'     : [
-        \ 'c:classes:0:1',
-        \ 'f:functions',
-        \ 'g:enums',
-        \ 'u:unions',
-        \ 's:structs',
-        \ 'm:members'
+	\ 'c:classes:0:1',
+	\ 'f:functions',
+	\ 'g:enums',
+	\ 'u:unions',
+	\ 's:structs',
+	\ 'm:members'
     \ ],
     \'sro': '.',
     \ 'kind2scope' : {
-        \ 'c' : 'class',
-        \ 'g' : 'enum',
-        \ 's' : 'struct',
-        \ 'u' : 'union'
+	\ 'c' : 'class',
+	\ 'g' : 'enum',
+	\ 's' : 'struct',
+	\ 'u' : 'union'
     \},
     \ 'scope2kind' : {
-        \ 'class'     : 'c',
-        \ 'enum'      : 'g',
-        \ 'struct'    : 's',
-        \ 'union'     : 'u'
+	\ 'class'     : 'c',
+	\ 'enum'      : 'g',
+	\ 'struct'    : 's',
+	\ 'union'     : 'u'
     \ }
 \}
 
@@ -268,26 +278,53 @@ let g:tagbar_type_d = {
     \ 'ctagsbin' : '/opt/ctags/bin/ctags',
     \ 'ctagstype' : 'd',
     \ 'kinds'     : [
-        \ 'c:classes:0:1',
-        \ 'f:functions',
-        \ 'g:enums',
-        \ 'u:unions',
-        \ 's:structs',
-        \ 'm:members'
+	\ 'c:classes:0:1',
+	\ 'f:functions',
+	\ 'g:enums',
+	\ 'u:unions',
+	\ 's:structs',
+	\ 'm:members'
     \ ],
     \'sro': '.',
     \ 'kind2scope' : {
-        \ 'c' : 'class',
-        \ 'g' : 'enum',
-        \ 's' : 'struct',
-        \ 'u' : 'union'
+	\ 'c' : 'class',
+	\ 'g' : 'enum',
+	\ 's' : 'struct',
+	\ 'u' : 'union'
     \},
     \ 'scope2kind' : {
-        \ 'class'     : 'c',
-        \ 'enum'      : 'g',
-        \ 'struct'    : 's',
-        \ 'union'     : 'u'
+	\ 'class'     : 'c',
+	\ 'enum'      : 'g',
+	\ 'struct'    : 's',
+	\ 'union'     : 'u'
     \ }
 \ }
 
 set tm=320
+map <leader>s :execute " grep! -srnw --binary-files=without-match --exclude-dir=.git --exclude-dir=.svn . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+map <leader>c :copen<CR>
+
+"""""""""""""
+" Syntastic "
+"""""""""""""
+let g:syntastic_mode_map = { 'mode': 'active',
+         \ 'active_filetypes': ['php', 'python'],
+         \ 'passive_filetypes': ['cpp', 'c']}
+let g:syntastic_php_checkers = ['phplint', 'php']
+"let g:syntastic_python_checkers = ['flake8', 'python', 'pyflakes', 'pylint']
+let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_flake8_args=''
+let g:syntastic_php_phplint_quiet_messages = {
+    \ "!level":  "errors",
+    \ "!regex":   ['.*variable.*'],
+\}
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=0
