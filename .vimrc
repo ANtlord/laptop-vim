@@ -62,7 +62,7 @@ colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F4> :TagbarToggle<CR>
-nmap <F5> :copen<CR>
+nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
 nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
