@@ -179,6 +179,10 @@ function s:treatConfig(config)
     endif
   endif
 
+  if has_key(config, 'insert_final_newline')
+      let config["end_with_newline"] = config["insert_final_newline"]
+  endif
+
   return config
 endfunction
 
@@ -400,7 +404,13 @@ func! Beautifier(...)
   let path_Beautifier_arg = s:quote(path)
   let tmp_file_Beautifier_arg = s:quote(g:tmp_file_Beautifier)
 
-  if executable(engine)
+  if has("win32unix")  && executable("cygpath")
+    let beautify_absolute_path_windows = fnameescape(system("cygpath -w ".s:plugin_Root_directory."/beautify.js"))
+    let tmp_file_Beautifier_arg_windows = fnameescape(system("cygpath -w ".tmp_file_Beautifier_arg))
+    let path_Beautifier_arg_windows = fnameescape(system("cygpath -w ".path_Beautifier_arg))
+
+    let result = system(engine." ".beautify_absolute_path_windows." --js_arguments ".tmp_file_Beautifier_arg_windows." ".opts_Beautifier_arg." ".path_Beautifier_arg_windows)
+  elseif executable(engine)
     let result = system(engine." ".fnameescape(s:plugin_Root_directory."/beautify.min.js")." --js_arguments ".tmp_file_Beautifier_arg." ".opts_Beautifier_arg." ".path_Beautifier_arg)
   else
     " Executable bin doesn't exist
@@ -413,6 +423,15 @@ func! Beautifier(...)
   " issue 42
   if !len(lines_Beautify)
       return result
+  endif
+
+  " TODO(maksimrv): Find better solution for splitting result on lines
+  " NOTE(maksimrv): This is need because if result contain newline in the end of file
+  " then split simple remove last line
+  if has_key(opts, 'end_with_newline')
+      if opts["end_with_newline"] == 'true'
+          let lines_Beautify =  lines_Beautify + ['']
+      endif
   endif
 
   silent exec line1.",".line2."j"

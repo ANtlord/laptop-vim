@@ -1,9 +1,9 @@
 set t_Co=65536
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 set nocompatible               " be iMproved
 filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
@@ -27,12 +27,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
+Plugin 'rust-lang/rust.vim'
 
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
 \}
 let mapleader = "\\"
+call vundle#end()
 filetype plugin indent on     " required!*/
 syntax on
 set mouse=a        " Enable mouse usage (all modes)
