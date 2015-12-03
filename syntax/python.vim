@@ -104,7 +104,7 @@ syn region  pythonSuperclasses start="("ms=s+1 end=")"me=e-1 keepend contained c
 syn match   pythonSuperclass "[a-zA-Z_][a-zA-Z_0-9]*" contained
 
 " Function definitions
-syn region  pythonFunc start="^\s*def\>" end=")\s*:" keepend contains=pythonFuncDef,pythonFuncName,pythonFuncParams
+syn region  pythonFunc start="^\s*def\>" end=").*:" keepend contains=pythonFuncDef,pythonFuncName,pythonFuncParams
 syn keyword pythonFuncDef def contained nextgroup=pythonFuncName skipwhite
 syn match   pythonFuncName	"[a-zA-Z_][a-zA-Z0-9_]*" display contained nextgroup=pythonFuncParams skipwhite
 syn region  pythonFuncParams start="("ms=s+1 end=")"me=e-1 contained transparent contains=pythonParam 
@@ -369,8 +369,8 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonHexError		Error
   HiLink pythonBinError		Error
 
-  HiLink pythonBuiltinObj   Number
-  HiLink pythonBuiltinFunc  Structure
+  HiLink pythonBuiltinObj   Structure
+  HiLink pythonBuiltinFunc  Function
 
   HiLink pythonExClass	Structure
 
@@ -378,3 +378,5 @@ if version >= 508 || !exists("did_python_syn_inits")
 endif
 
 let b:current_syntax = "python"
+hi Folded guifg=#cccccc guibg=#222222 
+hi Constant guifg=#44ff44

@@ -10,18 +10,21 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
 Plugin 'https://github.com/robhudson/snipmate_for_django.git'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Tagbar'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/vim-scripts/The-NERD-Commenter.git'
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
-Plugin 'https://github.com/jmcantrell/vim-virtualenv.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
+""python plugins"""""""""""""""""""
+"Plugin 'https://github.com/hdima/python-syntax.git'
+Plugin 'https://github.com/jmcantrell/vim-virtualenv.git'
+Plugin 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
+Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
@@ -330,3 +333,4 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=0
+set splitright
