@@ -266,3 +266,4 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 let g:python_highlight_all = 1
 map <leader>d :RopeGotoDefinition<CR>
 let g:ropevim_goto_def_newwin = "vnew"
+let g:syntastic_loc_list_height = 5
