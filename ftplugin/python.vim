@@ -9,12 +9,6 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_virtualenv = 1
 "let g:pymode_lint_cwindow = 0
 "let g:pymode_indent = 0
-"imap <C-c> <Esc>"+ya
-"map <C-c> "+y
-"imap <C-x> <Esc>"+da
-"map <C-x> "+d
-"imap <C-v> <Esc>"+pa
-"map <C-v> "+p
 "if getline(1) =~ 'from django.db import models'
     "Snippet addmodel class <{}>(models.Model):<CR><><CR><CR>def __unicode__(self):<CR>return "%s" % (<{}>,)
     "Snippet mcf models.CharField(max_length=<{}>)<CR><{}>
@@ -262,7 +256,7 @@ function! GetPythonIndent(lnum)
 endfunction
 
 
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501,E265'
 let g:python_highlight_all = 1
 map <leader>d :RopeGotoDefinition<CR>
 let g:ropevim_goto_def_newwin = "vnew"

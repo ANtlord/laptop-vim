@@ -1,4 +1,4 @@
-set t_Co=65536
+set t_Co=256
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -31,7 +31,7 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
 Plugin 'rust-lang/rust.vim'
-Plugin 'https://github.com/fatih/vim-go.git'
+Plugin 'fatih/vim-go'
 
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
@@ -226,7 +226,7 @@ au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.twig            set filetype=htmldjango    " [Feral:176/05@19:09] OGRE3d's material files
 
-hi CursorLine cterm=NONE ctermbg=235
+hi CursorLine term=None cterm=None ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
 hi Search ctermfg=black
 hi PmenuSel ctermfg=black
@@ -341,4 +341,11 @@ set splitright
 """"""""""""""""
 " GO settings
 """"""""""""""""
+setlocal omnifunc=go#complete#Complete
 let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+"let g:go_highlight_functions = 1
+"let g:go_highlight_methods = 1
+"let g:go_highlight_structs = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_build_constraints = 1
