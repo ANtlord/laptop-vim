@@ -31,6 +31,7 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
 Plugin 'https://github.com/stephpy/vim-yaml.git'
 Plugin 'rust-lang/rust.vim'
+Plugin 'https://github.com/fatih/vim-go.git'
 
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
@@ -231,6 +232,7 @@ hi Search ctermfg=black
 hi PmenuSel ctermfg=black
 hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
+hi StatusLine ctermbg=232 ctermfg=245
 set cursorline
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
@@ -323,6 +325,7 @@ let g:syntastic_php_phplint_quiet_messages = {
     \ "!level":  "errors",
     \ "!regex":   ['.*variable.*'],
 \}
+let g:syntastic_loc_list_height = 5
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -334,3 +337,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=0
 set splitright
+
+""""""""""""""""
+" GO settings
+""""""""""""""""
+let g:go_fmt_autosave = 0
