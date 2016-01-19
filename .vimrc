@@ -37,7 +37,7 @@ let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
 \}
-let mapleader = "\\"
+let mapleader = ","
 call vundle#end()
 filetype plugin indent on     " required!*/
 syntax on
