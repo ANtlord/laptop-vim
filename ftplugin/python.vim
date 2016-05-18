@@ -40,6 +40,7 @@ let NERDTreeIgnore = ['\.pyc$']
 "imap <silent> \ff = models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
 "map <silent> \ff o= models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
 
+map <leader>u :execute "grep! -rnHP '^(?!def\\<bar>class).*" . expand("<cword>") . "' ./ --include=\\*.py --exclude-dir=cache --exclude-dir=web --exclude-dir=.venv --exclude-dir=migrations" <bar> bel cwindow<CR>
 imap <silent> \setfunc <ESC>:call SetFunc()<CR>
 map <silent> \setfunc :call SetFunc()<CR>
 

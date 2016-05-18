@@ -33,6 +33,7 @@ Plugin 'https://github.com/stephpy/vim-yaml.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 
+let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
@@ -83,6 +84,7 @@ nmap <C-c> "+yy
 nmap <C-x> "+dd
 vmap <C-c> "+y
 vmap <C-x> "+d
+nnoremap v <c-v>
 imap <C-v> <Esc>"+pa
 map <C-v> "+p
 imap <C-F12> :q<CR>
@@ -226,6 +228,7 @@ au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.twig            set filetype=htmldjango    " [Feral:176/05@19:09] OGRE3d's material files
 
+hi Folded ctermbg=0
 hi CursorLine term=None cterm=None ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
 hi Search ctermfg=black
