@@ -32,6 +32,7 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Plugin 'https://github.com/stephpy/vim-yaml.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+Plugin 'ekalinin/Dockerfile.vim'
 
 let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_filetype_specific_completion_to_disable = {
