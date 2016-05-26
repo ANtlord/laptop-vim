@@ -32,11 +32,9 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Plugin 'https://github.com/stephpy/vim-yaml.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+""""""""TEST"""""""""""
+Plugin 'https://github.com/tshirtman/vim-cython.git'
 
-let g:ycm_filetype_specific_completion_to_disable = {
-  \ 'gitcommit': 1,
-  \ 'php': 1
-\}
 let mapleader = ","
 call vundle#end()
 filetype plugin indent on     " required!*/
@@ -207,6 +205,12 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'gitcommit': 1,
+  \ 'php': 1
+\}
 let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_complete_in_strings = 1
 let g:ycm_complete_in_comments = 1
