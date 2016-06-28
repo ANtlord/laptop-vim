@@ -36,6 +36,7 @@ Plug 'fatih/vim-go'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/idanarye/vim-dutyl'
 call plug#end()
 let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_filetype_specific_completion_to_disable = {
@@ -45,6 +46,7 @@ let g:ycm_filetype_specific_completion_to_disable = {
 let mapleader = ","
 filetype plugin indent on     " required!*/
 syntax on
+lang en_US.UTF-8
 set mouse=a        " Enable mouse usage (all modes)
 set number
 
@@ -356,4 +358,27 @@ let g:go_fmt_command = "goimports"
 "let g:go_highlight_structs = 1
 "let g:go_highlight_operators = 1
 "let g:go_highlight_build_constraints = 1
-nmap <C-p> :FZF<CR>
+""""""
+" FZF
+""""""
+nmap <C-p> :Files<CR>
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+" - window (nvim only)
+let g:fzf_layout = { 'down': '10' }
+"""""""
+" D settings
+"""""""
+let g:dutyl_stdImportPaths=['/usr/include/dmd/druntime/', '/usr/include/dmd/phobos/']
+let g:dutyl_neverAddClosingParen=1
+let g:dutyl_dontUseVimProc = 1
+call dutyl#register#tool('dcd-client', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-client')
+call dutyl#register#tool('dcd-server', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-server')
+call dutyl#register#tool('dfmt', '/home/antlord/.dub/packages/dfmt-0.4.5/dfmt/dfmt')
+call dutyl#register#tool('dscanner', '/home/antlord/.dub/packages/dscanner-0.3.0/dscanner/dscanner')
