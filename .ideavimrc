@@ -1,0 +1,11 @@
+map fr gT
+nmap <C-c> "+yy
+nmap <C-x> "+dd
+vmap <C-c> "+y
+vmap <C-x> "+d
+imap <C-v> <Esc>"+pa
+map <C-v> "+p
+let mapleader = ","
+map <leader>c<space> :action CommentByLineComment<CR>
+"vmap <leader>c<space> <C-/>
+set tm=320
