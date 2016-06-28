@@ -2,47 +2,51 @@ set t_Co=256
 
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'https://github.com/robhudson/snipmate_for_django.git'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Tagbar'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'https://github.com/vim-scripts/The-NERD-Commenter.git'
-Plugin 'https://github.com/jiangmiao/auto-pairs.git'
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
-Plugin 'https://github.com/kien/ctrlp.vim.git'
-Plugin 'https://github.com/scrooloose/syntastic.git'
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/vundle'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'https://github.com/robhudson/snipmate_for_django.git'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'Tagbar'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/vim-scripts/The-NERD-Commenter.git'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
+"Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/scrooloose/syntastic.git'
 ""python plugins"""""""""""""""""""
-"Plugin 'https://github.com/hdima/python-syntax.git'
-Plugin 'https://github.com/jmcantrell/vim-virtualenv.git'
-Plugin 'https://github.com/python-rope/ropevim.git'
+Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
+Plug 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
-Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+Plug 'https://github.com/maksimr/vim-jsbeautify.git'
+Plug 'marijnh/tern_for_vim'
+Plug 'pangloss/vim-javascript'
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
-Plugin 'https://github.com/stephpy/vim-yaml.git'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
-Plugin 'ekalinin/Dockerfile.vim'
-
+Plug 'https://github.com/stephpy/vim-yaml.git'
+Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/idanarye/vim-dutyl'
+call plug#end()
 let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
 \}
 let mapleader = ","
-call vundle#end()
 filetype plugin indent on     " required!*/
 syntax on
+lang en_US.UTF-8
 set mouse=a        " Enable mouse usage (all modes)
 set number
 
@@ -176,7 +180,8 @@ imap <A-BS> <C-W>
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
 let NERDTreeShowHidden=1
-let NERDChristmasTree=1
+"let NERDChristmasTree=1
+let NERDTreeMinimalUI=0
 let NERDTreeDirArrows=0
 let NERDTreeHighlightCursorline=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$']
@@ -359,3 +364,27 @@ let g:go_fmt_command = "goimports"
 "let g:go_highlight_structs = 1
 "let g:go_highlight_operators = 1
 "let g:go_highlight_build_constraints = 1
+""""""
+" FZF
+""""""
+nmap <C-p> :Files<CR>
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+" - window (nvim only)
+let g:fzf_layout = { 'down': '10' }
+"""""""
+" D settings
+"""""""
+let g:dutyl_stdImportPaths=['/usr/include/dmd/druntime/', '/usr/include/dmd/phobos/']
+let g:dutyl_neverAddClosingParen=1
+let g:dutyl_dontUseVimProc = 1
+call dutyl#register#tool('dcd-client', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-client')
+call dutyl#register#tool('dcd-server', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-server')
+call dutyl#register#tool('dfmt', '/home/antlord/.dub/packages/dfmt-0.4.5/dfmt/dfmt')
+call dutyl#register#tool('dscanner', '/home/antlord/.dub/packages/dscanner-0.3.0/dscanner/dscanner')
