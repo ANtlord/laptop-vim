@@ -1,2 +1,3 @@
 session
-./plugged
+plugged
+autoload/plug.vim
