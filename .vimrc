@@ -9,7 +9,7 @@ filetype off                   " required!
 " let Vundle manage Vundle
 " required! 
 call plug#begin('~/.vim/plugged')
-Plug 'gmarik/vundle'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
@@ -378,13 +378,3 @@ let g:fzf_action = {
 " - down / up / left / right
 " - window (nvim only)
 let g:fzf_layout = { 'down': '10' }
-"""""""
-" D settings
-"""""""
-let g:dutyl_stdImportPaths=['/usr/include/dmd/druntime/', '/usr/include/dmd/phobos/']
-let g:dutyl_neverAddClosingParen=1
-let g:dutyl_dontUseVimProc = 1
-call dutyl#register#tool('dcd-client', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-client')
-call dutyl#register#tool('dcd-server', '/home/antlord/.dub/packages/dcd-0.8.0/dcd/dcd-server')
-call dutyl#register#tool('dfmt', '/home/antlord/.dub/packages/dfmt-0.4.5/dfmt/dfmt')
-call dutyl#register#tool('dscanner', '/home/antlord/.dub/packages/dscanner-0.3.0/dscanner/dscanner')
