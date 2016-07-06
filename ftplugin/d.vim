@@ -21,3 +21,4 @@
 
 "command! -buffer DCDdoc DCDonCurrentBufferPosition --doc
 "command! -buffer DCDsymbolLocation call dcomplete#runDCDtoJumpToSymbolLocation()
+map gd :DUjump<CR>
