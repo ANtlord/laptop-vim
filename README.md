@@ -1,2 +1,2 @@
-type next commands
-`ln -s ~/.vim/.vimrc ~/.vimrc && ln -s ~/.vim/.gvimrc ~/.gvimrc`
+To install plugin manager
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
