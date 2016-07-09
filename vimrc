@@ -215,8 +215,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
+let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
