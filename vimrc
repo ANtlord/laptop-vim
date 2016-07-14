@@ -19,11 +19,11 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-scripts/The-NERD-Commenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
-"Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
 ""python plugins"""""""""""""""""""
+Plug 'https://github.com/hdima/python-syntax.git'
 Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
-Plug 'https://github.com/python-rope/ropevim.git'
+"Plug 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
 Plug 'https://github.com/maksimr/vim-jsbeautify.git'
 Plug 'marijnh/tern_for_vim'
@@ -369,13 +369,8 @@ let g:go_fmt_command = "goimports"
 " FZF
 """"""
 nmap <C-p> :Files<CR>
-" This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
-
-" Default fzf layout
-" - down / up / left / right
-" - window (nvim only)
 let g:fzf_layout = { 'down': '10' }
