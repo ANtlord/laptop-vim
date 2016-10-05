@@ -19,6 +19,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-scripts/The-NERD-Commenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
+"Plug 'https://github.com/davidhalter/jedi-vim.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
 ""python plugins"""""""""""""""""""
 Plug 'https://github.com/hdima/python-syntax.git'
@@ -97,12 +98,12 @@ map <C-F12> :q<CR>
 inoremap <C-l> <C-o>l
 "imap <C-h> <Esc> :%s///gc
 map <C-h> :%s///gc
-imap <C-a> <Esc>:1<CR>vG<end>
-map <C-a> :1<CR>vG<end>
+"imap <C-a> <Esc>:1<CR>vG<end>
+nmap <C-a> :1<CR>vG<end>
 vmap <tab> >gv
 vmap <S-tab> <gv
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
- 
+
 nmap Ж :
 " yank
 nmap Н Y
@@ -374,3 +375,15 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '10' }
+
+function! ToggleNumbers()
+    "if &nu == 1
+       "set rnu
+    if &rnu == 1
+       set nornu
+    else
+       set rnu
+    endif
+endfunction
+
+nmap <C-L> :call ToggleNumbers()<CR>
