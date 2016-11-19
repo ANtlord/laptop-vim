@@ -1,4 +1,4 @@
-set t_Co=256
+set t_Co=8
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Tagbar'
@@ -177,7 +178,6 @@ nmap Q gqap
 imap <C-BS> <C-W>
 imap <A-BS> <C-W>
 "au BufEnter *.py source ~/.vim/plugin/python.vim
-"let g:ctags_path='/home/uantlord/.vim/ctags.vim'
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
 let NERDTreeShowHidden=1
@@ -387,3 +387,6 @@ function! ToggleNumbers()
 endfunction
 
 nmap <C-L> :call ToggleNumbers()<CR>
+set hidden
+let g:racer_cmd = $HOME.'/.cargo/bin/racer'
+let $RUST_SRC_PATH="/media/storage/develop/rustc-1.12.1/src"
