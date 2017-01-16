@@ -1,6 +1,8 @@
 set t_Co=8
 
 set nocompatible               " be iMproved
+set ruler
+set backspace=2
 filetype off                   " required!
 
 "set rtp+=~/.vim/bundle/vundle/
@@ -23,6 +25,7 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
 ""python plugins"""""""""""""""""""
+Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
 Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
 "Plug 'https://github.com/python-rope/ropevim.git'
@@ -39,6 +42,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/idanarye/vim-dutyl'
+Plug 'https://github.com/terryma/vim-multiple-cursors'
 call plug#end()
 let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_filetype_specific_completion_to_disable = {
@@ -250,6 +254,11 @@ hi PmenuSel ctermfg=black
 hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
 hi StatusLine ctermbg=232 ctermfg=245
+hi diffadd ctermbg=236 guifg=#00ff00
+hi diffdelete ctermbg=124 guifg=#ff0000
+hi diffchange ctermbg=236 guifg=#ff0000
+hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
+
 set cursorline
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'

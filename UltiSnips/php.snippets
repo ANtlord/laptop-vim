@@ -1,0 +1,10 @@
+snippet pvdd "pre var_dump"
+echo '<pre>';
+var_dump($1); die();
+endsnippet
+snippet dd "dump(); die();"
+dump($1); die();
+endsnippet
+snippet dcd "dump(get_class_methods(get_class())); die();"
+dump(get_class_methods(get_class($1))); die();
+endsnippet
