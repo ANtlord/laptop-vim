@@ -121,6 +121,7 @@ nmap З P
 nmap . {>}``
 nmap , {<}``
 
+command Onspell set spelllang=en
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -308,29 +309,37 @@ let g:tagbar_type_php = {
 \}
 
 let g:tagbar_type_d = {
-    \ 'ctagsbin' : '/opt/ctags/bin/ctags',
     \ 'ctagstype' : 'd',
     \ 'kinds'     : [
-	\ 'c:classes:0:1',
-	\ 'f:functions',
-	\ 'g:enums',
-	\ 'u:unions',
-	\ 's:structs',
-	\ 'm:members'
+    \ 'c:classes:1:1',
+    \ 'f:functions:1:1',
+    \ 'T:template:1:1',
+    \ 'g:enums:1:1',
+    \ 'e:enumerators:0:0',
+    \ 'u:unions:1:1',
+    \ 's:structs:1:1',
+    \ 'v:variables:1:0',
+    \ 'i:interfaces:1:1',
+    \ 'm:members',
+    \ 'a:alias'
     \ ],
     \'sro': '.',
     \ 'kind2scope' : {
-	\ 'c' : 'class',
-	\ 'g' : 'enum',
-	\ 's' : 'struct',
-	\ 'u' : 'union'
+    \ 'c' : 'class',
+    \ 'g' : 'enum',
+    \ 's' : 'struct',
+    \ 'u' : 'union',
+    \ 'T' : 'template'
     \},
     \ 'scope2kind' : {
-	\ 'class'     : 'c',
-	\ 'enum'      : 'g',
-	\ 'struct'    : 's',
-	\ 'union'     : 'u'
-    \ }
+    \ 'enum'      : 'g',
+    \ 'class'     : 'c',
+    \ 'struct'    : 's',
+    \ 'union'     : 'u',
+    \ 'template'  : 'T'
+    \ },
+    \ 'ctagsbin' : $HOME.'/.dub/packages/dscanner-master/dscanner/dscanner',
+    \ 'ctagsargs' : ['--ctags']
 \ }
 
 set tm=320

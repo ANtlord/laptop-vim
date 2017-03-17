@@ -8,7 +8,7 @@ endif
 
 let colors_name = "blackboard"
 
-hi Normal		guifg=#ccc guibg=black						
+hi Normal		guifg=#cccccc guibg=black
 
 hi Comment	    guifg=#aeaeae gui=none
 hi Constant	    guifg=#d7fa41 gui=none
@@ -20,10 +20,10 @@ hi LineNr       guifg=#aeaeae guibg=#000000 gui=none
 hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold
 hi NonText 		guifg=#808080 guibg=black	gui=none
 
-hi CursorLine guibg=#222
-hi pythonDecorator guifg=#55f
+hi CursorLine guibg=#222222
+hi pythonDecorator guifg=#5555ff
 hi Constant guifg=#00aa00
-hi Visual       gui=reverse guibg=#000
+hi Visual       gui=reverse guibg=#000000
 hi VertSplit    guifg=#444444 guibg=#444444
 hi StatusLine   guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC guifg=#857b6f guibg=#444444
