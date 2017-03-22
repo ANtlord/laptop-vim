@@ -1,4 +1,5 @@
 let NERDTreeIgnore = ['\.pyc$']
+let NERDSpaceDelims = 0
 "hi Folded guifg=#cccccc guibg=#111111 gui=bold 
 "hi Folded guifg=#84b9ae guibg=#444444
 "let fdm='fold-syntax'

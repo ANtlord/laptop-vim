@@ -19,7 +19,7 @@ Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Tagbar'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/vim-scripts/The-NERD-Commenter.git'
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
@@ -408,3 +408,6 @@ nmap <C-L> :call ToggleNumbers()<CR>
 set hidden
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 let $RUST_SRC_PATH="/media/storage/develop/rustc-1.12.1/src"
+let NERDCommentWholeLinesInVMode = 2
+let NERDSpaceDelims = 1
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
