@@ -407,7 +407,7 @@ endfunction
 nmap <C-L> :call ToggleNumbers()<CR>
 set hidden
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
-let $RUST_SRC_PATH="/media/storage/develop/rustc-1.12.1/src"
+let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
