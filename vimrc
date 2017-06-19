@@ -24,6 +24,7 @@ Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
 Plug 'https://github.com/scrooloose/syntastic.git'
+" Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
 Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
@@ -122,6 +123,9 @@ nmap . {>}``
 nmap , {<}``
 
 command Onspell set spelllang=en
+au FileType d setlocal comments=sl:/**,mb:\ *,elx:*/
+au FileType d setlocal formatoptions+=r
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,6 +195,9 @@ let NERDTreeMinimalUI=0
 let NERDTreeDirArrows=0
 let NERDTreeHighlightCursorline=0
 let NERDTreeIgnore = ['\.pyc$', '\.o$']
+let NERDCommentWholeLinesInVMode = 2
+let NERDSpaceDelims = 1
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
 
 "py << EOF
 "import os
@@ -349,6 +356,7 @@ map <leader>c :copen<CR>
 """""""""""""
 " Syntastic "
 """""""""""""
+
 let g:syntastic_mode_map = { 'mode': 'active',
          \ 'active_filetypes': ['php', 'python'],
          \ 'passive_filetypes': ['cpp', 'c']}
@@ -371,7 +379,6 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=0
-set splitright
 
 """"""""""""""""
 " GO settings
@@ -406,8 +413,19 @@ endfunction
 
 nmap <C-L> :call ToggleNumbers()<CR>
 set hidden
+""""""
+" RUST
+""""""
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-let NERDCommentWholeLinesInVMode = 2
-let NERDSpaceDelims = 1
-"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
+""""""
+
+""""""""""""""
+" ALE LINTER
+""""""""""""""
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_enabled = 0
+"""""""
+
+set splitright
