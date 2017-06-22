@@ -6,11 +6,9 @@ let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd/', '/usr/include/dmd/druntim
 let g:dutyl_neverAddClosingParen=1
 let g:dutyl_dontUseVimProc = 1
 " let g:syntastic_d_dmd_args = '-c -o- -boundscheck=off'
-" let g:syntastic_d_dmd_args = '-c -o- -boundscheck=off'
 " let g:syntastic_d_checkers = ['dmd']
 let g:syntastic_d_checkers = ['dscanner']
 let g:syntastic_d_dscanner_exec = '~/.dub/packages/dscanner-master/dscanner/dscanner'
-" let g:syntastic_d_dscanner_exe = "dscanner"
 set noexpandtab
 
 call dutyl#register#tool('dcd-client', $HOME.'/.dub/packages/dcd-master/dcd/dcd-client')
