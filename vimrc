@@ -418,6 +418,10 @@ set hidden
 """"""
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 """"""
 
 """"""""""""""
