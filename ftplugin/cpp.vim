@@ -1,5 +1,4 @@
 filetype plugin on
-nmap <F3> :YcmDiags<CR>
 set nocp
 "Bundle 'https://github.com/vim-scripts/OmniCppComplete.git'
 "Bundle 'octol/vim-cpp-enhanced-highlight'

@@ -66,6 +66,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
 set ic
 set hls
 set directory=/tmp
@@ -78,10 +79,10 @@ set incsearch
 colorscheme peachpuff
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
+map <F3> :Buffers<CR>
 map <F4> :TagbarToggle<CR>
 nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
-nmap <C-n> :tabnew<CR>
 nmap o <Esc>:NERDTreeFind<CR>
 imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
@@ -261,7 +262,7 @@ hi Search ctermfg=black
 hi PmenuSel ctermfg=black
 hi SpellBad ctermbg=088 ctermfg=white
 hi Comment guifg=#777777 ctermfg=240
-hi StatusLine ctermbg=232 ctermfg=245
+hi StatusLine ctermbg=yellow ctermfg=blue
 hi diffadd ctermbg=236 guifg=#00ff00
 hi diffdelete ctermbg=124 guifg=#ff0000
 hi diffchange ctermbg=236 guifg=#ff0000
@@ -433,3 +434,10 @@ let g:ale_enabled = 0
 """""""
 
 set splitright
+
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsShortcutToggle = '\'
+let g:AutoPairsShortcutFastWrap = 'r'
+let g:AutoPairsShortcutJump = 'n'
+let g:AutoPairsCenterLine = 0
+
