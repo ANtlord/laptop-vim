@@ -16,7 +16,7 @@ call dutyl#register#tool('dcd-server', $HOME.'/.dub/packages/dcd-master/dcd/dcd-
 "call dutyl#register#tool('dfmt', $HOME.'/.dub/packages/dfmt-0.4.5/dfmt/dfmt')
 "call dutyl#register#tool('dscanner', $HOME.'/.dub/packages/dscanner-0.3.0/dscanner/dscanner')
 
-filetype plugin indent off    " required!*/
+filetype indent off    " required!*/
 if exists("b:did_indent")
   finish
 endif
