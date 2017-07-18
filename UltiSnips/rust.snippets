@@ -1,0 +1,15 @@
+snippet from "implement From trait for" b
+impl From<${1:from type}> for ${2:for type} {
+	fn from(${3:var}: $1) -> Self {
+		$4
+	}
+}
+endsnippet
+
+snippet into "implement Into trait for" b
+impl Into<${1:from type}> for ${2:for type} {
+	fn from(${3:var}: $2) -> $1 {
+		$4
+	}
+}
+endsnippet
