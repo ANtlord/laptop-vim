@@ -12,3 +12,23 @@ from django.dispatch import receiver
 def pp_pre_save(sender, **kwargs):
     import pdb; pdb.set_trace()
 endsnippet
+
+
+global !p
+def make_choices(val_string):
+	choices = (x.strip() for x in val_string.split('\n'))
+	choices = (re.sub(r'(\ |)=.*', '', x) for x in choices)
+	vals = ('(%s, \'\')' % x.strip() for x in choices)
+	return ',\n'.join((snip.mkline(x) for x in vals))
+endglobal
+
+snippet cho "make choices" b
+${1:placeholder}
+${2:CHOIES} = (`!p
+snip.unshift(1)
+snip.rv = snip.mkline('\n')
+snip.shift(2)
+snip.rv += make_choices(t[1])
+`
+)
+endsnippet
