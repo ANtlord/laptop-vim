@@ -260,7 +260,7 @@ function! GetPythonIndent(lnum)
 endfunction
 
 
-let g:syntastic_python_flake8_args='--ignore=E501,E265'
+" let g:syntastic_python_flake8_args='--ignore=E501,E265'
 let g:python_highlight_all = 1
 "map <leader>d :RopeGotoDefinition<CR>
 let g:ropevim_goto_def_newwin = "vnew"

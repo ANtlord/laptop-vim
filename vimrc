@@ -23,8 +23,8 @@ Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
-Plug 'https://github.com/scrooloose/syntastic.git'
-" Plug 'https://github.com/w0rp/ale.git'
+" Plug 'https://github.com/scrooloose/syntastic.git'
+Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
 Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
@@ -363,7 +363,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
          \ 'passive_filetypes': ['cpp', 'c']}
 let g:syntastic_php_checkers = ['phplint', 'php']
 "let g:syntastic_python_checkers = ['flake8', 'python', 'pyflakes', 'pylint']
-let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_checkers = ['flake8']
 "let g:syntastic_python_flake8_args=''
 let g:syntastic_php_phplint_quiet_messages = {
     \ "!level":  "errors",
@@ -380,6 +380,9 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=0
+let g:syntastic_enable_balloons = 0
+let g:syntastic_enable_highlighting = 0
+let g:syntastic_echo_current_error = 0
 
 """"""""""""""""
 " GO settings
@@ -428,9 +431,17 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 """"""""""""""
 " ALE LINTER
 """"""""""""""
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 1
+let g:ale_set_highlights = 1
+let g:ale_list_window_size = 5
+
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-let g:ale_enabled = 0
+let g:ale_enabled = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 """""""
 
 set splitright
