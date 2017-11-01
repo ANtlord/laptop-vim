@@ -253,7 +253,8 @@ let g:ycm_goto_buffer_command = 'new-tab'
 au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
-au BufNewFile,BufRead    *.twig            set filetype=htmldjango    " [Feral:176/05@19:09] OGRE3d's material files
+au BufNewFile,BufRead    *.twig            set filetype=htmldjango
+au BufNewFile,BufRead    *.vue            set filetype=html
 
 hi Folded ctermbg=0
 hi CursorLine term=None cterm=None ctermbg=235
@@ -442,6 +443,9 @@ let g:ale_lint_on_enter = 0
 let g:ale_enabled = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_linters = {
+\   'rust': [],
+\}
 """""""
 
 set splitright
