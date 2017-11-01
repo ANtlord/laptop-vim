@@ -23,8 +23,8 @@ Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
-Plug 'https://github.com/scrooloose/syntastic.git'
-" Plug 'https://github.com/w0rp/ale.git'
+" Plug 'https://github.com/scrooloose/syntastic.git'
+Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
 Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
@@ -430,14 +430,19 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 """"""""""""""
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-let g:ale_enabled = 0
+let g:ale_enabled = 1
+let g:ale_linters = {
+\ 'python': ['flake8']
+\}
 """""""
 
 set splitright
 
+""""""""""""""
+" AUTO PAIRS
+""""""""""""""
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '\'
 let g:AutoPairsShortcutFastWrap = 'r'
 let g:AutoPairsShortcutJump = 'n'
 let g:AutoPairsCenterLine = 0
-
