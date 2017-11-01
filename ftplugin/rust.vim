@@ -7,17 +7,17 @@
 " --regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?trait[ \t]+([a-zA-Z0-9_]+)/\3/o,traits,traits/
 " --regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?impl([ \t\n]*<[^>]*>)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(<[^>]*>)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\5 \7 \8/p,impls,trait implementations/
 " --regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/
+
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
     \ 'kinds' : [
-        \'q:functions,function definitions',
-        \'w:types,type definitions',
-        \'e:enum,enumeration names',
-        \'r:structure names',
-        \'y:modules,module names',
-        \'u:consts,static constants',
-        \'o:traits,traits',
-        \'p:impls,trait implementations',
-        \'d:macros,macro definitions',
+        \'T:types,type definitions',
+        \'f:functions,function definitions',
+        \'g:enum,enumeration names',
+        \'s:structure names',
+        \'m:modules,module names',
+        \'c:consts,static constants',
+        \'t:traits',
+        \'i:impls,trait implementations',
     \]
     \}
