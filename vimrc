@@ -442,13 +442,18 @@ let g:ale_lint_on_enter = 0
 let g:ale_enabled = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_linters = {
+\ 'python': ['flake8']
+\}
 """""""
 
 set splitright
 
+""""""""""""""
+" AUTO PAIRS
+""""""""""""""
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '\'
 let g:AutoPairsShortcutFastWrap = 'r'
 let g:AutoPairsShortcutJump = 'n'
 let g:AutoPairsCenterLine = 0
-
