@@ -2,3 +2,4 @@ session
 plugged
 autoload/plug.vim
 spell
+.netrwhist

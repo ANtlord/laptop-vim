@@ -18,7 +18,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Tagbar'
-Plug 'https://github.com/scrooloose/nerdtree.git'
+" Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
@@ -83,9 +83,10 @@ map <F3> :Buffers<CR>
 map <F4> :TagbarToggle<CR>
 nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
-nmap o <Esc>:NERDTreeFind<CR>
-imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
-map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
+" nmap o <Esc>:NERDTreeFind<CR>
+nmap o :Vex<CR>
+" imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
+" map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map fr gT
 "inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 "\ "\<lt>C-n>" :
@@ -199,17 +200,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
-
-"py << EOF
-"import os
-"import sys
-"import vim
-"if 'VIRTUAL_ENV' in os.environ:
-    "project_base_dir = os.environ['VIRTUAL_ENV']
-    "sys.path.insert(0, project_base_dir)
-    "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    "execfile(activate_this, dict(__file__=activate_this))
-"EOF
 
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
 " ==============================================
@@ -406,17 +396,8 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '10' }
 
-function! ToggleNumbers()
-    "if &nu == 1
-       "set rnu
-    if &rnu == 1
-       set nornu
-    else
-       set rnu
-    endif
-endfunction
+" nmap <C-L> :set rnu!<CR>
 
-nmap <C-L> :call ToggleNumbers()<CR>
 set hidden
 """"""
 " RUST
@@ -427,6 +408,7 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+au FileType netrw nmap <buffer> <silent> <nowait> q :q!<CR>
 """"""
 
 """"""""""""""
@@ -459,3 +441,11 @@ let g:AutoPairsShortcutToggle = '\'
 let g:AutoPairsShortcutFastWrap = 'r'
 let g:AutoPairsShortcutJump = 'n'
 let g:AutoPairsCenterLine = 0
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 1
+let g:netrw_browse_split = 4
+let g:netrw_altv = 0
+let g:netrw_winsize = 20
+let g:netrw_mousemaps = 0
+" let g:netrw_usetab = 1
