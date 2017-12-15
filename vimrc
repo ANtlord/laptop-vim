@@ -5,11 +5,6 @@ set ruler
 set backspace=2
 filetype off                   " required!
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#begin()
-
-" let Vundle manage Vundle
-" required! 
 call plug#begin('~/.vim/plugged')
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
@@ -18,6 +13,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Tagbar'
+Plug 'leafgarland/typescript-vim'
 " Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
@@ -45,17 +41,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/idanarye/vim-dutyl'
 Plug 'https://github.com/terryma/vim-multiple-cursors'
 call plug#end()
-let g:ycm_path_to_python_interpreter='/usr/bin/python2'
-let g:ycm_filetype_specific_completion_to_disable = {
-  \ 'gitcommit': 1,
-  \ 'php': 1
-\}
-let mapleader = ","
 filetype plugin indent on     " required!*/
 syntax on
 lang en_US.UTF-8
-set mouse=a        " Enable mouse usage (all modes)
-set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Indention                                 "
@@ -66,17 +54,37 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Basic options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a        " Enable mouse usage (all modes)
+set number
+let mapleader = ","
 set laststatus=2
 set ic
 set hls
+set cursorline
 set directory=/tmp
 set fencs=utf8,cp1251
 set ffs=unix,dos
-set nocursorline
 set nobackup
 set noswapfile
 set incsearch
 colorscheme peachpuff
+set exrc
+set secure
+set splitright
+set tm=320
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Optimization
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set lazyredraw
+syntax sync minlines=256
+set synmaxcol=140
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Key Bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F3> :Buffers<CR>
@@ -85,15 +93,7 @@ nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
 " nmap o <Esc>:NERDTreeFind<CR>
 nmap o :Vex<CR>
-" imap <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
-" map <leader>o <Esc>:NERDTreeFind<CR>:TagbarOpen<CR><C-w>l
 map fr gT
-"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-"\ "\<lt>C-n>" :
-"\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-"\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-"\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-"imap <C-@> <C-Space>
 nmap <C-c> "+yy
 nmap <C-x> "+dd
 vmap <C-c> "+y
@@ -104,7 +104,6 @@ map <C-v> "+p
 imap <C-F12> :q<CR>
 map <C-F12> :q<CR>
 inoremap <C-l> <C-o>l
-"imap <C-h> <Esc> :%s///gc
 map <C-h> :%s///gc
 "imap <C-a> <Esc>:1<CR>vG<end>
 nmap <C-a> :1<CR>vG<end>
@@ -124,6 +123,18 @@ nmap З P
 nmap . {>}``
 nmap , {<}``
 
+nnoremap + <C-W>+
+nnoremap _ <C-W>-
+nnoremap = <C-W>>
+nnoremap - <C-W><
+nmap h <C-w>h
+nmap l <C-w>l
+nmap j <C-w>j
+nmap k <C-w>k
+
+vmap Q gq
+nmap Q gqap
+
 command Onspell set spelllang=en
 au FileType d setlocal comments=sl:/**,mb:\ *,elx:*/
 au FileType d setlocal formatoptions+=r
@@ -139,11 +150,11 @@ let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 set completeopt=longest,menuone
 function! OmniPopup(action)
     if pumvisible()
-	if a:action == 'j'
-	    return "\<C-N>"
-	elseif a:action == 'k'
-	    return "\<C-P>"
-	endif
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
     endif
     return a:action
 endfunction
@@ -151,26 +162,10 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-nnoremap + <C-W>+
-nnoremap _ <C-W>-
-nnoremap = <C-W>>
-nnoremap - <C-W><
-nmap h <C-w>h
-nmap l <C-w>l
-nmap j <C-w>j
-nmap k <C-w>k
-
-"imap h <left>
-"imap l <right>
-"imap j <down>
-"imap k <up>
-
 " Source a global configuration file if available
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
 endif 
-vmap Q gq
-nmap Q gqap
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 "autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -186,25 +181,23 @@ nmap Q gqap
 			"\	endif
     "endif
 "Plugin 'git://github.com/vim-scripts/AutoComplPop.git'
-imap <C-BS> <C-W>
-imap <A-BS> <C-W>
 "au BufEnter *.py source ~/.vim/plugin/python.vim
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 "let NERDChristmasTree=1
-let NERDTreeMinimalUI=0
-let NERDTreeDirArrows=0
-let NERDTreeHighlightCursorline=0
-let NERDTreeIgnore = ['\.pyc$', '\.o$']
+" let NERDTreeMinimalUI=0
+" let NERDTreeDirArrows=0
+" let NERDTreeHighlightCursorline=0
+" let NERDTreeIgnore = ['\.pyc$', '\.o$']
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
 
 "let g:pydiction_location='/usr/share/pydiction/complete-dict'
-" ==============================================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JEDI vim
-" ==============================================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plugin 'https://github.com/davidhalter/jedi-vim.git'
 "let g:jedi#auto_initialization = 1
 "let g:jedi#auto_vim_configuration = 1
@@ -220,6 +213,7 @@ let NERDSpaceDelims = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+let g:ycm_path_to_python_interpreter='/usr/bin/python2'
 let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
 let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
 let g:ycm_filetype_specific_completion_to_disable = {
@@ -239,13 +233,22 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_goto_buffer_command = 'new-tab'
 
 "set path=$PWD/include,$PWD/src
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For scripts of framework OGRE 3D
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
 au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" HTML TEMPLATE HIGHLIGHT
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead    *.twig            set filetype=htmldjango
 au BufNewFile,BufRead    *.vue            set filetype=html
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Color customiazation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Folded ctermbg=0
 hi CursorLine term=None cterm=None ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
@@ -259,27 +262,14 @@ hi diffdelete ctermbg=124 guifg=#ff0000
 hi diffchange ctermbg=236 guifg=#ff0000
 hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
 
-set cursorline
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
-
-set exrc
-set secure
 
 function! MyMethod()
     exe "!vpaste ft=".&ft
 endfun
 
 nmap <leader>sp :call MyMethod()<CR>
-
-let g:ctrlp_custom_ignore = {
-    \ 'file': '\v\.(exe|so|dll|o)$',
-\ }
-    "\ 'ctagsargs': '-f - --format=2 --excmd=pattern --fields=n --extra= --sort=no',
-    "\ 'ctagsbin': '/home/uantlord/Develop/Dscanner/bin/dscanner',
-    "\ 'ctagsargs': '--ctags',
-    "
-
 
 let g:tagbar_type_php = {
     \ 'ctagsbin' : '/opt/ctags/bin/ctags',
@@ -341,13 +331,12 @@ let g:tagbar_type_d = {
     \ 'ctagsargs' : ['--ctags']
 \ }
 
-set tm=320
 map <leader>s :execute " grep! -srnw --binary-files=without-match --exclude-dir=.git --exclude-dir=.svn . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 map <leader>c :copen<CR>
 
-"""""""""""""
-" Syntastic "
-"""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:syntastic_mode_map = { 'mode': 'active',
          \ 'active_filetypes': ['php', 'python'],
@@ -386,17 +375,15 @@ let g:go_fmt_command = "goimports"
 "let g:go_highlight_structs = 1
 "let g:go_highlight_operators = 1
 "let g:go_highlight_build_constraints = 1
-""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
-""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-p> :Files<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '10' }
-
-" nmap <C-L> :set rnu!<CR>
 
 set hidden
 """"""
@@ -431,11 +418,11 @@ let g:ale_linters = {
 \}
 """""""
 
-set splitright
 
-""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTO PAIRS
-""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '\'
 let g:AutoPairsShortcutFastWrap = 'r'
@@ -443,7 +430,7 @@ let g:AutoPairsShortcutJump = 'n'
 let g:AutoPairsCenterLine = 0
 
 let g:netrw_banner = 0
-let g:netrw_liststyle = 1
+let g:netrw_liststyle = 0
 let g:netrw_browse_split = 4
 let g:netrw_altv = 0
 let g:netrw_winsize = 20
