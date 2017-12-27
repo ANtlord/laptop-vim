@@ -17,7 +17,9 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
-Plug 'https://github.com/Valloric/YouCompleteMe.git', {'do': './install.py'}
+Plug 'https://github.com/Valloric/YouCompleteMe.git', {
+    \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
+\}
 "Plug 'https://github.com/davidhalter/jedi-vim.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 Plug 'https://github.com/w0rp/ale.git'
@@ -28,13 +30,13 @@ Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
 "Plug 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
 Plug 'https://github.com/maksimr/vim-jsbeautify.git'
-Plug 'marijnh/tern_for_vim'
-Plug 'pangloss/vim-javascript'
-Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+" Plug 'marijnh/tern_for_vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
 Plug 'https://github.com/stephpy/vim-yaml.git'
 Plug 'rust-lang/rust.vim'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -74,6 +76,7 @@ set exrc
 set secure
 set splitright
 set tm=320
+set wildmenu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Optimization
@@ -213,14 +216,19 @@ let NERDSpaceDelims = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
-let g:ycm_path_to_python_interpreter='/usr/bin/python2'
+" let g:ycm_path_to_python_interpreter='/usr/bin/python2'
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" let g:ycm_key_invoke_completion = '<C-x><C-o>'
 let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
 let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
   \ 'php': 1
 \}
+let g:ycm_max_num_candidates = 20
 let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_auto_trigger = 1
+let g:ycm_use_ultisnips_completer = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_complete_in_comments = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -367,7 +375,7 @@ let g:syntastic_echo_current_error = 0
 """"""""""""""""
 " GO settings
 """"""""""""""""
-setlocal omnifunc=go#complete#Complete
+" setlocal omnifunc=go#complete#Complete
 let g:go_fmt_autosave = 0
 let g:go_fmt_command = "goimports"
 "let g:go_highlight_functions = 1
