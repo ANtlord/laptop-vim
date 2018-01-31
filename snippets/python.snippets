@@ -1,36 +1,36 @@
 snippet get_c
 	def get_context_data(self, **kwargs):
-		ctx = super(${1:ClassName}, self).get_context_data(**kwargs)
+		ctx = super().get_context_data(**kwargs)
 		${2:#code}
 		return ctx
 
 snippet get_q
 	def get_queryset(self, **kwargs):
-		qs = super(${1:ClassName}, self).get_queryset(**kwargs)
+		qs = super().get_queryset(**kwargs)
 		${2:#code}
 		return qs
 
 snippet get_o
 	def get_object(self, **kwargs):
-		obj = super(${1:ClassName}, self).get_object(**kwargs)
+		obj = super().get_object(**kwargs)
 		${2:#code}
 		return obj
 
 snippet post
 	def post(self, request, *args, **kwargs):
-		res = super(${1:ClassName}, self).post(request, *args, **kwargs)
+		res = super().post(request, *args, **kwargs)
 		${2:#code}
 		return res
 
 snippet get
 	def get(self, request, *args, **kwargs):
-		res = super(${1:ClassName}, self).get(request, *args, **kwargs)
-		${2:#code}
+		res = super().get(request, *args, **kwargs)
+		${1:#code}
 		return res
 
 snippet form_v
 	def form_valid(self, form):
-		res = super(${1:ClassName}, self).form_valid(form)
+		res = super().form_valid(form)
 		${2:#code}
 		return res
 

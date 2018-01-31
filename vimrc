@@ -12,7 +12,7 @@ Plug 'honza/vim-snippets'
 Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'Tagbar'
+" Plug 'Tagbar'
 Plug 'leafgarland/typescript-vim'
 " Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
@@ -63,6 +63,7 @@ set number
 let mapleader = ","
 set laststatus=2
 set ic
+set smartcase
 set hls
 set cursorline
 set directory=/tmp
@@ -84,7 +85,13 @@ set wildmenu
 set lazyredraw
 syntax sync minlines=256
 set synmaxcol=140
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Folding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldminlines=3
+set foldnestmax=4
+set nofoldenable
+set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,7 +245,7 @@ let g:ycm_key_list_select_completion = []
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_goto_buffer_command = 'new-tab'
+" let g:ycm_goto_buffer_command = 'new-tab'
 
 "set path=$PWD/include,$PWD/src
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -257,7 +264,7 @@ au BufNewFile,BufRead    *.vue            set filetype=html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Color customiazation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Folded ctermbg=0
+hi Folded ctermbg=0 ctermfg=236
 hi CursorLine term=None cterm=None ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
 hi Search ctermfg=black
