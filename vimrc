@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 " Plug 'Tagbar'
@@ -26,7 +26,7 @@ Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
 Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
-Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
+" Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
 "Plug 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
 Plug 'https://github.com/maksimr/vim-jsbeautify.git'
@@ -114,7 +114,8 @@ map <C-v> "+p
 imap <C-F12> :q<CR>
 map <C-F12> :q<CR>
 inoremap <C-l> <C-o>l
-map <C-h> :%s///gc
+map <C-h> :%s///gc<Left><Left><Left><Left>
+vmap <C-h> :s///gc<Left><Left><Left><Left>
 "imap <C-a> <Esc>:1<CR>vG<end>
 nmap <C-a> :1<CR>vG<end>
 vmap <tab> >gv
@@ -182,7 +183,6 @@ endif
 "autocmd FileType python setlocal omnifunc=jedi#complete
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
-"
 
 "if has("autocmd") && exists("+omnifunc")
 	"autocmd Filetype *
@@ -264,6 +264,7 @@ au BufNewFile,BufRead    *.vue            set filetype=html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Color customiazation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi MatchParen ctermbg=blue guibg=lightblue
 hi Folded ctermbg=0 ctermfg=236
 hi CursorLine term=None cterm=None ctermbg=235
 hi Pmenu ctermfg=white ctermbg=238
