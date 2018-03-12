@@ -78,6 +78,7 @@ set secure
 set splitright
 set tm=320
 set wildmenu
+set nojs
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Optimization
@@ -95,6 +96,8 @@ set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap m J
+nmap J :call JoinSpaceless()<CR>
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F3> :Buffers<CR>
@@ -391,6 +394,7 @@ let g:go_fmt_command = "goimports"
 "let g:go_highlight_structs = 1
 "let g:go_highlight_operators = 1
 "let g:go_highlight_build_constraints = 1
+au FileType go set noexpandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
