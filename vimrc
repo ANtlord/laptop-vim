@@ -96,8 +96,9 @@ set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap m J
-nmap J :call JoinSpaceless()<CR>
+" nnoremap m J
+" nmap J :call JoinSpaceless()<CR>
+"
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F3> :Buffers<CR>
@@ -148,6 +149,11 @@ nmap k <C-w>k
 
 vmap Q gq
 nmap Q gqap
+
+command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '-w', fzf#vim#layout(<bang>0))
+nmap  gr :Agw <C-r><C-w><CR>
+nmap  gR :Ag <C-r><C-w><CR>
+
 
 command Onspell set spelllang=en
 au FileType d setlocal comments=sl:/**,mb:\ *,elx:*/
@@ -280,6 +286,7 @@ hi diffadd ctermbg=236 guifg=#00ff00
 hi diffdelete ctermbg=124 guifg=#ff0000
 hi diffchange ctermbg=236 guifg=#ff0000
 hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
+set textwidth=100
 
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
@@ -415,7 +422,6 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
-au FileType netrw nmap <buffer> <silent> <nowait> q :q!<CR>
 """"""
 
 """"""""""""""
@@ -449,6 +455,10 @@ let g:AutoPairsShortcutFastWrap = 'r'
 let g:AutoPairsShortcutJump = 'n'
 let g:AutoPairsCenterLine = 0
 
+"""""""""""""""""""""""""""
+" NETRW
+"""""""""""""""""""""""""""
+au FileType netrw nmap <buffer> <silent> <nowait> q :q!<CR>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 0
 let g:netrw_browse_split = 4

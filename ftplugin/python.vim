@@ -1,51 +1,8 @@
-let NERDTreeIgnore = ['\.pyc$']
-let NERDSpaceDelims = 0
-"hi Folded guifg=#cccccc guibg=#111111 gui=bold 
-"hi Folded guifg=#84b9ae guibg=#444444
-"let fdm='fold-syntax'
-"let g:pymode = 1
-"let g:pymode_syntax = 0
-"let g:pymode_rope_goto_def_newwin = 0
-"let g:pymode_rope_always_show_complete_menu = 0
-"let g:pymode_virtualenv = 1
-"let g:pymode_lint_cwindow = 0
-"let g:pymode_indent = 0
-"if getline(1) =~ 'from django.db import models'
-    "Snippet addmodel class <{}>(models.Model):<CR><><CR><CR>def __unicode__(self):<CR>return "%s" % (<{}>,)
-    "Snippet mcf models.CharField(max_length=<{}>)<CR><{}>
-    "Snippet mff models.FileField(upload_to=<{}>)<CR><{}>
-    "Snippet mfpf models.FilePathField(path=<{}>, match="<{}>", recursive=<False>)<CR><{}>
-    "Snippet mfloat models.FloatField(max_digits=<{}>, decimal_places=<{}>)<CR><{}>
-    "Snippet mfk models.ForeignKey(<{}>)<CR><{}>
-    "Snippet m2m models.ManyToManyField(<{}>)<CR><{}>
-    "Snippet o2o models.OneToOneField(<{}>)<CR><{}>
-
-"imap <silent> \cf = models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
-"map <silent> \cf o= models.CharField(max_length=255, blank=True, null=True, verbose_name=u'')<ESC>I<space><left>
-
-"imap <silent> \fk = models.ForeignKey('to model', related_name='name for access', verbose_name=u'')<ESC>I<space><left>
-"map <silent> \fk o= models.ForeignKey('to model', related_name='name for access', verbose_name=u'')<ESC>I<space><left>
-
-"imap <silent> \if = models.IntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
-"map <silent> \if o= models.IntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
-
-"imap <silent> \pf = models.PositiveIntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
-"map <silent> \pf o= models.PositiveIntegerField(default=0, verbose_name=u'')<ESC>I<space><left>
-
-"imap <silent> \bf = models.BooleanField(default=False, verbose_name=u'')<ESC>I<space><left>
-"map <silent> \bf o= models.BooleanField(default=False, verbose_name=u'')<ESC>I<space><left>
-
-"imap <silent> \im = models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)<ESC>I<space><left>
-"map <silent> \im o= models.ImageField(upload_to=generate_upload_name, verbose_name=u'Изображение', blank=True, null=True)<ESC>I<space><left>
-
-"imap <silent> \ff = models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
-"map <silent> \ff o= models.FileField(upload_to=generate_upload_name, verbose_name=u'Прикрепленный файл', blank=True, null=True)<ESC>I<space><left>
-
 set switchbuf+=newtab
-map <leader>u :execute "grep! -rnHP '^(?!def\\<bar>class).*" . expand("<cword>") . "' ./ --include=\\*.py --exclude-dir=cache --exclude-dir=web --exclude-dir=.venv --exclude-dir=migrations" <bar> bel cwindow<CR><CR>
-map <leader>s :execute "grep! -rnHP '^(def\\<bar>class)<space>*" . expand("<cword>") . "' ./ --include=\\*.py --exclude-dir=cache --exclude-dir=web --exclude-dir=.venv --exclude-dir=migrations" <bar> bel cwindow<CR>
-imap <silent> \setfunc <ESC>:call SetFunc()<CR>
-map <silent> \setfunc :call SetFunc()<CR>
+" map <leader>u :execute "grep! -rnHP '^(?!def\\<bar>class).*" . expand("<cword>") . "' ./ --include=\\*.py --exclude-dir=cache --exclude-dir=web --exclude-dir=.venv --exclude-dir=migrations" <bar> bel cwindow<CR><CR>
+" map <leader>s :execute "grep! -rnHP '^(def\\<bar>class)<space>*" . expand("<cword>") . "' ./ --include=\\*.py --exclude-dir=cache --exclude-dir=web --exclude-dir=.venv --exclude-dir=migrations" <bar> bel cwindow<CR>
+" imap <silent> \setfunc <ESC>:call SetFunc()<CR>
+" map <silent> \setfunc :call SetFunc()<CR>
 
 hi pythonParamName ctermfg=027
 hi pythonClassName ctermfg=034
@@ -269,3 +226,6 @@ nnoremap K :YcmCompleter GetDoc<CR>
 nmap <silent> <C-_> <Plug>(pydocstring)
 
 let @c = 'vex%pa, Bhh2x'  " set the last argument in brackets to the first place. (CloseMixin, AbstractEventState) -> (AbstractEventState, CloseMixin)
+
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_flake8_args = '-m flake8'
