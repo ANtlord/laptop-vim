@@ -96,8 +96,6 @@ set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap m J
-nmap J :call JoinSpaceless()<CR>
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F3> :Buffers<CR>
