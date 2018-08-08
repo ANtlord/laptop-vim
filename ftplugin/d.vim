@@ -8,11 +8,16 @@ let g:dutyl_dontUseVimProc = 1
 " let g:syntastic_d_dmd_args = '-c -o- -boundscheck=off'
 " let g:syntastic_d_checkers = ['dmd']
 let g:syntastic_d_checkers = ['dscanner']
-let g:syntastic_d_dscanner_exec = '~/.dub/packages/dscanner-master/dscanner/dscanner'
+let g:syntastic_d_dscanner_exec = $HOME.'/.dub/packages/dscanner-master/dscanner/dscanner'
 set noexpandtab
 
-call dutyl#register#tool('dcd-client', $HOME.'/.dub/packages/dcd-master/dcd/dcd-client')
-call dutyl#register#tool('dcd-server', $HOME.'/.dub/packages/dcd-master/dcd/dcd-server')
+call dutyl#register#tool('dcd-client', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-client')
+call dutyl#register#tool('dcd-server', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-server')
+"
+let g:deoplete#sources#d#dcd_client_binary = $HOME.'/.dub/packages/dcd-master/dcd/dcd-client'
+let g:deoplete#sources#d#dcd_server_binary = $HOME.'/.dub/packages/dcd-master/dcd/dcd-server.sh'
+let g:deoplete#sources#d#dcd_server_autostart = 1
+let g:deoplete#enable_at_startup = 1
 "call dutyl#register#tool('dfmt', $HOME.'/.dub/packages/dfmt-0.4.5/dfmt/dfmt')
 "call dutyl#register#tool('dscanner', $HOME.'/.dub/packages/dscanner-0.3.0/dscanner/dscanner')
 

@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'racer-rust/vim-racer'
 Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
 " Plug 'Tagbar'
@@ -20,7 +19,15 @@ Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {
     \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
 \}
-"Plug 'https://github.com/davidhalter/jedi-vim.git'
+
+""DEOPLETE"""
+Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'landaire/deoplete-d'
+""
+
+Plug 'https://github.com/davidhalter/jedi-vim.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
@@ -217,9 +224,9 @@ let NERDSpaceDelims = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JEDI vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plugin 'https://github.com/davidhalter/jedi-vim.git'
-"let g:jedi#auto_initialization = 1
-"let g:jedi#auto_vim_configuration = 1
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#completions_enabled = 0
 ""let g:jedi#goto_command = "<leader>g"
 ""let g:jedi#related_names_command = "<leader>n"
 ""let g:jedi#get_definition_command = "<leader>d"
@@ -239,7 +246,8 @@ let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
 let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1,
-  \ 'php': 1
+  \ 'php': 1,
+  \ 'd': 1
 \}
 let g:ycm_max_num_candidates = 20
 let g:ycm_register_as_syntastic_checker = 0
@@ -418,10 +426,6 @@ set hidden
 """"""
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 """"""
 
 """"""""""""""
@@ -466,3 +470,5 @@ let g:netrw_altv = 0
 let g:netrw_winsize = 20
 let g:netrw_mousemaps = 0
 " let g:netrw_usetab = 1
+
+let g:deoplete#enable_at_startup = 0
