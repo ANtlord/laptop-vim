@@ -32,3 +32,12 @@ snip.rv += make_choices(t[1])
 `
 )
 endsnippet
+
+snippet deco "decorator method"
+def ${1:method_name}(${2:decorator_args}):
+	def deco(${3:fun}):
+		def wrapper(${4:*args}, ${5:**kwargs}):
+			return $3($4, $5)
+		return wrapper
+	return deco
+endsnippet
