@@ -154,9 +154,10 @@ nmap k <C-w>k
 vmap Q gq
 nmap Q gqap
 
-command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '-w', fzf#vim#layout(<bang>0))
+command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
 nmap  gr :Agw <C-r><C-w><CR>
 nmap  gR :Ag <C-r><C-w><CR>
+nmap f :Buffers<CR>
 
 
 command Onspell set spelllang=en
@@ -453,7 +454,7 @@ let g:ale_linters = {
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '\'
 let g:AutoPairsShortcutFastWrap = 'r'
-let g:AutoPairsShortcutJump = 'n'
+let g:AutoPairsShortcutJump = '<C-g>'
 let g:AutoPairsCenterLine = 0
 
 """""""""""""""""""""""""""

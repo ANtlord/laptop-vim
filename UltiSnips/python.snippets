@@ -41,3 +41,31 @@ def ${1:method_name}(${2:decorator_args}):
 		return wrapper
 	return deco
 endsnippet
+
+snippet setup "setup script"
+def get_packages():
+    kwargs = {
+        'exclude': ['tests.*', 'tests'],
+    }
+    if 'flake8' in sys.argv:
+        del kwargs['exclude']
+    return find_packages(**kwargs)
+
+setup(
+    name='${1:project_name}',
+    version='0.0.1',
+    packages=get_packages(),
+    url='',
+    license='',
+    author='',
+    author_email='',
+    description='',
+    setup_requires=[],
+    install_requires=[],
+    tests_require=[],
+    include_package_data=True,
+    entry_points = {
+        'console_scripts': ['$1=$1.__main__:main'],
+    }
+)
+endsnippet

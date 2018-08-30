@@ -48,4 +48,4 @@ let label = a:n.":".label
 return label
 endfunction
 
-set tabline=%!MyTabLine()
+set tabline=
