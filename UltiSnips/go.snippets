@@ -1,3 +1,19 @@
 snippet pri "fmt.Println"
 fmt.Println($1)
 endsnippet
+
+snippet ty "type name struct"
+type $1 struct {
+	$2
+}
+endsnippet
+
+snippet Er "type nameError struct"
+type ${1:name}Err struct {
+	msg string
+}
+
+func (e *$1Err) Error() string {
+	${2:return e.msg}
+}
+endsnippet

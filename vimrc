@@ -1,6 +1,7 @@
 set t_Co=8
 
 set nocompatible               " be iMproved
+
 set ruler
 set backspace=2
 filetype off                   " required!
@@ -21,17 +22,17 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git', {
 \}
 
 ""DEOPLETE"""
-Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'landaire/deoplete-d'
+" Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'landaire/deoplete-d'
 ""
 
-Plug 'https://github.com/davidhalter/jedi-vim.git'
+" Plug 'https://github.com/davidhalter/jedi-vim.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
-Plug 'https://github.com/heavenshell/vim-pydocstring.git'
+" Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
 " Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
 "Plug 'https://github.com/python-rope/ropevim.git'
@@ -43,12 +44,12 @@ Plug 'https://github.com/maksimr/vim-jsbeautify.git'
 """""""""""""""""""""""""""""""""""
 Plug 'https://github.com/stephpy/vim-yaml.git'
 Plug 'rust-lang/rust.vim'
-" Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/idanarye/vim-dutyl'
-Plug 'https://github.com/terryma/vim-multiple-cursors'
+" Plug 'https://github.com/terryma/vim-multiple-cursors'
 call plug#end()
 filetype plugin indent on     " required!*/
 syntax on
@@ -70,7 +71,6 @@ set number
 let mapleader = ","
 set laststatus=2
 set ic
-set smartcase
 set hls
 set cursorline
 set directory=/tmp
@@ -78,8 +78,13 @@ set fencs=utf8,cp1251
 set ffs=unix,dos
 set nobackup
 set noswapfile
+"""search options""""
 set incsearch
-colorscheme peachpuff
+set nowrapscan
+set smartcase
+nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+" colorscheme peachpuff
+colorscheme breeze
 set exrc
 set secure
 set splitright
@@ -93,6 +98,7 @@ set nojs
 set lazyredraw
 syntax sync minlines=256
 set synmaxcol=140
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Folding
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,9 +115,9 @@ map <F3> :Buffers<CR>
 map <F4> :TagbarToggle<CR>
 nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
-" nmap o <Esc>:NERDTreeFind<CR>
 nmap o :Vex<CR>
 map fr gT
+"""Selection and copying"""
 nmap <C-c> "+yy
 nmap <C-x> "+dd
 vmap <C-c> "+y
@@ -119,8 +125,6 @@ vmap <C-x> "+d
 nnoremap v <c-v>
 imap <C-v> <Esc>"+pa
 map <C-v> "+p
-imap <C-F12> :q<CR>
-map <C-F12> :q<CR>
 inoremap <C-l> <C-o>l
 map <C-h> :%s///gc<Left><Left><Left><Left>
 vmap <C-h> :s///gc<Left><Left><Left><Left>
@@ -146,10 +150,10 @@ nnoremap + <C-W>+
 nnoremap _ <C-W>-
 nnoremap = <C-W>>
 nnoremap - <C-W><
-nmap h <C-w>h
-nmap l <C-w>l
-nmap j <C-w>j
-nmap k <C-w>k
+" nmap h <C-w>h
+" nmap l <C-w>l
+" nmap j <C-w>j
+" nmap k <C-w>k
 
 vmap Q gq
 nmap Q gqap
@@ -158,6 +162,11 @@ command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
 nmap  gr :Agw <C-r><C-w><CR>
 nmap  gR :Ag <C-r><C-w><CR>
 nmap f :Buffers<CR>
+nnoremap ' ;
+nnoremap ; ,
+vnoremap ' ;
+vnoremap ; ,
+nmap 1 :set rnu!<CR>
 
 
 command Onspell set spelllang=en
@@ -191,34 +200,19 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
 endif 
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType python setlocal omnifunc=jedi#complete
-"autocmd FileType python set ft=python.django " For SnipMate
-"autocmd FileType html set ft=htmldjango.html " For SnipMate
-
 "if has("autocmd") && exists("+omnifunc")
 	"autocmd Filetype *
 			"\	if &omnifunc == "" |
 			"\		setlocal omnifunc=syntaxcomplete#Complete |
 			"\	endif
     "endif
-"Plugin 'git://github.com/vim-scripts/AutoComplPop.git'
 "au BufEnter *.py source ~/.vim/plugin/python.vim
 "let g:ctags_statusline=1 
 "set completeopt-=preview " это для документации
-" let NERDTreeShowHidden=1
-"let NERDChristmasTree=1
-" let NERDTreeMinimalUI=0
-" let NERDTreeDirArrows=0
-" let NERDTreeHighlightCursorline=0
-" let NERDTreeIgnore = ['\.pyc$', '\.o$']
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
 
-"let g:pydiction_location='/usr/share/pydiction/complete-dict'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JEDI vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -235,11 +229,6 @@ let g:jedi#completions_enabled = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
-" let g:ycm_path_to_python_interpreter='/usr/bin/python2'
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_key_invoke_completion = '<C-x><C-o>'
 let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
 let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
 let g:ycm_filetype_specific_completion_to_disable = {
@@ -279,89 +268,25 @@ au BufNewFile,BufRead    *.vue            set filetype=html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Color customiazation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi MatchParen ctermbg=blue guibg=lightblue
-hi Folded ctermbg=0 ctermfg=236
-hi CursorLine term=None cterm=None ctermbg=235
-hi Pmenu ctermfg=white ctermbg=238
-hi Search ctermfg=black
-hi PmenuSel ctermfg=black
-hi SpellBad ctermbg=088 ctermfg=white
-hi Comment guifg=#777777 ctermfg=240
-hi StatusLine ctermbg=yellow ctermfg=blue
-hi diffadd ctermbg=236 guifg=#00ff00
-hi diffdelete ctermbg=124 guifg=#ff0000
-hi diffchange ctermbg=236 guifg=#ff0000
-hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
+" hi MatchParen ctermbg=blue guibg=lightblue
+" hi Folded ctermbg=0 ctermfg=236
+" hi CursorLine term=None cterm=None ctermbg=235
+" hi Pmenu ctermfg=white ctermbg=238
+" hi Search ctermfg=black
+" hi PmenuSel ctermfg=black
+" hi SpellBad ctermbg=088 ctermfg=white
+" hi Comment guifg=#777777 ctermfg=240
+" hi StatusLine ctermbg=yellow ctermfg=blue
+" hi diffadd ctermbg=236 guifg=#00ff00
+" hi diffdelete ctermbg=124 guifg=#ff0000
+" hi diffchange ctermbg=236 guifg=#ff0000
+" hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
 set textwidth=100
 
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
 
-function! MyMethod()
-    exe "!vpaste ft=".&ft
-endfun
-
-nmap <leader>sp :call MyMethod()<CR>
-
-let g:tagbar_type_php = {
-    \ 'ctagsbin' : '/opt/ctags/bin/ctags',
-    \ 'ctagstype' : 'php',
-    \ 'kinds'     : [
-	\ 'c:classes:0:1',
-	\ 'f:functions',
-	\ 'g:enums',
-	\ 'u:unions',
-	\ 's:structs',
-	\ 'm:members'
-    \ ],
-    \'sro': '.',
-    \ 'kind2scope' : {
-	\ 'c' : 'class',
-	\ 'g' : 'enum',
-	\ 's' : 'struct',
-	\ 'u' : 'union'
-    \},
-    \ 'scope2kind' : {
-	\ 'class'     : 'c',
-	\ 'enum'      : 'g',
-	\ 'struct'    : 's',
-	\ 'union'     : 'u'
-    \ }
-\}
-
-let g:tagbar_type_d = {
-    \ 'ctagstype' : 'd',
-    \ 'kinds'     : [
-    \ 'c:classes:1:1',
-    \ 'f:functions:1:1',
-    \ 'T:template:1:1',
-    \ 'g:enums:1:1',
-    \ 'e:enumerators:0:0',
-    \ 'u:unions:1:1',
-    \ 's:structs:1:1',
-    \ 'v:variables:1:0',
-    \ 'i:interfaces:1:1',
-    \ 'm:members',
-    \ 'a:alias'
-    \ ],
-    \'sro': '.',
-    \ 'kind2scope' : {
-    \ 'c' : 'class',
-    \ 'g' : 'enum',
-    \ 's' : 'struct',
-    \ 'u' : 'union',
-    \ 'T' : 'template'
-    \},
-    \ 'scope2kind' : {
-    \ 'enum'      : 'g',
-    \ 'class'     : 'c',
-    \ 'struct'    : 's',
-    \ 'union'     : 'u',
-    \ 'template'  : 'T'
-    \ },
-    \ 'ctagsbin' : $HOME.'/.dub/packages/dscanner-master/dscanner/dscanner',
-    \ 'ctagsargs' : ['--ctags']
-\ }
+vmap vp <ESC>:exec "'<,'>w !vpaste ft=".&ft<CR>
 
 map <leader>s :execute " grep! -srnw --binary-files=without-match --exclude-dir=.git --exclude-dir=.svn . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 map <leader>c :copen<CR>
@@ -417,6 +342,7 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '10' }
+let g:fzf_files_options = ['+m']
 
 set hidden
 """"""
@@ -470,3 +396,10 @@ let g:netrw_mousemaps = 0
 " let g:netrw_usetab = 1
 
 let g:deoplete#enable_at_startup = 0
+
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+let @q='^f_lveyEa: "pvBluEa"lDa,'

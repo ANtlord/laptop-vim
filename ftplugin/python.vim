@@ -226,6 +226,7 @@ nnoremap K :YcmCompleter GetDoc<CR>
 nmap <silent> <C-_> <Plug>(pydocstring)
 
 let @c = 'vex%pa, Bhh2x'  " set the last argument in brackets to the first place. (CloseMixin, AbstractEventState) -> (AbstractEventState, CloseMixin)
+let @s = 'vawyPa = Iself._' " add 'self._<field_name> = ' before variable named <field_name>
 
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'

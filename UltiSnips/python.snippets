@@ -69,3 +69,10 @@ setup(
     }
 )
 endsnippet
+
+snippet logexc "logging with stack"
+import traceback
+_, _, tb = sys.exc_info()
+stack_summary = traceback.StackSummary.extract(traceback.walk_stack(tb.tb_frame), capture_locals=True)
+logger.exception(''.join(stack_summary.format()), stack_info=True)
+endsnippet
