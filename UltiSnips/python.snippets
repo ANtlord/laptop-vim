@@ -76,3 +76,11 @@ _, _, tb = sys.exc_info()
 stack_summary = traceback.StackSummary.extract(traceback.walk_stack(tb.tb_frame), capture_locals=True)
 logger.exception(''.join(stack_summary.format()), stack_info=True)
 endsnippet
+
+snippet par ":param :"
+:param ${1:variable}: $2
+endsnippet
+
+snippet ph "print bytes or string in hexadecimal"
+print(' '.join('%#x' % x for x in $1${2:.encode()}))
+endsnippet

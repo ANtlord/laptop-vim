@@ -10,16 +10,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'https://github.com/robhudson/snipmate_for_django.git'
 Plug 'Lokaltog/vim-easymotion'
-" Plug 'Tagbar'
 Plug 'leafgarland/typescript-vim'
-" Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', {
     \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
 \}
+Plug 'https://github.com/vim-scripts/highlight.vim'
 
 ""DEOPLETE"""
 " Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
@@ -82,7 +80,11 @@ set noswapfile
 set incsearch
 set nowrapscan
 set smartcase
+""""""""""""""""""""""""""""""
+" Word highlighting
+""""""""""""""""""""""""""""""
 nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap 4 :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hls<CR>
 " colorscheme peachpuff
 colorscheme breeze
 set exrc
@@ -216,12 +218,12 @@ let NERDSpaceDelims = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JEDI vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#completions_enabled = 0
-""let g:jedi#goto_command = "<leader>g"
+" let g:jedi#auto_initialization = 1
+" let g:jedi#auto_vim_configuration = 1
+" let g:jedi#completions_enabled = 0
+" let g:jedi#goto_command = "<leader>g"
 ""let g:jedi#related_names_command = "<leader>n"
-""let g:jedi#get_definition_command = "<leader>d"
+" let g:jedi#get_definitions_command = "<leader>d"
 "let g:jedi#popup_on_dot = 1
 "let g:jedi#popup_select_first = 1
 "let g:jedi#show_call_signatures = 1
@@ -243,21 +245,14 @@ let g:ycm_use_ultisnips_completer = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_complete_in_comments = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
 let g:ycm_always_populate_location_list = 0
 let g:ycm_key_list_select_completion = []
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_goto_buffer_command = 'new-tab'
-
-"set path=$PWD/include,$PWD/src
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" For scripts of framework OGRE 3D
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufRead    *.material            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
-au BufNewFile,BufRead    *.program            setf ogrematerial    " [Feral:176/05@19:09] OGRE3d's material files
-au BufNewFile,BufRead    *.cg            setf cg    " [Feral:176/05@19:09] OGRE3d's material files
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ HTML TEMPLATE HIGHLIGHT
@@ -286,9 +281,6 @@ set textwidth=100
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
 
-vmap vp <ESC>:exec "'<,'>w !vpaste ft=".&ft<CR>
-
-map <leader>s :execute " grep! -srnw --binary-files=without-match --exclude-dir=.git --exclude-dir=.svn . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 map <leader>c :copen<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -396,6 +388,9 @@ let g:netrw_mousemaps = 0
 " let g:netrw_usetab = 1
 
 let g:deoplete#enable_at_startup = 0
+
+nmap <leader>o yawO//pa<Space>
+nmap <leader>qq I'Ei'
 
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
