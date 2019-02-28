@@ -14,16 +14,24 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
-Plug 'https://github.com/Valloric/YouCompleteMe.git', {
-    \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
-\}
+" Plug 'https://github.com/Valloric/YouCompleteMe.git', {
+    " \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
+" \}
 Plug 'https://github.com/vim-scripts/highlight.vim'
 
-""DEOPLETE"""
-" Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
-" Plug 'roxma/nvim-yarp'
-" Plug 'roxma/vim-hug-neovim-rpc'
-" Plug 'landaire/deoplete-d'
+""""""""""""""""""""""""""""""""
+""" LANGUAGE SERVER """"""""""""
+""""""""""""""""""""""""""""""""
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+ " Plug 'landaire/deoplete-d'
 ""
 
 " Plug 'https://github.com/davidhalter/jedi-vim.git'
@@ -46,12 +54,21 @@ Plug 'rust-lang/rust.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/idanarye/vim-dutyl'
+" Plug 'https://github.com/idanarye/vim-dutyl'
 " Plug 'https://github.com/terryma/vim-multiple-cursors'
 call plug#end()
 filetype plugin indent on     " required!*/
 syntax on
 lang en_US.UTF-8
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+let g:LanguageClient_serverCommands = {
+    \ 'd': [$HOME.'/.dub/packages/.bin/dls-latest/dls']
+    \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Indention                                 "
@@ -387,7 +404,7 @@ let g:netrw_winsize = 20
 let g:netrw_mousemaps = 0
 " let g:netrw_usetab = 1
 
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 
 nmap <leader>o yawO//pa<Space>
 nmap <leader>qq I'Ei'

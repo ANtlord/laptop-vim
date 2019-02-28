@@ -1,7 +1,7 @@
 """""""
 " D settings
 """""""
-map gd :DUjump<CR>
+" map gd :DUjump<CR>
 let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd/', '/usr/include/dmd/druntime/import', '/usr/include/dmd/phobos/']
 let g:dutyl_neverAddClosingParen=1
 let g:dutyl_dontUseVimProc = 1
@@ -11,8 +11,8 @@ let g:syntastic_d_checkers = ['dscanner']
 let g:syntastic_d_dscanner_exec = $HOME.'/.dub/packages/dscanner-master/dscanner/dscanner'
 set noexpandtab
 
-call dutyl#register#tool('dcd-client', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-client')
-call dutyl#register#tool('dcd-server', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-server')
+" call dutyl#register#tool('dcd-client', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-client')
+" call dutyl#register#tool('dcd-server', $HOME.'/.dub/packages/dcd-master/dcd/bin/dcd-server')
 "
 let g:deoplete#sources#d#dcd_client_binary = $HOME.'/.dub/packages/dcd-master/dcd/dcd-client'
 let g:deoplete#sources#d#dcd_server_binary = $HOME.'/.dub/packages/dcd-master/dcd/dcd-server.sh'
