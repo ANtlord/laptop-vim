@@ -7,9 +7,9 @@ set backspace=2
 filetype off                   " required!
 
 call plug#begin('~/.vim/plugged')
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
@@ -36,7 +36,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 " Plug 'https://github.com/davidhalter/jedi-vim.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
-Plug 'https://github.com/w0rp/ale.git'
+" Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
 " Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
@@ -67,7 +67,8 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 let g:LanguageClient_serverCommands = {
-    \ 'd': [$HOME.'/.dub/packages/.bin/dls-latest/dls']
+    \ 'd': [$HOME.'/.dub/packages/.bin/dls-latest/dls'],
+    \ 'python': ['/endlessos/develop/buf/.venv/bin/pyls'],
     \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -248,28 +249,28 @@ let NERDSpaceDelims = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
-let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
-let g:ycm_filetype_specific_completion_to_disable = {
-  \ 'gitcommit': 1,
-  \ 'php': 1,
-  \ 'd': 1
-\}
-let g:ycm_max_num_candidates = 20
-let g:ycm_register_as_syntastic_checker = 0
-let g:ycm_auto_trigger = 1
-let g:ycm_use_ultisnips_completer = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_complete_in_comments = 1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
-let g:ycm_always_populate_location_list = 0
-let g:ycm_key_list_select_completion = []
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_goto_buffer_command = 'new-tab'
+" let g:ycm_server_python_interpreter = '/usr/bin/python3' " For YCM
+" let g:ycm_python_binary_path = '/usr/bin/python2' " For jedi, can be changed in project file.
+" let g:ycm_filetype_specific_completion_to_disable = {
+  " \ 'gitcommit': 1,
+  " \ 'php': 1,
+  " \ 'd': 1
+" \}
+" let g:ycm_max_num_candidates = 20
+" let g:ycm_register_as_syntastic_checker = 0
+" let g:ycm_auto_trigger = 1
+" let g:ycm_use_ultisnips_completer = 1
+" let g:ycm_complete_in_strings = 1
+" let g:ycm_complete_in_comments = 1
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" " nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+" let g:ycm_always_populate_location_list = 0
+" let g:ycm_key_list_select_completion = []
+" let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" " let g:ycm_goto_buffer_command = 'new-tab'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ HTML TEMPLATE HIGHLIGHT

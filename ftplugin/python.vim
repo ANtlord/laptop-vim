@@ -222,7 +222,7 @@ let g:python_highlight_all = 1
 "map <leader>d :RopeGotoDefinition<CR>
 let g:ropevim_goto_def_newwin = "vnew"
 let g:syntastic_loc_list_height = 5
-nnoremap K :YcmCompleter GetDoc<CR>
+" nnoremap K :YcmCompleter GetDoc<CR>
 nmap <silent> <C-_> <Plug>(pydocstring)
 
 let @c = 'vex%pa, Bhh2x'  " set the last argument in brackets to the first place. (CloseMixin, AbstractEventState) -> (AbstractEventState, CloseMixin)
