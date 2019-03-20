@@ -64,8 +64,8 @@ hi SpellBad ctermbg=088 ctermfg=white
 hi Constant ctermfg=33
 hi Comment guifg=#777777 ctermfg=240
 hi StatusLine ctermbg=yellow ctermfg=blue
-hi diffadd ctermbg=236 guifg=#00ff00
+hi diffadd cterm=bold ctermbg=18 guifg=#00ff00
 hi diffdelete ctermbg=124 guifg=#ff0000
-hi diffchange ctermbg=236 guifg=#ff0000
-hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
+hi diffchange ctermbg=18 guifg=#ff0000
+hi DiffText term=reverse cterm=bold ctermbg=17 gui=bold guibg=#ff8060
 hi StatusLine ctermbg=16

@@ -1,5 +1,6 @@
-set t_Co=8
+set t_Co=256
 
+set termguicolors
 set nocompatible               " be iMproved
 
 set ruler
@@ -19,35 +20,21 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git', {
 \}
 Plug 'https://github.com/vim-scripts/highlight.vim'
 
-""DEOPLETE"""
-" Plug 'Shougo/deoplete.nvim', {'do': 'pip3 install --user neovim'}
-" Plug 'roxma/nvim-yarp'
-" Plug 'roxma/vim-hug-neovim-rpc'
-" Plug 'landaire/deoplete-d'
-""
+""" Additional colorschemes
+Plug 'https://github.com/cocopon/iceberg.vim/'
+Plug 'https://github.com/freeo/vim-kalisi'
 
-" Plug 'https://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/scrooloose/syntastic.git'
 Plug 'https://github.com/w0rp/ale.git'
 ""python plugins"""""""""""""""""""
-" Plug 'https://github.com/heavenshell/vim-pydocstring.git'
 Plug 'https://github.com/hdima/python-syntax.git'
-" Plug 'https://github.com/jmcantrell/vim-virtualenv.git'
-"Plug 'https://github.com/python-rope/ropevim.git'
 ""js plugins"""""""""""""""""""""""
 Plug 'https://github.com/maksimr/vim-jsbeautify.git'
-" Plug 'marijnh/tern_for_vim'
-" Plug 'pangloss/vim-javascript'
-" Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 """""""""""""""""""""""""""""""""""
 Plug 'https://github.com/stephpy/vim-yaml.git'
 Plug 'rust-lang/rust.vim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/idanarye/vim-dutyl'
-" Plug 'https://github.com/terryma/vim-multiple-cursors'
 call plug#end()
 filetype plugin indent on     " required!*/
 syntax on
@@ -86,7 +73,8 @@ set smartcase
 nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 nnoremap 4 :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hls<CR>
 " colorscheme peachpuff
-colorscheme breeze
+" colorscheme breeze
+colorscheme iceberg
 set exrc
 set secure
 set splitright
@@ -113,7 +101,6 @@ set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
-map <F3> :Buffers<CR>
 map <F4> :TagbarToggle<CR>
 nmap <F5> :bel copen<CR>
 imap <esc><F5> :copen<CR>
@@ -168,6 +155,7 @@ nnoremap ' ;
 nnoremap ; ,
 vnoremap ' ;
 vnoremap ; ,
+nmap q q:
 nmap 1 :set rnu!<CR>
 
 
