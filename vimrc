@@ -67,11 +67,11 @@ set noswapfile
 set incsearch
 set nowrapscan
 set smartcase
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+set textwidth=100
 """"""""""""""""""""""""""""""
 " Word highlighting
 """"""""""""""""""""""""""""""
-nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-nnoremap 4 :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hls<CR>
 " colorscheme peachpuff
 " colorscheme breeze
 colorscheme iceberg
@@ -99,11 +99,13 @@ set foldmethod=indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap 1 :set rnu!<CR>
+nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap 4 :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hls<CR>
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 map <F4> :TagbarToggle<CR>
 nmap <F5> :bel copen<CR>
-imap <esc><F5> :copen<CR>
 nmap o :Vex<CR>
 map fr gT
 """Selection and copying"""
@@ -114,14 +116,12 @@ vmap <C-x> "+d
 nnoremap v <c-v>
 imap <C-v> <Esc>"+pa
 map <C-v> "+p
-inoremap <C-l> <C-o>l
 map <C-h> :%s///gc<Left><Left><Left><Left>
 vmap <C-h> :s///gc<Left><Left><Left><Left>
 "imap <C-a> <Esc>:1<CR>vG<end>
 nmap <C-a> :1<CR>vG<end>
 vmap <tab> >gv
 vmap <S-tab> <gv
-set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 nmap Ж :
 " yank
@@ -156,12 +156,15 @@ nnoremap ; ,
 vnoremap ' ;
 vnoremap ; ,
 nmap q q:
-nmap 1 :set rnu!<CR>
-
+map <leader>c :copen<CR>
+nmap <leader>o yawO//pa<Space>
+nmap <leader>qq I'Ei'
 
 command Onspell set spelllang=en
 au FileType d setlocal comments=sl:/**,mb:\ *,elx:*/
 au FileType d setlocal formatoptions+=r
+autocmd CmdwinEnter * nmap q :q<ESC>
+autocmd CmdwinLeave * nmap  q q:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips "
@@ -202,19 +205,6 @@ endif
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JEDI vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:jedi#auto_initialization = 1
-" let g:jedi#auto_vim_configuration = 1
-" let g:jedi#completions_enabled = 0
-" let g:jedi#goto_command = "<leader>g"
-""let g:jedi#related_names_command = "<leader>n"
-" let g:jedi#get_definitions_command = "<leader>d"
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#popup_select_first = 1
-"let g:jedi#show_call_signatures = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe "
@@ -264,42 +254,9 @@ au BufNewFile,BufRead    *.vue            set filetype=html
 " hi diffdelete ctermbg=124 guifg=#ff0000
 " hi diffchange ctermbg=236 guifg=#ff0000
 " hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
-set textwidth=100
 
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
-
-map <leader>c :copen<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:syntastic_mode_map = { 'mode': 'active',
-         \ 'active_filetypes': ['php', 'python'],
-         \ 'passive_filetypes': ['cpp', 'c']}
-let g:syntastic_php_checkers = ['phplint', 'php']
-"let g:syntastic_python_checkers = ['flake8', 'python', 'pyflakes', 'pylint']
-" let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_flake8_args=''
-let g:syntastic_php_phplint_quiet_messages = {
-    \ "!level":  "errors",
-    \ "!regex":   ['.*variable.*'],
-\}
-let g:syntastic_loc_list_height = 5
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs=0
-let g:syntastic_enable_balloons = 0
-let g:syntastic_enable_highlighting = 0
-let g:syntastic_echo_current_error = 0
 
 """"""""""""""""
 " GO settings
@@ -325,16 +282,16 @@ let g:fzf_layout = { 'down': '10' }
 let g:fzf_files_options = ['+m']
 
 set hidden
-""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUST
-""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 """"""
 
-""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE LINTER
-""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_open_list = 1
@@ -350,9 +307,6 @@ let g:ale_linters = {
     \'python': ['flake8'],
     \'rust': [],
 \}
-"""""""
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTO PAIRS
@@ -374,11 +328,6 @@ let g:netrw_altv = 0
 let g:netrw_winsize = 20
 let g:netrw_mousemaps = 0
 " let g:netrw_usetab = 1
-
-let g:deoplete#enable_at_startup = 0
-
-nmap <leader>o yawO//pa<Space>
-nmap <leader>qq I'Ei'
 
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
