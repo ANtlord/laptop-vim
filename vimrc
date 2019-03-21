@@ -96,69 +96,6 @@ set foldminlines=3
 set foldnestmax=4
 set nofoldenable
 set foldmethod=indent
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Key Bindings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap 1 :set rnu!<CR>
-nnoremap 3 :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-nnoremap 4 :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hls<CR>
-imap <F2> <Esc>:w<CR>
-map <F2> <Esc>:w<CR>
-map <F4> :TagbarToggle<CR>
-nmap <F5> :bel copen<CR>
-nmap o :Vex<CR>
-map fr gT
-"""Selection and copying"""
-nmap <C-c> "+yy
-nmap <C-x> "+dd
-vmap <C-c> "+y
-vmap <C-x> "+d
-nnoremap v <c-v>
-imap <C-v> <Esc>"+pa
-map <C-v> "+p
-map <C-h> :%s///gc<Left><Left><Left><Left>
-vmap <C-h> :s///gc<Left><Left><Left><Left>
-"imap <C-a> <Esc>:1<CR>vG<end>
-nmap <C-a> :1<CR>vG<end>
-vmap <tab> >gv
-vmap <S-tab> <gv
-
-nmap Ж :
-" yank
-nmap Н Y
-nmap з p
-nmap ф a
-nmap щ o
-nmap г u
-nmap З P 
-
-nmap . {>}``
-nmap , {<}``
-
-nnoremap + <C-W>+
-nnoremap _ <C-W>-
-nnoremap = <C-W>>
-nnoremap - <C-W><
-" nmap h <C-w>h
-" nmap l <C-w>l
-" nmap j <C-w>j
-" nmap k <C-w>k
-
-vmap Q gq
-nmap Q gqap
-
-command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
-nmap  gr :Agw <C-r><C-w><CR>
-nmap  gR :Ag <C-r><C-w><CR>
-nmap f :Buffers<CR>
-nnoremap ' ;
-nnoremap ; ,
-vnoremap ' ;
-vnoremap ; ,
-nmap q q:
-map <leader>c :copen<CR>
-nmap <leader>o yawO//pa<Space>
-nmap <leader>qq I'Ei'
 
 command Onspell set spelllang=en
 au FileType d setlocal comments=sl:/**,mb:\ *,elx:*/
@@ -171,23 +108,6 @@ autocmd CmdwinLeave * nmap  q q:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Source a global configuration file if available
 if filereadable("/etc/vimrc.local")
@@ -273,6 +193,10 @@ au FileType go set noexpandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! -bang -nargs=* Agw call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
+nmap  gr :Agw <C-r><C-w><CR>
+nmap  gR :Ag <C-r><C-w><CR>
+nmap f :Buffers<CR>
 nmap <C-p> :Files<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
