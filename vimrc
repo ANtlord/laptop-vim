@@ -10,20 +10,16 @@ Plug 'https://github.com/Valloric/YouCompleteMe.git', {
     \'do': './install.py --clang-completer --go-completer --rust-completer --js-completer'
 \}
 Plug 'https://github.com/vim-scripts/highlight.vim'
-
+Plug 'https://github.com/hdima/python-syntax.git'
 """ Additional colorschemes
 Plug 'https://github.com/cocopon/iceberg.vim/'
 Plug 'https://github.com/freeo/vim-kalisi'
 
 Plug 'https://github.com/w0rp/ale.git'
-""python plugins"""""""""""""""""""
-Plug 'https://github.com/hdima/python-syntax.git'
 ""js plugins"""""""""""""""""""""""
 Plug 'https://github.com/maksimr/vim-jsbeautify.git'
 """""""""""""""""""""""""""""""""""
 Plug 'https://github.com/stephpy/vim-yaml.git'
-Plug 'rust-lang/rust.vim'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -39,15 +35,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 if filereadable("/etc/vimrc.local")
   source /etc/vimrc.local
 endif 
-"if has("autocmd") && exists("+omnifunc")
-	"autocmd Filetype *
-			"\	if &omnifunc == "" |
-			"\		setlocal omnifunc=syntaxcomplete#Complete |
-			"\	endif
-    "endif
-"au BufEnter *.py source ~/.vim/plugin/python.vim
-"let g:ctags_statusline=1 
-"set completeopt-=preview " это для документации
 let NERDCommentWholeLinesInVMode = 2
 let NERDSpaceDelims = 1
 "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 'cpp': { 'left': '/**','right': '*/' } }
@@ -84,38 +71,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 au BufNewFile,BufRead    *.twig            set filetype=htmldjango
 au BufNewFile,BufRead    *.vue            set filetype=html
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Color customiazation
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hi MatchParen ctermbg=blue guibg=lightblue
-" hi Folded ctermbg=0 ctermfg=236
-" hi CursorLine term=None cterm=None ctermbg=235
-" hi Pmenu ctermfg=white ctermbg=238
-" hi Search ctermfg=black
-" hi PmenuSel ctermfg=black
-" hi SpellBad ctermbg=088 ctermfg=white
-" hi Comment guifg=#777777 ctermfg=240
-" hi StatusLine ctermbg=yellow ctermfg=blue
-" hi diffadd ctermbg=236 guifg=#00ff00
-" hi diffdelete ctermbg=124 guifg=#ff0000
-" hi diffchange ctermbg=236 guifg=#ff0000
-" hi DiffText term=reverse cterm=bold ctermbg=12 gui=bold guibg=#ff8060
-
 let g:EasyMotion_leader_key = ',' 
 let g:EasyMotion_keys = 'qwerasdfzxc'
 
-""""""""""""""""
-" GO settings
-""""""""""""""""
-" setlocal omnifunc=go#complete#Complete
-let g:go_fmt_autosave = 0
-let g:go_fmt_command = "goimports"
-"let g:go_highlight_functions = 1
-"let g:go_highlight_methods = 1
-"let g:go_highlight_structs = 1
-"let g:go_highlight_operators = 1
-"let g:go_highlight_build_constraints = 1
-au FileType go set noexpandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,14 +88,6 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '10' }
 let g:fzf_files_options = ['+m']
-
-set hidden
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUST
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:racer_cmd = $HOME.'/.cargo/bin/racer'
-let $RUST_SRC_PATH = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE LINTER

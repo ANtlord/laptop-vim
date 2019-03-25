@@ -20,32 +20,34 @@ set mouse=a        " Enable mouse usage (all modes)
 set number
 let mapleader = ","
 set laststatus=2
-set ic
-set hls
+set ignorecase
 set cursorline
-set directory=/tmp
 set fencs=utf8,cp1251
 set ffs=unix,dos
+set textwidth=100
+set hidden
+
+""" Swap files settings
+set directory=/tmp
 set nobackup
 set noswapfile
+
 """search options""""
+set hls
 set incsearch
 set nowrapscan
 set smartcase
+
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-set textwidth=100
-""""""""""""""""""""""""""""""
-" Word highlighting
-""""""""""""""""""""""""""""""
 " colorscheme peachpuff
 " colorscheme breeze
 colorscheme iceberg
 set exrc
 set secure
 set splitright
-set tm=320
+set timeoutlen=320
 set wildmenu
-set nojs
+set nojoinspaces
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Optimization
